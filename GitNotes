@@ -1,0 +1,524 @@
+$ mkdir projects
+$ cd projects
+$ pwd
+
+$ git version
+
+$ git config --global user.name "Chris Trimmer"
+
+cptri@500-409 MINGW64 /projects
+$ git config --global user.email "chrisschoolacct@yahoo.com"
+
+cptri@500-409 MINGW64 /projects
+$ git config --global -list
+error: did you mean `--list` (with two dashes)?
+
+cptri@500-409 MINGW64 /projects
+$ git config --global --list
+filter.lfs.clean=git-lfs clean -- %f
+filter.lfs.smudge=git-lfs smudge -- %f
+filter.lfs.process=git-lfs filter-process
+filter.lfs.required=true
+user.name=Chris Trimmer
+user.email=chrisschoolacct@yahoo.com
+
+cptri@500-409 MINGW64 /projects
+$ git clone https://github.com/cpt409/github-demo-taylor1.git
+Cloning into 'github-demo-taylor1'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 623 bytes | 4.00 KiB/s, done.
+
+cptri@500-409 MINGW64 /projects
+$ ls
+github-demo-taylor1/
+
+cptri@500-409 MINGW64 /projects
+$ cd github-demo-taylor1
+
+cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
+$ ls
+README.md
+
+cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
+$ echo "Test Git Quick Start Demo" >> start.txt
+
+cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
+$ ls
+README.md  start.txt
+
+cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
+$ cat start.txt
+Test Git Quick Start Demo
+
+cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        start.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
+$ git add start.txt
+warning: LF will be replaced by CRLF in start.txt.
+The file will have its original line endings in your working directory
+
+cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   start.txt
+
+
+cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
+$ git commit -m "Adding start text file"
+[master 100c949] Adding start text file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 start.txt
+
+cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+
+cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
+$ git push origin master
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 318 bytes | 318.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/cpt409/github-demo-taylor1.git
+   49133a5..100c949  master -> master
+
+cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
+
+///////////////////////////////////////////////////////////////
+
+Set up NPP as default:
+must be execute from users home dir (use shortcut on desktop
+c:\usr\cptri)
+notepad++ .bash_profile
+
+add this to profile doc
+alias npp="notepad++.exe -multiInst -nosession"
+
+
+view config of gitbash:
+cat ~/.gitconfig
+git config --global --list
+
+add npp as default editor:
+git config --global core.editor "notepad++.exe -multiInst -nosession"
+
+now you can use this line to edit global, etc...
+
+git config --global -e  (this will open the config file in npp)
+
+
+--------------------------------------------------
+
+hipsum.co   for text
+
+create a fresh repo from gitbash (git init <name>):
+
+echo "# NotesRepo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/cpt409/NotesRepo.git
+git push -u origin master
+
+
+
+git init <name>
+
+ls
+ls -al (list all files/folders/hidden)
+a = all
+l = list format
+
+.git is where the repo lives
+
+mate (create a file) (text mate)
+mate hipster.txt
+npp hipster.txt
+add data to file and save
+
+to put it into staging:
+git add hipster.txt
+
+to put it into local Repo:
+git commit
+(file will open so you can add comments at top)
+(when you save and exit, it will commit to repo)
+
+do remove the project:
+rm -rf fresh-project
+
+
+git remote add origin https://github.com/cpt409/NotesRepo.git
+
+
+
+
+
+---------------------
+
+adding git to an existing project (git init)
+
+http://www.initializr.com/
+bootstrap
+select all the options at bottom to generate more files
+download it
+
+unzip d:\Downloads\<filename>
+
+rename it:
+mv initializr web-project
+
+go to the folder:
+
+git init
+ -- this will create a repo here
+
+ls -al to make sure you see the .git folder
+
+to add all files to staging at once:
+git add .
+
+git commit -m "My first commit, inline"
+
+to make a project no longer managed by git:
+
+rm -rf .git  (remove the git folder)
+
+-----------------------------
+
+start on github, join an existing project (git clone)
+
+go to a project
+fork (copies repo to your account)
+
+go to projects folder:
+
+git clone https://....
+ls
+cd <new project>
+
+
+-----------------------------
+
+Basic git workflow (add, commit, pull, push)
+
+http://bitly.com/git-start-web
+https://hipsum.co/
+https://meettheipsums.com/
+
+do all steps to create a file
+move it from working dir to staging
+then from staging to local repo
+
+do a pull from origin to make sure we are up to date with github
+version.  this pulls down.
+
+git pull origin master
+
+then 
+
+git push origin master
+
+then go to github, refresh browser, you will see file and comment
+
+
+-----------------------------
+
+tracked files
+
+modify hipster
+npp hipster.txt
+add text, save, exit
+
+to commit directly to repo:
+git commit -am "Adding more ipsum text."
+a = add to stage, and commit directly
+m = add the commit message
+
+what is a tracked file?
+a file that git is tracking -> 
+has already been committed to repo, or to staging/index
+
+to see what files are tracked:
+git ls-files
+
+-----------------------------
+
+editing files:
+you can have same file in staging waiting for commit,
+as well as in working directory waiting to be staged
+
+use git add command to apply changes to the staged file.
+now both changes are on the file, and it is still in staging
+
+
+-----------------------------
+
+recursive add
+
+create folder structure:
+$ mkdir -p level1/level2/level3
+ 
+to go back up to starter root:
+cd ../../
+
+git status will not show all the dir/files in the hierarchy that have changes
+
+use:
+git add .
+it will add all files in the subdirs that have changes
+
+
+-----------------------------
+
+backout changes
+
+go into level1 file, add changes
+add to staging
+open file again from staging
+
+
+
+while in staging:
+git restore --staged <file name>
+
+check this (maybe old command):
+git reset HEAD <file>
+
+to backout from working directory:
+git restore <file>
+
+check this (maybe old):
+git checkout -- <file>
+
+
+-----------------------------
+
+rename/move files
+
+cd level1/level2/level3
+
+use the mv command:
+git mv <old name> <new name>
+
+file will be staged...
+which means it could be backed out
+
+rename files before  making changes...
+
+using OS level command:
+mv <old> <new>
+
+file will be in working as unstaged as two operations:
+- deleting old file
+- add new file
+
+must use:
+git add -A
+A = updates recursively, also gets files that have been moved, deleted, etc.
+
+to revert:
+just change name back to original, without commiting
+or use git restore --staged <file>
+
+move file using git:
+git mv level2.txt level3
+
+move file using OS:
+mv level2.txt ..
+
+
+changing name using file explorer:
+
+sees it as two actions in working directory
+(don't use -A <---- might be able to, this might be old)
+git add level1.txt
+git add -u
+
+-u ensures that systems sees it as a rename, not an add
+
+-----------------------------
+
+delete files
+
+delete will file not yet tracked (in working dir)
+
+cannot use:
+git rm doomed.txt because file is not yet bieng tracked
+using OS level remove instead:
+rm doomed.txt
+
+file in repo:
+git rm newfile.txt
+git commit -m "committing deletion of newfile.txt"
+
+back out a staged deletion (i.e, you don't want to delete a file):
+
+git restore --staged <file>
+
+however, the change will be unstaged
+it does not restore the file
+
+git restore <file>
+to discard the fact that file was deleted...
+
+
+delete a file that git is tracking, using OS command:
+rm hipster.txt
+
+shows as unstaged (working folder)
+
+git add -A
+git status
+
+deletion is now staged
+
+git commit
+
+
+delete folder structure using OS level (ie. tracked files/folders)
+
+rm -rf level1
+-r = recursive
+f = force the deletions
+
+git add -A (to get all changes)
+
+git commit -m "deleting level1 and all children"
+
+
+-----------------------------
+
+show history:
+
+git help log
+
+git log (use q to get out of log, space bar to scroll down)
+
+git log --abbrev-commit (shortens the SHA identifier hash)
+
+git log --oneline --graph --decorate
+--oneline = compress log entries into one line
+--graph = ascii graph showing branching path
+--decorate = add labels/tags/etc to annotate the commits
+
+get a range of entries:
+git log 83b970e...b80c214 (ending entry is not shown)
+
+datebased searching:
+git log --since="3 days ago"
+
+log of a specific file:
+git log -- "hipster.txt"
+
+log of a file that has been renamed:
+git log --follow -- level1/level2/level2.txt
+
+show info about a specific commit:
+git show <sha id of commit>
+shows all changes to the file
+
+-----------------------------
+
+git alias
+
+git log --all --graph --decorate --oneline
+
+to make sure a command doesn't already exist:
+try the command you want to create..
+git hist
+(will get feedback that it is not a git command)
+
+git config --global alias.hist "log --all --graph --decorate --oneline"
+
+alias. is the command that creates the alias named afterward
+leave out "git" from the command argument
+
+git hist <--- should now work
+
+to view aliases:
+npp ~/.gitconfig
+~ = home directory
+
+
+-----------------------------
+
+ignoring unwanted files:
+
+ls -al
+check to see if .gitignore has already been completed
+
+npp .gitignore
+
+format of file:
+one express per line
+
+test using a bogus access.log file
+create access.log file
+(don't stage or commit the file)
+
+modify .gitignore by adding *.log as a line to ignore log files
+
+sh status will show that .gitignore was modified,
+but that access.log is no longer showing untracked
+
+if you know of a directory you want to ignore completely,
+then using this in .gitignore:
+bogus/ instead of *.bogus
+
+
+
+-----------------------------
+
+compare, merge
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

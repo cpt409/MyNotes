@@ -1,0 +1,94 @@
+Hamedani - Double Coding Speed
+
+Fn to use Home/End/PageUp/PageDown
+
+Ctrl to move cursor
+
+Shift to select text
+
+alt+up, alt+down to move text
+
+
+ctrl+arrow to move cursor by words
+ctrl+shift to move cursor and select text
+ctrl+end/home to move cursor to end or top of file
+
+ctrl+backspace to delete one word to left
+ctrl+delete to delete word to right
+
+ctrl+k ctrl+k to add bookmark (also removes existing bookmark)
+ctrl+k ctrl+w to see bookmarks
+
+ctrl+m ctrl+m to collapse code
+
+ctrl+tab to choose a different tab
+
+
+ctrl+F4 to remove a tab
+alt+w l to remove all tabs
+ctrl_comma to open search box, to find file you want to open
+
+
+ctrl+f to find something (it will highlight all occurrences)
+F3 to move forward through occurrences
+shft+f3 to move backward through occurrences
+
+
+ctrl+h to find/replace dialog
+alt+r replace current selected
+alt+a replace all occurrences
+
+
+mine:
+f5 = debug.startwithoutdebugging (run prog)
+ctrl+f5 = debug.start
+
+
+f7 = compile
+f8 = move to next error
+
+
+shift+fn to select text and move to location
+shift+alt+enter to go full screen/reduce screen
+
+ctrl + L to delete current line
+
+Fn + arrow to page-up/page-down
+
+f9 = set breakpoint
+ctrl+f5 to run code to the break point
+
+format file correctly (i.e., fixes misaligned tabs, etc):
+ctrl+a to highlight all text
+ctrl+k ctrl+f
+
+snippets:
+cw = console.writeline
+equals = in a class if you want to override the bool Equals funct,
+is also adds the GetHashCode() function
+try = try/catch
+tryf = try/finally
+for = creates a for loop
+forr = creates decrementing loop
+foreach = auto creates foreach loop
+while = autocreate while loop
+do
+interface
+
+
+
+productivity power tools
+https://marketplace.visualstudio.com/items
+
+jetbrains: resharper, rider, etc.
+alt+enter is golden shortcut
+ctrl+shft+t = search for a file
+ctrl+w = select line, block, method, etc...
+
+
+code snippet / live template
+
+
+
+
+
