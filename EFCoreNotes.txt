@@ -1,0 +1,19 @@
+
+For Console:
+Launch Nuget Package Manager
+install:
+Microsoft.EntityFrameworkCore.SqlServer
+...Tools
+...Tools.DotNet
+
+Open proj.csproj file
+right-click Project in explorer -> Edit Project File
+add this in <ItemGroup> with the Package References:
+<DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
+
+In Package Manager Console:
+Scaffold-DbContext "Server=.\;Database=PWS_Names;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+To update code from the Database:
+Scaffold-DbContext "Server=.\;Database=PWS_Names;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -forced
+
