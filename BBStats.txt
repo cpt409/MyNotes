@@ -1,0 +1,155 @@
+
+///////////////////////////////////////////////  Pitching Stats
+
+162 innings pitched to qualify for stats
+
+K/9
+Rating			K/9		K%
+Excellent		10.0	27.0%
+Great			9.0		24.0%
+Above Average	8.2		22.0%
+Average			7.7		20.0%
+Below Average	7.0		17.0%
+Poor			6.0		15.0%
+Awful			5.0		13.0%
+ 
+ 
+GB%
+ Type	League Average
+LD		21%
+GB		44%
+FB		35%
+IFFB	11%
+“Ground ball pitchers” generally have grounder rates over 50%, while “fly ball pitchers” have fly ball rates above (or approaching) 40%.
+
+
+BB/9
+Rating			BB/9	BB%
+Excellent		1.5		4.5%
+Great			1.9		5.5%
+Above Average	2.5		6.5%
+Average			2.9		7.7%
+Below Average	3.2		8.0%
+Poor			3.5		8.5%
+Awful			4.0		9.0%
+
+
+IP
+162 IP to qualify
+FB%
+see GB%
+
+
+ERA
+Rating	ERA
+Excellent	2.50
+Great	3.00
+Above Average	3.40
+Average	3.75
+Below Average	4.00
+Poor	4.30
+Awful	4.60
+
+
+
+///////////////////////////////////////////////  Batting Stats
+
+502 plate appearances to qualify for stats
+
+
+K-Percent
+Rating			K%		BB%
+Excellent		10.0%	15.0%
+Great			12.5%	12.5%
+Above Average	16.0%	10.0%
+Average			20.0%	8.0%
+Below Average	22.0%	7.0%
+Poor			25.0%	5.5%
+Awful			27.5%	4.0%
+
+
+ISO - isolated power - you want high number
+excellent		.250
+great			.200
+above avg		.170
+avg				.140
+below avg		.120
+poor			.100
+aweful			.080
+
+
+BsR - base running - you want high number
+excellent		8
+great			6
+above avg		2
+avg				0
+below avg		-2
+poor			-4
+aweful			-6
+
+
+Def - you want high number
+excellent		20
+great			12
+above avg		4
+avg				0
+below avg		-4
+poor			-12
+aweful			-20
+
+
+OBP
+Rating			OBP
+Excellent		0.390
+Great			0.370
+Above Average	0.340
+Average			0.320
+Below Average	0.310
+Poor			0.300
+Awful			0.290
+
+
+For speed - consider using UBR
+Rating		UBR
+Excellent		+6
+Great			+4
+Above Average	+1.5
+Average			0
+Below Average	-1.5
+Poor			-4
+Awful			-6
+
+
+/////////////////////////////   Deadball Charts
+
+
+Batting:
+P++		35HR, .540 SLG, .250 ISO
+P+		20HR, .450 SLG, .170 ISO
+C+		35 doubles, k% of 10% or less
+S+		20 Steals, 4 BsR
+D+		8.0 Def, a Gold Glove
+
+P--		0-5HR, .090 ISO
+P-		6-10HR, .120 ISO
+C-		K% of 25% or higher
+S-		0 steals, -4 BsR
+D-		-12 Def
+
+
+Pitching:
+K+		9.0+ K/9
+GB+		55%+
+CN+		2.0 or fewer BB/9
+ST+		200+ innings pitched
+
+
+
+
+
+
+
+
+
+
+

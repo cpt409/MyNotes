@@ -1,0 +1,76 @@
+create wpf app
+nuget -> add entityframework
+right click project -> add item -> ado object model
+	pick designer from database
+	500-409.master.dbo
+		you need the right database
+		click new connection
+		server = 500-409
+		select database name at bottom
+			choose all the tables/views/etc.
+			
+	after edmx file has loaded:
+			build the project
+			
+	
+	go to main window:  mainwindow.xaml
+		on sidebar below toolbox, you open the datasource tables
+	
+	tweak .tt file (not the .context.tt file
+		it's the mainmodel.tt file
+Replace the two occurrences of ICollection with ObservableCollection<T>.
+
+Replace the first occurrence of HashSet<T> with ObservableCollection<T> around line 51. Do not replace the second occurrence of HashSet.
+
+Replace the only occurrence of System.Collections.Generic (around line 431) with System.Collections.ObjectModel.		
+		
+		
+
+now bind the data source to the wpf
+			project -> addnew datasource
+				choose Object
+				choose the tables
+					sources for other tables that are a navigation property will auto generate
+					i.e., choose names (position and team should auto generate)
+				drag the main one over to canvas
+				drag the other that are sub to  main to see their data that is bound
+			
+	in the mainwindow.xaml.cs
+		public partial class MainWindow : Window
+{
+    NorthwindEntities context = new NorthwindEntities();
+    CollectionViewSource custViewSource;
+    CollectionViewSource ordViewSource;
+
+    public MainWindow()
+    {
+        InitializeComponent();
+        custViewSource = ((CollectionViewSource)(FindResource("customerViewSource")));
+        ordViewSource = ((CollectionViewSource)(FindResource("customerOrdersViewSource")));
+        DataContext = this;
+    }
+	
+	
+	add system.data.entity;
+	
+	
+	private void Window_Loaded(object sender, RoutedEventArgs e)
+{
+    // Load is an extension method on IQueryable,    
+    // defined in the System.Data.Entity namespace.   
+    // This method enumerates the results of the query,    
+    // similar to ToList but without creating a list.   
+    // When used with Linq to Entities, this method    
+    // creates entity objects and adds them to the context.   
+    context.Customers.Load();
+
+    // After the data is loaded, call the DbSet<T>.Local property    
+    // to use the DbSet<T> as a binding source.   
+    custViewSource.Source = context.Customers.Local;
+}
+
+
+	
+				
+				
+				
