@@ -2,9 +2,12 @@
 For Console:
 Launch Nuget Package Manager
 install:
-Microsoft.EntityFrameworkCore.SqlServer
+
+Microsoft.EntityFrameworkCore
+...sqlserver
 ...Tools
 ...Tools.DotNet
+
 
 Open proj.csproj file
 right-click Project in explorer -> Edit Project File

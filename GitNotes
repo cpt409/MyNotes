@@ -119,10 +119,23 @@ cptri@500-409 MINGW64 /projects/github-demo-taylor1 (master)
 Set up NPP as default:
 must be execute from users home dir (use shortcut on desktop
 c:\usr\cptri)
-notepad++ .bash_profile
+new Home Directory:
+D:\Source\Repos
+Open .bash_profile
+
 
 add this to profile doc
 alias npp="notepad++.exe -multiInst -nosession"
+alias pwsapp="start /d/Source/Repos/PWSMain/EFConsole/bin/Debug/netcoreapp3.1/EFConsole.exe"
+
+for changing directories with alias:
+alias pwsapp="cd /d/Source/Repos/PWSMain/EFConsole/bin/Debug/netcoreapp3"
+
+if you can't use the alias:
+- add it to .bash_profile
+- source ~/.bashrc
+- then use the alias
+
 
 
 view config of gitbash:
