@@ -1,3 +1,24 @@
+
+///////////////////////////////  create GitHub Repo from existing project
+
+in VS:
+file -> add to source control
+team explorer opens or open it
+where it says Pending Changes [project name]
+	- click the drop down and click sync
+click on Publish to GitHub
+	- enter name, check Private Repo, etc
+	- click Publish right below the checkbox for Private Repo
+
+Online GitHub should now be updated
+
+
+
+
+
+///////////////////////////////  main notes
+
+
 $ mkdir projects
 $ cd projects
 $ pwd
