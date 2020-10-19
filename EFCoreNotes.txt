@@ -21,4 +21,8 @@ To update code from the Database:
 Scaffold-DbContext "Server=.\;Database=PWS_Names;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force
 
 
+if data is coming in wrong when reading file from .csv
+make sure to save filetype as .csv.  the one file was
+saving as unicode.
+
 
