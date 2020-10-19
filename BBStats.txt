@@ -149,6 +149,16 @@ CN+		2.0 or fewer BB/9
 ST+		200+ innings pitched
 
 
+Use FIP-, xFIP- for GB% (it goes back prior to 2002, and it is park and league adjusted)
+Rating	ERA-/FIP-/xFIP-
+Excellent	70
+Great	80
+Above Average	90
+Average	100
+Below Average	110
+Poor	115
+Awful	125
+
 
 
 
