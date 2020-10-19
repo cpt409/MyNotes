@@ -151,13 +151,15 @@ ST+		200+ innings pitched
 
 Use FIP-, xFIP- for GB% (it goes back prior to 2002, and it is park and league adjusted)
 Rating	ERA-/FIP-/xFIP-
-Excellent	70
-Great	80
+(xFIP- is only available 2002+)
+Excellent		70
+Great			80
 Above Average	90
-Average	100
+Average			100
 Below Average	110
-Poor	115
-Awful	125
+Poor			115
+Awful			125
+
 
 
 
