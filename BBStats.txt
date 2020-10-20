@@ -161,6 +161,8 @@ Poor			115
 Awful			125
 
 
+Used GDIP/9 instead of GB% for players earlier than 2002
+
 
 
 
