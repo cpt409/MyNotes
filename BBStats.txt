@@ -164,6 +164,8 @@ Awful			125
 
 Used GIDP/9 instead of GB% for players earlier than 2002
 Grounded into double plays
+gidp/9 > 1 == GB+
+
 https://www.baseball-reference.com/
 
 http://www.sweethoss.com/deadball
