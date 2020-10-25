@@ -26,3 +26,30 @@ make sure to save filetype as .csv.  the one file was
 saving as unicode.
 
 
+
+/////////////////////////////////  Connection Strings ////////////////////////
+Default Connection String:
+Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+
+for main to use:
+Data Source=500-409;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+(see above scaffolding info for connection string info...)
+
+
+/////////////////   Code First ////////////////////////////////////////////
+- create blank console app
+- create models folder, then add class files
+- in proj folder -> create EFContext.cs class
+	add System.Data.Entity
+	public class EFContext : DbContext
+	- add entities for each class:
+		public DbSet<Pitcher> Pitchers {get; set;}
+	- in main just create a generic static function to add
+		pitcher, or whatever, and then add to context, save context...
+- VS studio will automatically create default connection string
+- database will be created in following directory:
+C:\Users\cptri\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\mssqllocaldb
+
+////////////////////////////////////////////////////////////////////////////////
+		
+		
