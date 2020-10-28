@@ -1,0 +1,122 @@
+
+vm login:
+virl
+ivirl
+
+
+ip for eth0:
+192.168.205.128
+
+
+https://learningnetwork.cisco.com/groups/virl
+.../docs/DOC-30160
+.../docs/DOC-30518
+
+
+hostname: virl
+domain name: virl.info
+primary interface: "eth0" (uses dhcp)
+ntp server: pool.ntp.org
+infrastructure password: ipass
+uwm admin password: uwmpass
+primary project name: iguest
+primary account password:  iguest
+user "virl" password: ivirl
+cluster mode enabled: false
+virl login: virl
+uwm: http://192.168.205.128
+
+
+int gi0/1
+switchport trunk encap dot1q
+switchport mode trunk
+do sh int trunk
+
+en
+config t
+line con 0
+logging synchronous
+end
+
+////////////////////////// virl servers
+servers:
+login: cisco
+pword: cisco
+
+ifconfig eth1 up 192.168.10.2 netmask 255.255.255.0
+
+ifconfig -a
+
+route add default gw 192.168.10.1
+route delete default gw...
+
+shutdown -h now
+
+
+show routing table:
+sudo route -n
+ip route list
+netstat -rn
+
+route del default gw 192.168.1.254
+sudo route add default gw 192.168.1.254 eth0
+
+to open the config file:
+sudo nano /etc/network/interfaces
+
+restart networking:
+
+sudo /etc/init.d/networking restart
+
+
+/////////////////////////////////
+
+
+OSPF
+States:
+FULL/DR
+
+
+AD:
+eigrp	90
+ospf	110
+rip	120
+
+top:
+
+key chain ospfsha
+key 1
+key-string cisco12345
+cryptographic-algorithm hmac-sha-256
+
+int lo 1
+ip addr 200.1.1.1 255.255.255.255
+
+int gi0/1
+ip addr 192.168.1.1 255.255.255.0
+ip ospf authentication key-chain ospfsha
+no shut
+
+int gi0/2
+ip ospf authentication key-chain ospfsha
+ip addr 10.1.1.1 255.255.255.0
+no shut
+
+router ospf 1
+passive-interface default
+no passive-interface int gi0/2
+network 10.1.1.1 0.0.0.0 area 0
+network 192.168.1.1 0.0.0.0 area 0
+
+
+sh ip ospf neighbor
+sh ip ospf database
+sh ip route
+sh ip protocol
+sh ip ospf interface br
+sh ip ospf interface g0/2
+sh ip ospf topology-info
+
+
+
+

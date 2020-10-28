@@ -50,6 +50,18 @@ Data Source=500-409;Integrated Security=True;Connect Timeout=30;Encrypt=False;Tr
 - database will be created in following directory:
 C:\Users\cptri\AppData\Local\Microsoft\Microsoft SQL Server Local DB\Instances\mssqllocaldb
 
+
+here is what you put in app.config file:
+<connectionStrings>
+    <add name="CodeFirstEFyTest" providerName="System.Data.SqlClient"
+         connectionString="Data Source=500-409; Initial Catalog=EFContextYTest; Integrated Security=True"/>
+  </connectionStrings>
+
+Name = this is the name of the connectionString.  solution name + the current project name.  PUt this in your DBContext constructor so that EF knows to reference the App.Config file.  public EFContextYTest() : base("CodeFirstEFyTest") { }  base("xx") is the Name.
+Initial Catalog = name of context class.  make sure it is unique so that another database in the same solution does not create with same catalog.
+Since connectionString Name is different than context, then put that in your context constructor so that it knows to reference the App.config file section.
+
+
 ////////////////////////////////////////////////////////////////////////////////
 		
-		
+

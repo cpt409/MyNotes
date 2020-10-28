@@ -1,0 +1,123 @@
+
+
+- when loading using the ISO, it will say unsuccessful -> efi network
+	-- you have to click inside the VM when it says press any key
+	-- use Ctrl + G to get inside the VM window first
+
+
+vm1:
+user = vm1
+pw = tops
+10.0.0.220
+
+------------
+
+vm2:
+user = vm2
+pw = tops
+10.0.0.110
+192.168.23.100
+
+
+http://localhost/phpmyadmin
+root
+no p/w
+
+
+Database1:  GDLE_VM2_1
+
+--------------
+
+make sure you ran ac1install.exe first
+msvcp70.dll
+msvcr70.dll
+msvcr110.dll
+zlib1.dll
+missing from computer
+corestrings.dll
+
+make sure IIS is not using port 80 (process name: w3svc or w3wp.exe needs to be stopped)
+(world wide web publishing service)  <----
+
+install in system <-- this worked
+or try system32
+
+make sure adapter is in private profile setting:
+settings for network
+click on the Network icon -> choose the private profile
+
+
+local vm2 account
+cpt409
+Warl0rd!
+
+
+main account
+cpt409, cpt410, cpt411
+
+
+for logging in to thwarg:
+cpt409 - Warl0rd)(*
+
+
+
+for main game (all accts):
+)PO(8iu7
+
+
+///////////////////////////////////////
+
+for source codde:
+
+https://gitlab.com/Scribble/gdlenhanced
+https://gitlab.com/cptrim409/gdlenhanced (login using google)
+
+weenies:
+https://lifestoned.org/WorldRelease
+
+
+1) build code using ReleaseNoSIMD
+
+2) Copy client_portal.dat and client_cell_1.dat files to the Bin\Data folder (e.g. C:\GDLEServer\Bin\Data)
+
+3) copy all game files to bin/client ???
+
+4) Run WAMP
+
+5) https://localhost/phpmyadmin/
+root / no pw
+
+6) new database -> give name "GDLE"
+
+7) import the .sql dumps
+/bin/data/sqldumps
+gdle_db
+blob_update_house
+blob_update_weenie
+1_31  <--- table 'character_friends' already exists
+1_32  <--- table 'character_corpses' already exists
+1_33_4 <--- accounts -> email column already exists
+1_33_6 <--- table 'character_windowdata' already exists
+1_34 <--- run this one
+
+
+8) at some point go to Lifestoned.org for World Releases:
+https://lifestoned.org/WorldRelease
+bin/data/json/weenies
+
+
+9) run gdle.exe (pinned to taskbar or in /bin folder)
+
+9a) edit values in server.cfg file:
+bind_ip = 192.168.23.100
+bind_port = 9000
+database_port = 3311
+database_name = 10_27_20
+
+
+10) set up ThwargLauncher with correct server IP info
+
+
+
+
+

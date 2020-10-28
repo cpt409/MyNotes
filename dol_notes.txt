@@ -1,0 +1,318 @@
+
+
+for VM:
+username: win10DoL
+pw:   win10DL
+
+
+ip info:
+Only need to change ip here on server:
+C:\_build_this_one\precompiled_Release1125v108_2\Release\DOLConfig.exe
+
+also check this one:
+C:\_build_this_one\precompiled_Release1125v108_2\Release\config\serverconfig.xml
+
+on Portal on client, need to edit server listing and add the IP.
+
+log in to Portal:
+new acct:
+julytest
+pw: testtest
+
+
+/level will raise you to 50 automatically
+
+
+
+///////////////////////////
+///			///
+///	Database Info	///
+///			///
+///////////////////////////
+
+
+
+Race Table:
+see RaceID spreadsheet
+Resists
+
+classxspecialization:
+see classID spreadsheet
+
+Starterequipment:
+Use classID
+
+Zones:
+a bunch of cool flags
+set xp, rp, bp, coin
+
+
+classID
+Hibernia
+Blademaster	43
+
+Specialization
+Hibernia
+Celtic Dual	51
+
+
+
+
+Region
+Hibernia (200)
+Mag Mell	27
+
+
+Realm
+Albion		1
+Midgard		2
+Hibernia	3
+
+Gender
+Male		2
+Female		1
+
+
+
+///////////////////////////
+///			///
+///	Main Steps 2	///
+///			///
+///////////////////////////
+
+
+add a network adapter in vmware:
+edit -> virtual network editor
+
+missing head fix:
+swap out the gamedata.mpk in game folder
+use file in gamedatafixed.zip file
+
+
+Alternatively, in game type /plvl single plvl, and target yourself. This will allow you to assign your character the ability to always use the /plvl command. Then, /plvl 1 yourself for testing, and when the testing is complete, /plvl 3 yourself again to carry on as an admin account!
+
+
+links:
+https://github.com/Los-Ojos/DOLSharp-1124
+DOL Portal 1125 from los-ojos <--- must use the connect.exe in this folder of running 1.125 or higher DLL
+
+install guide version 1.109 below
+http://www.dolserver.net/viewtopic.php?f=4&t=23299
+
+newer versions 1.124-1.125
+http://losojos-001-site1.btempurl.com/Guides/Server/win10server
+
+
+
+
+vm:
+users\win10DoL\source\repos\
+clone here:
+https://github.com/Dawn-of-Light/DOLSharp/
+https://github.com/Loki1976/DOLSharp
+
+sql:
+dol_main
+https://github.com/Eve-of-Darkness/db-public
+To use this database download and run concat.exe in Windows or concat in Linux. This will combine the json files into a single script that you can run against an already made database. 
+Windows users: Find concat.exe in src\scripts\bin\windows - Run as Administrator. A blank DOS window should appear for a period of time. When it closes, the database file is created as 'public-db.sql'. 
+If the file is not created, goto src\scripts\config - rename 'config.example.yml' to 'config.yml'. Run the concat.exe again to create the DB file.
+Update Existing database
+To update an existing database without loosing any characters, accounts or server settings run the concat.exe for your respective platform with the '--update-only' flag. Example:
+concat --update-only
+This will generate a public-db.sql file that only contains content updates.
+You can then import with the following command
+mysql -u <user> -p <password> <doldb> < public-db.sql
+
+Game.DLL:
+use 1.9x for latest
+
+Replace the pregame dir with this one so that the buttons on character screen work correctly
+http://www.mediafire.com/file/en3vl73fdi6li2h/pregame.zip/file
+
+
+download daoc portal:
+check this one compared to one on main website:
+http://www.dolserver.net/viewtopic.php?f=63&t=23275
+vs
+daocportalsetup.msi
+
+set default directory for where the game is loaded
+
+click custom shards tab
+	- right click -> add server
+	- use IP of server
+
+
+
+
+///////////////////////////
+///			///
+///	Main Steps 1	///
+///			///
+///////////////////////////
+
+http://losojos-001-site1.btempurl.com/Guides/Server/win10server
+
+- Download game client from Broadsword, install client
+
+Database Steps:
+- Download MariaDB
+- Download latest public database
+https://github.com/Eve-of-Darkness/db-public
+
+for new database:
+- run concat.exe as admin (src/scripts/bin/windows)
+if you can't run the db concat.exe, go the src/scripts/config.yml (take out example)
+this creates the public-db.sql file that you import into the db
+
+for existing database:
+- run concat.exe with --update-only flag:
+concat --update-only (this generates a public-db.sql files)
+
+then import to your db:
+mysql -u <user> -p <password> <doldb name> < public-db.sql
+
+- refresh HeidiSQL DB to see all databases
+
+Now run the server:
+pre-compiled release is 1.125d release:
+http://www.mediafire.com/file/ossyuf8hb040q9k/Release1125v100.zip/file
+filename is release1125v108.zip
+
+uncompiled release:
+https://github.com/Los-Ojos/DOLSharp-1124
+
+Download and extract 'Release' version of DOL server software
+double-click DOLconfig.exe
+	- hit yes at error message
+
+config window opens after that:
+	- go to Database tab
+	- Database Type:  MySQL
+	- DB Name: whatever you called it
+	- username:  root
+	- password:  win10DL
+	- test connection
+	- Save Configuration
+
+double-click DOLServer.exe:
+<check settings here>
+
+Swap game.dll with game client
+http://www.mediafire.com/file/21cnu8u125yk0qe/game1125d.zip/file
+
+Setup DAoC Portal
+http://www.mediafire.com/file/iwanj6idgvr1gxl/DAoC_Portal.zip/file
+	- turn-off automatically update
+	- inside the Connect1125 folder, copy the connect.exe and paste it over the connect.exe that is the main Portal folder
+	- set default directory to the DAoC game
+	- click on Custom Shards:
+		-- right-click open space and click Add Server...
+		-- click ok through default settings
+	- highlight the server, it should have green light
+		-- set ip 10.0.0.41
+	- username, password
+		-- for a new acct, it will be created
+	- if you get error saying encryption 1.115+ failed:
+		-- make sure auto-updating is off
+	
+
+Make a character Admin:
+	- go to account in DB, change PrivLevel to 3 for admin
+	- 2 for gm
+		-- gm /commands (/speed xxx, /player level 50
+
+
+
+///////////////////////////
+///			///
+///	Code Notes	///
+///			///
+///////////////////////////
+
+build order:
+DOLBase
+DOLDatabase
+GameServer
+DOLServer
+IntegrationTests
+GameServerScripts
+DOLConfig
+IntegrationTest_Database
+UnitTests
+
+
+
+
+
+
+
+on VM:
+_dol_new -> DOLServer_net45_Release ->
+DOLConfig for changing settings
+DOLServer to run
+
+On DAoC Portal -> this is where put the IP of the VM
+
+
+on main:
+_dol_test -> precompiled release... -> release ->
+
+DOLConfig.exe for changing settings
+	set server IP = 10.0.0.41 (old)
+	(new: 192.168.23.139)
+	make sure database name is dol, or dol_new
+
+DOLServer.exe to run server
+
+DAoC Portal -> Portal.exe for running portal app
+
+installation copy:
+e:\games\DAoC_DOL\_build_this_one\Dark Aage of Camelot_master-Copy
+(put DLL here)
+
+
+all files:
+E:\Games\DAoC_DOL
+
+(version 125)
+On Server
+To change databases and versions:
+_build_this_one -> precompiled...(use _2) -> release ->
+DOLConfig.exe
+	set server IP = 10.0.0.41
+	make sure database name is dol_new
+	root
+	win10DL
+
+On client:
+game is at:  E:\Games\DAoC_DOL\_build_this_one\Dark Age of Camelot_master - Copy
+use 1.24b DLL
+
+run portal:
+D:\_dol_test\DAoC Portal
+portal.exe
+
+on server for the db:
+
+
+list of DLLs:
+195
+152
+126a (says 1.114 at loading screen)
+124b
+122c
+122
+121
+119
+
+
+
+
+
+
+
+
+
+

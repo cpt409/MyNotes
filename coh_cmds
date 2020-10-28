@@ -1,0 +1,120 @@
+
+/wdwloadfile masterwindow2 (or just masterwindow)
+/wdwloadfile newwindow
+asuswindowold <--- for the tiny layout
+
+/bindloadfile masterbind
+
+
+/macroimage Veteran.TeleportBase Base "enterbasefrompasscode BASE-6236"
+
+/influence_add 10000000000
+/levelup_xp 50
+
+
+/showfps 3
+/xpscale 5.0
+
+
+
+
+free-6265
+juno5726riptide
+
+/bind h "powexectoggleon super jump$$powexectoggleon weave$$powexectoggleon tough"
+
+
+ -patchdir i26 -noversioncheck -auth <yourserverip> and try running it from the shortcut
+If no dice with that, edit the shortcut again and add an extra -console to the end, then you will get a console window alongside the client that will give all sorts on information, along with hopefuly something to help troubleshoot
+
+
+
+***********
+*AC
+***********
+
+/loadui 1
+/saveui 1
+k = camera pan out
+
+
+
+Pyreal General's (holtburg)
+
+
+what profits a man who gains the whole world, only to lose his soul?
+
+
+1 - Atlas Park
+3 - Cimerora
+4 - Midnighter Club
+5 - Kings Row
+6 - Steel Canyon
+7 - Skyway City
+8 - Talos Island
+9 - Independence Port
+10 - Founder's Falls
+11 - Brickstown
+12 - Perez Park
+13 - Boomtown
+14 - Echo: Dark Astoria
+15 - Crey's Folly
+16 - Ouroboros
+18 - Abandoned Sewer Network
+19 - Echo: Faultline
+20 - Terra Volta
+21 - Eden
+22 - The Hive
+23 - Sewer Network
+24 - Outbreak
+29 - Galaxy City
+36 - Nova Praetoria
+37 - Imperial City
+38 - Neutropolis
+39 - Underground Nova Praetoria
+40 - Precinct Five
+41 - Destroyed Galaxy City
+42 - Underground Imperial
+43 - Dark Astoria
+49 - First Ward
+51 - Underground Neutropolis
+52 - Night Ward
+55 - Fort Trident
+56 - The Crucible
+60 - Rikti Crash Site
+61 - Peregrine Island
+62 - The Hollows
+63 - Tunnels of the Trolls
+64 - Firebase Zulu
+65 - Cascade Archipelago
+66 - The Chantry
+67 - The Storm Palace
+68 - Paragon Dance Party
+69 - Striga Isle
+70 - Breakout
+71 - Mercy Island
+72 - Port Oakes
+73 - Cap Au Diable
+74 - Sharkhead Isle
+75 - Nerva Archipelago
+76 - St. Martial
+77 - Grandville
+78 - Bloody Bay
+79 - Siren's Call
+80 - Warburg
+81 - Recluse's Victory
+82 - Croatoa
+83 - Pocket D
+84 - Faultline
+85 - Rikti War Zone
+86 - The Abyss
+87 - Monster Island
+
+
+
+
+
+
+
+
+

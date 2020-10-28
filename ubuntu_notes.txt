@@ -1,0 +1,57 @@
+
+first user acct:
+chris
+!QAZ@WSX
+
+ctrl + alt + t = terminal window
+
+location of xampp install
+/opt/lampp/htdocs/
+
+create file:
+sudo cat > test.php
+
+folder permission
+sudo chmod 777 ../../../../../Desktop
+
+
+sudo apt update
+sudo apt upgrade
+
+
+start lamp from command line:
+sudo /opt/lampp/lampp start
+sudo /opt/lampp/lampp stop
+
+
+start lamp from GUI:
+cd /opt/lampp
+sudo ./manager-linux.run (or manager-linux-x64.run)
+
+
+set security:
+sudo /opt/lampp/lampp security
+phpmyadmin password:  phpadmin
+mysql root: phpadmin
+ftp daemon password: phpadmin
+
+The main XAMPP configuration files are located as follows:
+Apache configuration file: /opt/lampp/etc/httpd.conf, /opt/lampp/etc/extra/httpd-xampp.conf
+PHP configuration file: /opt/lampp/etc/php.ini
+MySQL configuration file: /opt/lampp/etc/my.cnf
+ProFTPD configuration file: /opt/lampp/etc/proftpd.conf
+
+
+http://localhost/phpmyadmin/index.php
+use mysql login:
+root
+phpadmin
+
+
+create backup:
+sudo /opt/lampp/lampp backup secret (<--- uses mysql root pw)
+
+
+
+
+

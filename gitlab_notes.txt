@@ -1,0 +1,14 @@
+
+https://gitlab.com/cptrim409/gdlenhanced
+
+mirroring:
+in your project -> settings on left -> repository -> mirroring repositories
+
+input the git repo URL:
+
+https://gitlab.com/Scribble/gdlenhanced.git
+
+mirror direction = PULL
+
+
+
