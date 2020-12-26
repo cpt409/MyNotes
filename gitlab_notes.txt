@@ -13,6 +13,14 @@ mirror direction = PULL
 //////////////////////////////
 
 
+https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo
+
+https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/syncing-a-fork
+
+https://docs.github.com/en/free-pro-team@latest/github/using-git/pushing-commits-to-a-remote-repository
+
+
+
 update a forked copy on github:
 open fork in github
 click on Pull Requests
