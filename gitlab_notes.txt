@@ -10,5 +10,38 @@ https://gitlab.com/Scribble/gdlenhanced.git
 
 mirror direction = PULL
 
+//////////////////////////////
 
 
+update a forked copy on github:
+open fork in github
+click on Pull Requests
+click on New Pull Request
+click on "switching the base" (it will be in ordinary text midway down)
+click on create a pull request for this comparison
+	give it a name (update from original)
+click on create pull request
+scroll down and click merge pull request
+click on confirm merge
+
+//////////////////
+
+Update local copy:
+fork project to your account
+in git bash:
+go to d:/source/repos
+git clone (your fork) to create local copy
+git remote -v to verify
+git remote add upstream remote https url) to create the upstream link
+git remote -v
+
+git fetch upstream will update your local copy from DOL
+
+if you don't want to overwrite your local changes you merge the brance you want:
+
+git merge upstream/master (or whatever)  (use git remote -v to see the branches)
+
+if you want to update your github copy, then:
+git push origin master
+
+///////////////////////////
