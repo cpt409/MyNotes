@@ -1,0 +1,40 @@
+
+Azure:
+resource group: Test
+DB name = TestDB
+server = testcpt
+admin login = cptadmin
+pw = waterfall s12qw, then normal
+
+firewall settings:
+Yes on the turn on.
+Client IP address 174.55.224.185
+
+you start out in:
+PS /home/christopher>
+az
+az configure --defaults group=Test sql-server=testcpt
+az sql db list | jq '[.[] | {name: .name}]'
+az sql db show --name TestDB | jq '{name: .name, maxSizeBytes: .maxSizeBytes, status: .status}'
+az sql db show-connection-string --client sqlcmd --name TestDB
+"sqlcmd -S tcp:testcpt.database.windows.net,1433 -d TestDB -U cptadmin -P '!@QWASZX12qwaszx' -N -l 30"
+<type that without quotes>
+now you are in the db
+select name from sys.tables
+go
+
+
+in SSMS:
+change connection
+server name:  change server to xxxxx.database.windows.net
+authentication:  SQL Server Authentication
+login: user@server_name (cptadmin@testcpt)
+pword: xxxxx (waterfall)
+
+for the server 2016 VM:
+username:	testvmlogin
+pw:			!@QWASZX12qwaszx
+click connect, then RDP to the IP: 40.117.34.80
+
+
+
