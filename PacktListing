@@ -1,16 +1,30 @@
 
+
+
+////////   2021   /////////////
+
+--2021_01_aisciences_data_sci_machine_learning_fundamentals
+--2021_01_global_python_oop_handson
+--2021_01_hackersploit_nmap_pentesting
+
+
+
+
+
+
 /////////////////////////
 verified
 
 linux
 2018_11_cannon_linux_admin_bootcamp
-2018_10_cannon_vim_masterclass
+--2018_10_cannon_vim_masterclass
 --2020_11_eramo_art_doing_master_networks
 2020_11_mallett_automating_admin_ansible
 --2020_11_eramo_art_doing_learn_linux_commandline
-2020_09_krahenbill_ethical_hacking_v1
-2020_08_krahenbill_ethical_hacking_v2
-2020_03_global_mastering_linux_commandline
+--2020_09_krahenbill_ethical_hacking_v1
+--2020_08_krahenbill_ethical_hacking_v2
+--2020_03_global_mastering_linux_commandline
+--2020_08_linux_server_admin
 
 sql:
 --2020_10_williams_sql_for_everyone
@@ -20,7 +34,8 @@ sql:
 --2019_05_thompson_sql_beginner_guru_mysql
 --2019_05_elder_learn_sql_ms_server
 2019_05_elder_intro_sqllite_python
-2019_05_elder_intro_postgresql_pgadmin
+--2019_05_elder_intro_postgresql_pgadmin
+2019_09_complete_python_postgresql
 
 tkinter:
 --2020_10_eramo_art_doing_10_guis_tkinter
@@ -29,13 +44,24 @@ tkinter:
 2019_08_fuentes_percival_complete_python_course
 
 misc:
-2018_08_high_performance_scientific_with_c
+--2018_08_keller_high_performance_scientific_with_c
 2017_10_elhaj_learn_master_c_beginners
 2017_12_hacker_version_control_git
 2017_08_krenger_mysql_8_recipes
+--2017_12_jallov_graph_alg_for_ai
+--2019_10_barger_javascript_tricks
 
 Statistics
-2020_02_yang_fundamentals_stats_python
+--2020_02_yang_fundamentals_stats_python
+--2020_03_mozahem_intro_factor_analysis
+--2020_03_mozahem_understanding_regression_techniques
+--2020_03_mozahem_intro_to_stata
+2020_11_buscha_stata_omnibus_regression_modelling
+
+mozahem:
+linear regression using stata
+logistic regression using stata
+
 
 
 /////////////////////////////
@@ -48,8 +74,8 @@ no search terms:
 --2020_12_svekis_javascript_math_games
 --2020_12_svekis_webgames_javascript
 --2020_12_svekis_modern_web_design
-2020_12_svekis_css_modern_responsive_web
-2020_11_mallett_unix_admin_freebsd_12_1
+--2020_12_svekis_css_modern_responsive_web
+--2020_11_mallett_unix_admin_freebsd_12_1
 --2020_11_buscha_easy_statistics_linear_nonlinear
 --2020_11_eduonix_nodejs_ground_up
 --2020_10_jacobson_juniper_jncia_jno_103
@@ -60,6 +86,7 @@ no search terms:
 --2019_11_ramanathan_qc151_quantum_physics
 --2019_11_ramanathan_qc101_quantum_beginner
 --2019_11_ramanathan_qc051_math_prerequisites
+--2019_08_stashchuk_javascript_bible_es6
 
 
 

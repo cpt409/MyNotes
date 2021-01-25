@@ -8,6 +8,12 @@
 
 162 innings pitched to qualify for stats
 
+
+K/9 vs K%
+Neither of these are park/league/season adjusted, so only good measure of this season.
+Use K% for directly comparing pitchers, because it measures % of batters, not % of outs.
+You should also use K% with BB% in conjunction. The larger the spread between strikeout and walk rate, the more effective the pitcher.  Fangraph has K-BB% (higher number better).
+
 K/9
 Rating			K/9		K%
 Excellent		10.0	27.0%
@@ -17,16 +23,6 @@ Average			7.7		20.0%
 Below Average	7.0		17.0%
 Poor			6.0		15.0%
 Awful			5.0		13.0%
- 
- 
-GB%
- Type	League Average
-LD		21%
-GB		44%
-FB		35%
-IFFB	11%
-“Ground ball pitchers” generally have grounder rates over 50%, while “fly ball pitchers” have fly ball rates above (or approaching) 40%.
-
 
 BB/9
 Rating			BB/9	BB%
@@ -39,11 +35,27 @@ Poor			3.5		8.5%
 Awful			4.0		9.0%
 
 
-IP
-162 IP to qualify
-FB%
-see GB%
+ 
+GB% (for newer years)
+ Type	League Average
+LD		21%
+GB		44%
+FB		35%
+IFFB	11%
+“Ground ball pitchers” generally have grounder rates over 50%, while “fly ball pitchers” have fly ball rates above (or approaching) 40%.
 
+(Use Statcast for GIDP)
+Used GIDP/9 instead of GB% for players earlier than 2002
+Grounded into double plays
+gidp/9 > 1 == GB+
+
+GB%:
+Generally, ground ball pitchers will run higher BABIPs than average and fly ball pitchers will run lower BABIPs than average.
+But you can't use it, because it is more geared towards results that are hits
+For this stat, you want a pitcher who is good at causing double plays...
+
+So I think you need to use FIP-:
+The results were that the average ground ball generated 0.04 runs and caused 0.80 outs while the average ball in air generated 0.23 runs and caused just 0.62 outs. On a runs-per-out basis, balls hit into the air created almost 7.5 times as much offense as balls kept on the ground did.
 
 ERA
 Rating	ERA
@@ -54,6 +66,36 @@ Average	3.75
 Below Average	4.00
 Poor	4.30
 Awful	4.60
+
+Use FIP instead of ERA. (Fielding Independent Pitching)
+measures the effectiveness of preventing HRs, BB, HBP, and causing SO
+FIP is not league or park adjusted
+FIP- is park and league adjusted (lower stat is better)
+ERA- is league adjusted
+Example:  87 ERA- is 13% points better than league avg
+			110 ERA- is 10% points worse than league avg
+FIP Scale:
+Excellent		3.20
+Great			3.50
+Above Average	3.80
+Average			4.20
+Below Average	4.40
+Poor			4.70
+Awful			5.00
+
+ERA-/FIP-/xFIP- Scale:
+Excellent		70
+Great			80
+Above average	90
+Average			100
+Below average	110
+Poor			115
+Awful			125
+
+
+For Control:
+Use BB%
+
 
 
 
@@ -114,7 +156,9 @@ Poor			0.300
 Awful			0.290
 
 
-For speed - consider using UBR
+For speed -
+Use BsR for later years
+Also try UBR for later years
 Rating		UBR
 Excellent		+6
 Great			+4
@@ -124,6 +168,36 @@ Below Average	-1.5
 Poor			-4
 Awful			-6
 
+For older years try wSB (weighted stolen bases):
+it is neutral and not park/opponent adjusted.
+0 is league average
+player with +5 wSB has been worth five more runs than the average players given that player's stolen base activity
+general values are -3 and +6
+in later years, wSB is combined with UBR to produce BsR
+
+Don't use Speed
+Spd chart:
+Rating	Spd
+Excellent	7.0
+Great	6.0
+Above Average	5.5
+Average	4.5
+Below Average	4.0
+Poor	3.0
+Awful	2.0
+
+Defense (have to go to Value tab):
+Defensive Ability/Performance	Def
+Excellent						+20
+Great							+12
+Above Average					+4
+Average							0
+Below Average					-4
+Poor							-12
+Awful							-20
+
+
+
 
 /////////////////////////////   Deadball Charts
 
@@ -131,9 +205,9 @@ Awful			-6
 Batting:
 P++		35HR, .540 SLG, .250 ISO
 P+		20HR, .450 SLG, .170 ISO
-C+		35 doubles, k% of 10% or less
-S+		20 Steals, 4 BsR
-D+		8.0 Def, a Gold Glove
+C+		35 doubles, k% of 10% or less	(2B, k%)
+S+		20 Steals, 4 BsR				(SB, and use wSB instead of BSR)
+D+		8.0 Def, a Gold Glove			(Def)
 
 P--		0-5HR, .090 ISO
 P-		6-10HR, .120 ISO
@@ -142,35 +216,44 @@ S-		0 steals, -4 BsR
 D-		-12 Def
 
 
-Pitching:
-K+		9.0+ K/9
-GB+		55%+
-CN+		2.0 or fewer BB/9
-ST+		200+ innings pitched
+Pitching: (use Fangraph)
+K+		9.0+ K/9				(use K/9 (or K-BB%))
+GB+		55%+					(use FIP- for early years)
+CN+		2.0 or fewer BB/9		(use BB%)
+ST+		200+ innings pitched	(use IP)
 
 
-Use FIP-, xFIP- for GB% (it goes back prior to 2002, and it is park and league adjusted)
-Rating	ERA-/FIP-/xFIP-
-(xFIP- is only available 2002+)
-measures the effectiveness of preventing HRs, BB, HBP, and causing SO
-Excellent		70
-Great			80
-Above Average	90
-Average			100
-Below Average	110
-Poor			115
-Awful			125
 
-
-Used GIDP/9 instead of GB% for players earlier than 2002
-Grounded into double plays
-gidp/9 > 1 == GB+
 
 https://www.baseball-reference.com/
 
 http://www.sweethoss.com/deadball
 
 https://baseballsavant.mlb.com/
+
+http://m.mlb.com/glossary/statcast
+
+https://www.mlb.com/player/randy-johnson-116615?season=2000&team=109&stats=career-r-pitching-mlb
+
+
+Main:
+https://www.fangraphs.com/index.aspx
+
+
+
+
+
+
+Available 2015+
+xwOBA	expected weighted on-base average
+xBA		expected batting average
+xSLG	expected slugging
+all these remove defense and ballpark
+tell story of quality and amount of contact, not outcomes
+
+xERA	translation of xwOBA to ERA  scale
+BBE		batted ball event - any batted ball that produces result
+
 
 
 

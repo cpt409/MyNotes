@@ -1,0 +1,23 @@
+sound:
+
+mmsys.cpl
+- check to make sure rwby white (stereo) headphones is selected
+- headset rwby white hands-free ag audio is the for phone
+
+control panel -> sound
+
+task manager -> details -> power throttling disabled
+
+
+device manager -> speaker/headphone (realtext(r) audio)
+
+
+master sound:
+settings -> sound
+
+
+set volume for apps:
+
+settings -> audio sound mixer
+
+

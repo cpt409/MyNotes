@@ -1,0 +1,9 @@
+***********
+*AC
+***********
+
+/loadui 1
+/saveui 1
+k = camera pan out
+
+

@@ -118,6 +118,15 @@ database_name = 10_27_20
 10) set up ThwargLauncher with correct server IP info
 
 
+CREATE TABLE `character_friends` (
+	`character_id` INT(11) UNSIGNED NOT NULL,
+	`friend_type` INT(11) UNSIGNED NOT NULL,
+	`friend_id` INT(11) UNSIGNED NOT NULL,
+	PRIMARY KEY (`character_id`, `friend_type`, `friend_id`)
+)
+COLLATE='latin1_swedish_ci'
+ENGINE=InnoDB
+
 
 
 

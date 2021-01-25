@@ -28,20 +28,6 @@ juno5726riptide
 If no dice with that, edit the shortcut again and add an extra -console to the end, then you will get a console window alongside the client that will give all sorts on information, along with hopefuly something to help troubleshoot
 
 
-
-***********
-*AC
-***********
-
-/loadui 1
-/saveui 1
-k = camera pan out
-
-
-
-Pyreal General's (holtburg)
-
-
 what profits a man who gains the whole world, only to lose his soul?
 
 
