@@ -1,0 +1,1042 @@
+21 sep 1300z - oct 16 2359z
+ASI in progress
+work performed:
+upgrade system secondary servers
+NIPR will become intermittently as devicees are updated
+
+
+866-335-2769
+
+
+/d/Source/Repos/PWSMain/EFConsole/bin/Debug/netcoreapp3.1
+
+Set up NPP as default:
+must be execute from users home dir (use shortcut on desktop
+c:\usr\cptri)
+notepad++ .bash_profile
+
+add this to profile doc
+alias npp="notepad++.exe -multiInst -nosession"
+
+
+source ~/.bashrc
+pwsapp
+
+
+muscle dehydration of 3%
+= 10% loss of contractile strength
+= 8% loss of speed
+= performance dries up
+
+
+
+https://ourowiki.ouro-comdev.com/index.php?title=I25_Community_Virtual_Machines#Version_One
+
+
+Removing .5 hours of OT on 11/06 and adding it to regular straight hours to balance overall hours for pay period.
+
+
+stonehold for diamond golems
+
+
+
+baishi -> Atrium Residential Halls -> hasina gardens -> 204 - 206
+Baishi - 49.3S, 62.4E
+Glenden Wood - 29.7N, 27.0E
+Qalaba'r - 74.1S, 19.2E
+
+204 = Driftwood
+205 = Dokkodo
+206 = Tomisaburo
+
+/house guest add <name>
+/house storage add <name>
+/hr (house recall)
+
+Spell Costs:
+Item
+		3		4		5		6		7
+Item	1D		1MM		2MM		8MMD	16MMD
+Life	1DCCL	1MMD	2MMD	12MMD	24MMD
+Creat	1DCCL	2MMD	3MMD	20MMD	40MMD
+War		2CC		1MM		2MM		8MMD	16MMD
+Void	1C		1D		1M		2MMD	4MMD
+
+
+Cottage Items:
+thick gromnie hide
+
+Speak to Belinda du Loc (Stonehold)
+Banished (kill task (10)):
+Monouga = Nekode (finesse cold)
+Olthoi = Mace (light cold)
+Tumerok = Spear (heavy electric)
+
+Rare Game Kill Task:
+Basalt Golem
+Cold One
+Dark Myrmidon
+Dark Sorcerer
+Lord of Decay
+Lugian Warlord
+Master of the Pack
+Pure One
+Sentient Fragment
+Swamp King
+Tundra Mattekar
+
+
+Banished Banderling
+Banished Drudge
+Banished Grievver
+Banished Lugian
+Banished Monouga
+Banished Mu-miyah
+Banished Olthoi
+Banished Phyntos Wasp
+Banished Shadow
+Banished Tumerok
+Banished Tusker
+
+
+Dai Ya the Scholar tells you, "Hello, I am a collector of the writings of Jhong Mi, who was a philosopher who wrote his own interpretations of the teachings of Jojii.  If you find any of his writings, please give them to me, and I will reward you. You might start by talking to Lou Ei at the North Outpost, or Te Ven at the South Outpost."
+19:55:36 Dai Ya the Scholar tells you, "Also, I have been contracted by the Dereth Exploration Society to help them in their outreach program towards the Isparians who find themselves newly exiled in Dereth.  Here is a book that explains their mission.  I am also giving you a list describing the locations of the nearest stamp and portals to other towns.  If you collect any of the Society's stamped letters, you may bring them back to me for a reward."
+
+
+The Olthoi Chasm quest is a series of increasingly difficult dungeons each with a note at the end. The goal of the quest is to retrieve a series of notes at the end of each dungeon and turn them in to Xavier, Royal Guard located on the surface by the entrance portal to the first dungeon.
+Walkthrough
+Optional: Buy a copy of the Olthoi Tunnels Rumor from Selflora the Barkeep in the Lytelthorpe bar.
+The progressive dungeons are all different but have similar set ups. First you encounter Undead and Skeletons, and then in the later portion of the dungeons you encounter Olthoi. You can just run through the dungeons to the end and grab the notes if you wish.
+To get to the first dungeon, go through the Facility Hub to the level 30 area and take the Haunted Mansion portal. Then run south to the entrance at 0.7N, 44.7E.
+The entrance to the second dungeon is at the end of the first dungeon, and so on - be sure and pick up the note before you enter each portal.
+There is no surface portal in this dungeon. Once you have all of the notes you can get, you have to recall and run all the way back to hand in the notes to the Royal Guard for the rewards.
+Each dungeon is progressively harder. The final dungeon is extremely hard and you should be Level 200+ or have a large group of 150+.
+There is an Exploration Marker just outside the dungeon portal, if you are so inclined.
+
+Olthoi Chasm (Level 20+)
+Rewards:
+3,000,000 experience - xp shares in fellowship
+1 Gem of Stillness
+D Trade Note (50,000)
+
+Map: ACmaps
+
+Directions:
+
+1. From the portal drop go down either the west or east ramp down and continue going down until a reach a large sloping room where there are several ramps on the floor. Take the ramp to the west or east (depending on which ramp you used from the drop) going down.
+
+2. Off the passage you are in now will be a large pit that you have to jump down into. Exit the large room continue going down.
+
+3. You'll come to another large sloping room with more ramps in the floor. Go down to the ramp to the Northwest and you should come to a green olthoi door at the end of the hall. Go through the door and continue straight down till you see the portal to the next area. Pick up the Untranslated Note at the bottom on front of the portal.
+
+Shallow Olthoi Chasm (Level 40+)
+Rewards:
+10,000,000 experience
+2 Gems of Stillness
+M Trade Note (100,000)
+
+Map: ACmaps
+
+Directions:
+
+1. This is a pretty simple dungeon. The general rule is to always stay left the whole way through the dungeon and always go up, never down. There are some short dead ends off the main passage but you can navigate though pretty easily. Again the note is right in front of the portal to the next area.
+
+Deep Olthoi Chasm (Level 60+)
+Rewards:
+15,000,000 experience
+3 Gems of Stillness
+MD Trade Note (150,000)
+
+Map: ACmaps
+
+Directions:
+
+1. Take the first left then the first right. You will come to the a hall with several ramps down. Take the ramp down to the left and take a left at the bottom. Then go straight and up to another hallway with ramps.
+
+2. In the hallway to the end with the metal door and go right. This passage will take you down then up again at the top you'll be in yet another hallway with ramps. From the passage you just exited take the ramp down to the left and across from you (not the one right in front of you).
+
+3. Stay left through a large room then stay right and down a long ramp and at the bottom stay left until you reach the portal and the note.
+
+Cavernous Olthoi Chasm (Level 80+)
+Rewards:
+20,000,000 experience
+4 Gems of Stillness
+MM Trade Note (200,000)
+
+Map: ACmaps
+
+Directions:
+
+1. From the drop stay right until you go down a ramp then left at the bottom. Go immediately right then straight to a green olthoi door and go through it. You'll go through a large room that slopes down then up again.
+
+2. At the first T go left go take the first right and go straight down a ramp into a large room. Go left down a slope in the room to another ramp going down.
+
+3. Take the first right then straight into a room filled with olthoi. Go down a ramp in the floor of the that room.
+
+4. Take the first left and then go straight until you see the portal and note.
+
+Abyssal Olthoi Chasm (Level 100+)
+At the drop in this section you will find an undead NPC, Jaenyn, Stone Shaper. He has no use except for lore purposes. His interactions are listed below.
+
+Rewards:
+25,000,000 experience
+5 Gems of Stillness
+MMD Trade Note (250,000)
+
+Map: ACmaps
+
+Directions:
+
+The first part of this dungeon mirrors the first Chasm section almost exactly.
+
+1. From the drop go down one of the ramps in the floor to the east or west and continue down until a reach a large sloping room where there are several ramps on the floor. Take the ramp to the west or east (depending on which ramp you used from the drop) going down.
+
+2. Off the passage you are in now will be a large pit that you have to jump down into. Exit the large room continue going down.
+
+3. You'll come to a large room with a ramp down in the center. Go down and go through a metal door to find the final note in a stone hallway with an alloy machine at the end (which cannot be picked up).
+
+Maps
+
+
+
+jaws
+40 = engorged
+	From Sanamar take the Beacon Tower portal at 71.7N 61.0W, then run NW to 81.6N, 71.2W.
+70 = voracious
+	From Sanamar take the Beacon Tower portal at 71.7N 61.0W, then jump down and run NE to 85.9N 59.0W
+90 = abhorrent
+	From Eastwatch run west to 88.5N 50.3W.
+110 = ravenous
+	From Eastwatch run west to 92.8N 48.9W.
+125 = upper insatiable (for exp (20hrs))
+		insatiable eater jaw (for aug gem (six days))
+	From Eastwatch run northeast to the large island, then follow the coast north and around to 97.4N 48.0W.
+
+
+Soul Hunter (13 days)
+Talk to Hasin Lin at 28.9S, 59.3E, in Sawato.
+Enter Soul Hunter's Lair at 27.7S, 55.8E.
+Make your way to the end of the dungeon.
+[OPTIONAL] If you wish, you can skip ahead in the dungeon by making a sacrifice. This is not required, and places a quest flag on your character as a Falatacot helper.
+Pick up the Sacrificial Goblet and the Sacrificial Knife
+Use the knife on the goblet to create a Filled Sacrificial Goblet.
+Give the filled goblet to the Altar of Urdhinivix
+You are now flagged to enter the Soul Hunter's Chambers, a shortcut portal that leads further into the dungeon.
+Kill the Soul Hunter and loot the Soul Hunter's Untranslated Orders. It drops 1 per kill.
+Bring this text to Fanzen San the Translator at 39.2S 81.6E, near Hebian-To, for translation and Soul Hunter's Orders.
+Return to Hasin Lin, and hand him the translation to get the experience and a Copy of Soul Hunter's Orders.
+
+
+Frozen Fury
+Part 1: The Virindi Complex
+Speak to Mage Syltyn Rillon near Glenden Wood at 27.8N, 24.7E to flag for the Virindi Complex.
+Make your way to the complex at 73.8N, 25.1E.
+Route: either take the East Esper Valley settlement portal from the Crater at 66.4N, 14.3E or run east from Neydisa Castle along Bandit Road until you reach a glowing tree where the note from Syltyn Rillon used to be, then simply run north to the portal.
+From the drop, jump down each step and through the passage to more drops with a bridge overhead (used to exit the dungeon). After reaching the bottom head south until you reach two portals with another copy of A Tale of Paths.
+Pick up the book if you didn't keep the original and want to find your own way through the complex.
+The west portal follows Atlas' route and the east portal is Syretta's route from the story.
+Part 2: Navigating the Portal Maze
+We will follow Atlas' route, so head west into the portal and you will appear in a room with four portals, from here take the west portal again to end up in a room with 8 portals.
+Now take the east portal in the middle into a room with 4 portals lined up in a row.
+Take the last portal to the east of the row and then in the next room take either of the middle portals.
+You should now be in a room with a red moving light and two portals.
+Take the west portal and then east in the next room with 4 portals.
+If you succesfully traversed the portal rooms you will fall through some mysterious lights into the next section. Go into the portal in the middle of the room.
+Head around the caged lighting area and down the passage to the left.
+Ignore all side passages and stick to the main path and you should come to a ledge with a flame in the center leading up into the ceiling. Jump down off the ledge to the left and head north - the next part is fairly linear and leads up and around platforms suspended in the air with crystals.
+As you head up go east past the area that contains what looks like cells for experiments. You should now be in a room with a single platform in the middle with a Virindi Executor on top of it. The Virindi Interrogators here drop the Virindi Signet.
+The exit portal leads to the bridges mentioned earlier which cross over into a room with the surface portal.
+Bring the signet back to Mage Syltyn Rillon to be flagged to remove the Sword of Frozen Fury at 29.6N, 27.4E. The sword can also be given to Omaro Nagate near Glenden Wood (30.0N, 25.8E) for the Dagger of Frozen Fury.
+
+
+Voracious Eater Kill Task
+Talk to Aun Ruperea at 44.3N 77.9W in Timaru to begin the task of killing 50 Voracious Eaters.
+
+
+Crystalline Crag
+Route
+Use the Portal to Izji Qo's Temple at your allegiance mansion and then run to 14.6S, 62.2W.
+If you don't have access to a mansion device then you have a bit of a run:
+Start by purchasing some Sake from a Sho Barkeep.
+Then you need to go to the Drunken Madman:
+You can either run from Baishi to the Drunken Madman at 53.0S, 61.0E, -- OR --
+You can take a shortcut if you have access to Ayan Baqur -- give Ulgrim the Unpleasant the Sake and he'll open a portal for you to the Madman (Ulgrim doesn't keep the Sake).
+Give the Madman the Sake and use the gateway to Walled Portals he summons.
+From Walled Portals, take the Outside Accursed Halls Portal. Climb the wall to the North, jump outside, and proceed to the Resonant Portal at 14.6S 62.2W.
+
+
+
+locations for decal castaway:
+documents -> castaway -> settings -> harvestbud
+c:\prog x86\decal plugins
+d:\_myonedrive\onedrive\documents\decalplugins
+
+
+go to vtank:  c:\drive\games...
+then use utank2, editor.exe
+
+/vt propertydump
+
+Peas:
+ObjectClass = SpellComponent
+LongValueKey >= Value 500
+
+Rares:
+LongValueKey == IconUnderlay 23308
+
+Cloaks:
+Name matches: Cloak
+ObjectClass = Clothing
+IconOverlay >= 27703
+
+Aetheria:
+Name matches: Coalesced Aetheria
+Type == 42635 (blue)
+		42637 (yellow)
+		42636 (red)
+
+Shoes:
+ObjectClass = Clothing
+Value >= 10000
+Name matches: Bandana|Beret|Fez|Turban|Gloves|Loafers|Sandals|Slippers
+
+Underwear:
+ObjectClass = Clothing
+Value >= 10000
+Name matches: Tunic|Shirt|Pants
+
+ObjectClass = Jewelry
+Value >= 10000
+
+ObjectClass = WandStaffOrb
+Value >= 10000
+
+ObjectClass = Armor
+Name matches: Coronet|Crown|Circlet|Diadem
+Value >= 10000
+
+ObjectClass = ManaStone
+LongValueKey >= Type 27328 (greater)
+
+ObjectClass = Unknown
+Name = Lucky Gold Letter
+Type = 45875
+Name = Scarlet Red Letter
+Type = 45876
+
+Potions:
+ObjectClass = Food
+Name = Stamina Tincture|Stamina Elixir|Stamina Tonic|Stamina Brew|Philtre|Potion
+
+Misc Stuff:
+ObjectClass = Misc
+Name = Encapsulated Spirit
+
+ObjectClass = Gem
+Name = Small Shard
+
+ObjectClass = Misc
+Name = Pyreal Mote
+
+
+ancient empyrean trinket:
+ObjectClass = Gem
+Name = Ancient Empyrean Trinket
+Type = 34276
+
+ancient falatacot trinket
+objectclass = gem
+name = Ancient Falatacot Trinket
+type = 34277
+
+
+
+Journal Pages:
+Explorer Letters:
+Nanto
+Al-Arqas
+
+Lytethorpe
+Yanshi
+
+Samsur
+Rithwic
+
+Need:
+Lytelthorpe -> Yanshi
+
+
+Olthoi Chasm:
+go through the Facility Hub to the level 30 area and take the Haunted Mansion portal. Then run south to the entrance at 0.7N, 44.7E.
+
+20 - 3mil
+40 - 10mil
+60 - 15mil
+80 - 20mil
+100 - 25mil
+
+Pincer (High):
+50: (5 mil)
+Eviscerator
+Lair of the Eviscerators
+Gotto -> 53.7N, 76.6W
+
+70: (8.1)  Good Loot
+Warrior
+Nest -> 46.9N, 81.2W
+
+80: (11.1)
+Mutilator
+Grotto -> 52.8N, 78.1W
+
+200:
+Hive Eviscerator Pincer
+Nest -> 48.6N, 73.7W
+
+200:
+Hive Warrior Pincer
+Nest -> 49.3N, 81.2W
+
+200:
+Brood Pincer
+Marescent Plateau
+
+
+Tusks (High):
+45: (5.1 mil)
+Silver - Tusker Pits
+Guard -> 1.3N, 91.8E
+
+50: (3.6 mil)
+Armored - Tusker Armory
+Guard -> 0.1N, 89.4E
+Good Loot
+
+60: (8.3 mil)
+Rampager - Tusker Holding
+Guard -> 3.5S, 85.3E
+Jump bridge - horrible loot
+
+70: (6.7 mil)
+Plated - Tusker Tunnels
+Guard -> 0.4N, 86.4E
+Decent Loot
+
+80: (11.4 mil)
+Assailer - Tusker Honeycombs
+Guard -> 1.3S, 86.9E
+
+100:
+Devastator - Tusker Lacuna
+Guard -> 9.9S, 90.7E
+dont take tusker quarters and run around the other way
+
+200:
+Snow Tusker - Tusker Den
+84.3N, 6.4W
+
+
+Jaws:
+Give to Clemenza in Westwatch
+
+40 = engorged - Remote Empyrean Vault
+1.5mil
+From Sanamar take the Beacon Tower portal at 71.7N 61.0W, then run NW to 81.6N, 71.2W.
+
+70 = voracious - Ruined Empy Vault
+8mil + kill task
+From Sanamar take the Beacon Tower portal at 71.7N 61.0W, then jump down and run NE to 85.9N 59.0W
+
+90 = abhorrent - Abhor Vault - 15mil
+From Eastwatch run west to 88.5N 50.3W.
+
+110 = ravenous - Ravenous Vault
+35mil
+From Eastwatch run west to 92.8N 48.9W.
+
+125 = upper insatiable (for exp (20hrs))
+insatiable eater jaw (for aug gem (six days))
+40mil
+From Eastwatch run northeast to the large island, then follow the coast north and around to 97.4N 48.0W.
+
+
+
+
+Enter the following into your browser address bar: chrome://settings/content.
+Under Protected content, make sure Allow site to play protected content is enabled.
+
+
+UPDATE: brute-force search
+In the implementatio I made a mistake, sorry for that!
+
+for( int i = 0; i < lengthOfText - lengthOfPattern ; i++){   instead of this line of code we have to use 
+
+for( int i = 0; i <= lengthOfText - lengthOfPattern ; i++){ this code!
+
+
+
+fork project to your account
+in git bash:
+go to d:/source/repos
+git clone (your fork) to create local copy
+git remote -v to verify
+git remote add upstream remote https url) to create the upstream link
+git remote -v
+
+git fetch upstream will update your local copy from DOL
+
+if you don't want to overwrite your local changes you merge the brance you want:
+
+git merge upstream/master (or whatever)  (use git remote -v to see the branches)
+
+if you want to update your github copy, then:
+git push origin master
+
+https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo
+
+https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/syncing-a-fork
+
+https://docs.github.com/en/free-pro-team@latest/github/using-git/pushing-commits-to-a-remote-repository
+
+
+
+Age of Empires II
+Launch CaptureAge
+Launch AoE II
+Start watching games
+Alt+Tab to go to CaptureAge
+Press button to connect to the games
+
+
+Attribute Costs
+1	110	110	1	73	73
+2	277	167	2	183	110
+3	501	224	3	331	148
+4	784	283	4	517	186
+5	1,125	341	5	743	226
+6	1,527	402	6	1,008	265
+7	1,988	461	7	1,312	304
+8	2,511	523	8	1,658	346
+9	3,097	586	9	2,044	386
+10	3,746	649	10	2,472	428
+11	4,459	713	11	2,943	471
+12	5,238	779	12	3,457	514
+13	6,084	846	13	4,015	558
+14	6,998	914	14	4,619	604
+15	7,982	984	15	5,268	649
+16	9,038	1,056	16	5,965	697
+17	10,167	1,129	17	6,711	746
+18	11,372	1,205	18	7,505	794
+19	12,654	1,282	19	8,352	847
+20	14,015	1,361	20	9,250	898
+21	15,459	1,444	21	10,203	953
+22	16,988	1,529	22	11,212	1,009
+23	18,604	1,616	23	12,279	1,067
+24	20,311	1,707	24	13,406	1,127
+25	22,113	1,802	25	14,595	1,189
+26	24,012	1,899	26	15,848	1,253
+27	26,014	2,002	27	17,169	1,321
+28	28,122	2,108	28	18,561	1,392
+29	30,341	2,219	29	20,025	1,464
+30	32,676	2,335	30	21,566	1,541
+31	35,132	2,456	31	23,187	1,621
+32	37,716	2,584	32	24,893	1,706
+33	40,434	2,718	33	26,687	1,794
+34	43,293	2,859	34	28,574	1,887
+35	46,301	3,008	35	30,559	1,985
+36	49,465	3,164	36	32,647	2,088
+37	52,795	3,330	37	34,845	2,198
+38	56,300	3,505	38	37,158	2,313
+39	59,991	3,691	39	39,594	2,436
+40	63,878	3,887	40	42,160	2,566
+41	67,975	4,097	41	44,864	2,704
+42	72,295	4,320	42	47,715	2,851
+43	76,851	4,556	43	50,722	3,007
+44	81,659	4,808	44	53,895	3,173
+45	86,737	5,078	45	57,247	3,352
+46	92,102	5,365	46	60,788	3,541
+47	97,775	5,673	47	64,531	3,743
+48	103,775	6,000	48	68,492	3,961
+49	110,128	6,353	49	72,685	4,193
+50	116,858	6,730	50	77,126	4,441
+51	123,991	7,133	51	81,834	4,708
+52	131,559	7,568	52	86,829	4,995
+53	139,591	8,032	53	92,130	5,301
+54	148,124	8,533	54	97,762	5,632
+55	157,194	9,070	55	103,748	5,986
+56	166,843	9,649	56	110,116	6,368
+57	177,113	10,270	57	116,895	6,779
+58	188,053	10,940	58	124,115	7,220
+59	199,715	11,662	59	131,812	7,697
+60	212,153	12,438	60	140,021	8,209
+61	225,429	13,276	61	148,784	8,763
+62	239,609	14,180	62	158,142	9,358
+63	254,762	15,153	63	168,143	10,001
+64	270,967	16,205	64	178,838	10,695
+65	288,306	17,339	65	190,282	11,444
+66	306,870	18,564	66	202,534	12,252
+67	326,756	19,886	67	215,659	13,125
+68	348,070	21,314	68	229,726	14,067
+69	370,928	22,858	69	244,812	15,086
+70	395,453	24,525	70	260,999	16,187
+71	421,779	26,326	71	278,375	17,376
+72	450,054	28,275	72	297,036	18,661
+73	480,434	30,380	73	317,087	20,051
+74	513,091	32,657	74	338,640	21,553
+75	548,210	35,119	75	361,819	23,179
+76	585,992	37,782	76	386,755	24,936
+77	626,654	40,662	77	413,592	26,837
+78	670,432	43,778	78	442,486	28,894
+79	717,582	47,150	79	473,604	31,118
+80	768,378	50,796	80	507,130	33,526
+81	823,122	54,744	81	543,260	36,130
+82	882,136	59,014	82	582,210	38,950
+83	945,773	63,637	83	624,211	42,001
+84	1,014,414	68,641	84	669,513	45,302
+85	1,088,469	74,055	85	718,390	48,877
+86	1,168,386	79,917	86	771,135	52,745
+87	1,254,649	86,263	87	828,069	56,934
+88	1,347,781	93,132	88	889,536	61,467
+89	1,448,351	100,570	89	955,912	66,376
+90	1,556,972	108,621	90	1,027,602	71,690
+91	1,674,311	117,339	91	1,105,046	77,444
+92	1,801,089	126,778	92	1,188,719	83,673
+93	1,938,088	136,999	93	1,279,139	90,420
+94	2,086,155	148,067	94	1,376,862	97,723
+95	2,246,205	160,050	95	1,482,495	105,633
+96	2,419,233	173,028	96	1,596,694	114,199
+97	2,606,314	187,081	97	1,720,167	123,473
+98	2,808,613	202,299	98	1,853,685	133,518
+99	3,027,394	218,781	99	1,998,080	144,395
+100	3,264,023	236,629	100	2,154,256	156,176
+101	3,519,983	255,960	101	2,323,189	168,933
+102	3,796,877	276,894	102	2,505,939	182,750
+103	4,096,444	299,567	103	2,703,654	197,715
+104	4,420,567	324,123	104	2,917,575	213,921
+105	4,771,285	350,718	105	3,149,049	231,474
+106	5,150,808	379,523	106	3,399,533	250,484
+107	5,561,528	410,720	107	3,670,609	271,076
+108	6,006,039	444,511	108	3,963,986	293,377
+109	6,487,148	481,109	109	4,281,518	317,532
+110	7,007,896	520,748	110	4,625,212	343,694
+111	7,571,580	563,684	111	4,997,243	372,031
+112	8,181,768	610,188	112	5,399,967	402,724
+113	8,842,327	660,559	113	5,835,936	435,969
+114	9,557,443	715,116	114	6,307,913	471,977
+115	10,331,656	774,213	115	6,818,893	510,980
+116	11,169,877	838,221	116	7,372,119	553,226
+117	12,077,431	907,554	117	7,971,105	598,986
+118	13,060,084	982,653	118	8,619,656	648,551
+119	14,124,082	1,063,998	119	9,321,894	702,238
+120	15,276,190	1,152,108	120	10,082,286	760,392
+121	16,523,738	1,247,548	121	10,905,668	823,382
+122	17,874,666	1,350,928	122	11,797,280	891,612
+123	19,337,572	1,462,906	123	12,762,798	965,518
+124	20,921,773	1,584,201	124	13,808,370	1,045,572
+125	22,637,359	1,715,586	125	14,940,657	1,132,287
+126	24,495,261	1,857,902	126	16,166,873	1,226,216
+127	26,507,320	2,012,059	127	17,494,831	1,327,958
+128	28,686,361	2,179,041	128	18,932,998	1,438,167
+129	31,046,278	2,359,917	129	20,490,543	1,557,545
+130	33,602,120	2,555,842	130	22,177,399	1,686,856
+131	36,370,190	2,768,070	131	24,004,326	1,826,927
+132	39,368,147	2,997,957	132	25,982,977	1,978,651
+133	42,615,120	3,246,973	133	28,125,979	2,143,002
+134	46,131,828	3,516,708	134	30,447,007	2,321,028
+135	49,940,719	3,808,891	135	32,960,875	2,513,868
+136	54,066,105	4,125,386	136	35,683,629	2,722,754
+137	58,534,323	4,468,218	137	38,632,653	2,949,024
+138	63,373,901	4,839,578	138	41,826,775	3,194,122
+139	68,615,745	5,241,844	139	45,286,392	3,459,617
+140	74,293,328	5,677,583	140	49,033,597	3,747,205
+141	80,442,912	6,149,584	141	53,092,322	4,058,725
+142	87,103,777	6,660,865	142	57,488,493	4,396,171
+143	94,318,471	7,214,694	143	62,250,191	4,761,698
+144	102,133,083	7,814,612	144	67,407,835	5,157,644
+145	110,597,540	8,464,457	145	72,994,377	5,586,542
+146	119,765,922	9,168,382	146	79,045,509	6,051,132
+147	129,696,811	9,930,889	147	85,599,896	6,554,387
+148	140,453,665	10,756,854	148	92,699,419	7,099,523
+149	152,105,222	11,651,557	149	100,389,447	7,690,028
+150	164,725,942	12,620,720	150	108,719,122	8,329,675
+151	178,396,483	13,670,541	151	117,741,679	9,022,557
+152	193,204,214	14,807,731	152	127,514,781	9,773,102
+153	209,243,776	16,039,562	153	138,100,892	10,586,111
+154	226,617,688	17,373,912	154	149,567,674	11,466,782
+155	245,437,001	18,819,313	155	161,988,421	12,420,747
+156	265,822,007	20,385,006	156	175,442,525	13,454,104
+157	287,903,011	22,081,004	157	190,015,988	14,573,463
+158	311,821,164	23,918,153	158	205,801,968	15,785,980
+159	337,729,361	25,908,197	159	222,901,379	17,099,411
+160	365,793,227	28,063,866	160	241,423,530	18,522,151
+161	396,192,167	30,398,940	161	261,486,830	20,063,300
+162	429,120,520	32,928,353	162	283,219,543	21,732,713
+163	464,788,799	35,668,279	163	306,760,608	23,541,065
+164	503,425,038	38,636,239	164	332,260,525	25,499,917
+165	545,276,249	41,851,211	165	359,882,324	27,621,799
+166	590,610,001	45,333,752	166	389,802,601	29,920,277
+167	639,716,134	49,106,133	167	422,212,649	32,410,048
+168	692,908,610	53,192,476	168	457,319,683	35,107,034
+169	750,527,522	57,618,912	169	495,348,165	38,028,482
+170	812,941,268	62,413,746	170	536,541,237	41,193,072
+171	880,548,904	67,607,636	171	581,162,277	44,621,040
+172	953,782,704	73,233,800	172	629,496,585	48,334,308
+173	1,033,110,914	79,328,210	173	681,853,203	52,356,618
+174	1,119,040,753	85,929,839	174	738,566,897	56,713,694
+175	1,212,121,655	93,080,902	175	800,000,293	61,433,396
+176	1,312,948,783	100,827,128	176	866,546,197	66,545,904
+177	1,422,166,831	109,218,048	177	938,630,108	72,083,911
+178	1,540,474,151	118,307,320	178	1,016,712,940	78,082,832
+179	1,668,627,219	128,153,068	179	1,101,293,965	84,581,025
+180	1,807,445,467	138,818,248	180	1,192,914,009	91,620,044
+181	1,957,816,530	150,371,063	181	1,292,158,910	99,244,901
+182	2,120,701,915	162,885,385	182	1,399,663,264	107,504,354
+183	2,297,143,157	176,441,242	183	1,516,114,484	116,451,220
+184	2,488,268,472	191,125,315	184	1,642,257,192	126,142,708
+185	2,695,299,977	207,031,505	185	1,778,897,985	136,640,793
+186	2,919,561,502	224,261,525	186	1,926,910,591	148,012,606
+187	3,162,487,055	242,925,553	187	2,087,241,457	160,330,866
+188	3,425,629,996	263,142,941	188	2,260,915,797	173,674,340
+189	3,710,672,964	285,042,968	189	2,449,044,157	188,128,360
+190	4,019,438,644	308,765,680	190	2,652,829,505	203,785,348
+191			191	2,873,574,933	220,745,428
+192			192	3,112,691,986	239,117,053
+193			193	3,371,709,687	259,017,701
+194			194	3,652,284,316	280,574,629
+195			195	3,956,210,003	303,925,687
+196			196	4,285,430,197	329,220,194
+
+Skill Costs
+1	23	23	1	58	58
+2	56	33	2	138	80
+3	97	41	3	243	105
+4	149	52	4	372	129
+5	211	62	5	526	154
+6	282	71	6	704	178
+7	364	82	7	908	204
+8	456	92	8	1,138	230
+9	558	102	9	1,395	257
+10	671	113	10	1,678	283
+11	795	124	11	1,988	310
+12	931	136	12	2,326	338
+13	1,077	146	13	2,693	367
+14	1,236	159	14	3,089	396
+15	1,406	170	15	3,515	426
+16	1,589	183	16	3,971	456
+17	1,784	195	17	4,459	488
+18	1,992	208	18	4,980	521
+19	2,214	222	19	5,534	554
+20	2,449	235	20	6,122	588
+21	2,699	250	21	6,747	625
+22	2,963	264	22	7,408	661
+23	3,243	280	23	8,107	699
+24	3,539	296	24	8,846	739
+25	3,850	311	25	9,625	779
+26	4,180	330	26	10,448	823
+27	4,527	347	27	11,316	868
+28	4,892	365	28	12,230	914
+29	5,277	385	29	13,192	962
+30	5,683	406	30	14,206	1,014
+31	6,109	426	31	15,273	1,067
+32	6,559	450	32	16,396	1,123
+33	7,031	472	33	17,578	1,182
+34	7,529	498	34	18,821	1,243
+35	8,052	523	35	20,130	1,309
+36	8,603	551	36	21,508	1,378
+37	9,183	580	37	22,958	1,450
+38	9,794	611	38	24,485	1,527
+39	10,437	643	39	26,092	1,607
+40	11,115	678	40	27,786	1,694
+41	11,829	714	41	29,572	1,786
+42	12,582	753	42	31,454	1,882
+43	13,376	794	43	33,438	1,984
+44	14,213	837	44	35,533	2,095
+45	15,098	885	45	37,743	2,210
+46	16,031	933	46	40,078	2,335
+47	17,018	987	47	42,545	2,467
+48	18,061	1,043	48	45,152	2,607
+49	19,165	1,104	49	47,911	2,759
+50	20,332	1,167	50	50,830	2,919
+51	21,569	1,237	51	53,921	3,091
+52	22,879	1,310	52	57,196	3,275
+53	24,267	1,388	53	60,668	3,472
+54	25,740	1,473	54	64,350	3,682
+55	27,304	1,564	55	68,259	3,909
+56	28,964	1,660	56	72,409	4,150
+57	30,728	1,764	57	76,818	4,409
+58	32,603	1,875	58	81,506	4,688
+59	34,597	1,994	59	86,493	4,987
+60	36,720	2,123	60	91,800	5,307
+61	38,981	2,261	61	97,451	5,651
+62	41,389	2,408	62	103,472	6,021
+63	43,956	2,567	63	109,890	6,418
+64	46,695	2,739	64	116,736	6,846
+65	49,616	2,921	65	124,040	7,304
+66	52,736	3,120	66	131,838	7,798
+67	56,067	3,331	67	140,167	8,329
+68	59,627	3,560	68	149,067	8,900
+69	63,433	3,806	69	158,582	9,515
+70	67,504	4,071	70	168,758	10,176
+71	71,859	4,355	71	179,646	10,888
+72	76,521	4,662	72	191,301	11,655
+73	81,513	4,992	73	203,781	12,480
+74	86,860	5,347	74	217,149	13,368
+75	92,590	5,730	75	231,474	14,325
+76	98,732	6,142	76	246,830	15,356
+77	105,319	6,587	77	263,297	16,467
+78	112,384	7,065	78	280,959	17,662
+79	119,965	7,581	79	299,911	18,952
+80	128,101	8,136	80	320,252	20,341
+81	136,836	8,735	81	342,089	21,837
+82	146,216	9,380	82	365,539	23,450
+83	156,291	10,075	83	390,727	25,188
+84	167,116	10,825	84	417,789	27,062
+85	178,749	11,633	85	446,871	29,082
+86	191,252	12,503	86	478,129	31,258
+87	204,694	13,442	87	511,735	33,606
+88	219,149	14,455	88	547,871	36,136
+89	234,694	15,545	89	586,735	38,864
+90	251,416	16,722	90	628,540	41,805
+91	269,407	17,991	91	673,517	44,977
+92	288,765	19,358	92	721,913	48,396
+93	309,599	20,834	93	773,996	52,083
+94	332,022	22,423	94	830,054	56,058
+95	356,161	24,139	95	890,401	60,347
+96	382,148	25,987	96	955,370	64,969
+97	410,131	27,983	97	1,025,326	69,956
+98	440,264	30,133	98	1,100,659	75,333
+99	472,717	32,453	99	1,181,791	81,132
+100	507,671	34,954	100	1,269,177	87,386
+101	545,324	37,653	101	1,363,308	94,131
+102	585,886	40,562	102	1,464,714	101,406
+103	629,586	43,700	103	1,573,965	109,251
+104	676,672	47,086	104	1,691,679	117,714
+105	726,408	49,736	105	1,818,520	126,841
+106	777,982	51,574	106	1,955,205	136,685
+107	831,204	53,222	107	2,102,508	147,303
+108	886,706	55,502	108	2,261,264	158,756
+109	944,149	57,443	109	2,432,373	171,109
+110	1,004,623	60,474	110	2,616,806	184,433
+111	1,068,144	63,521	111	2,815,610	198,804
+112	1,134,867	66,723	112	3,029,917	214,307
+113	1,204,278	69,411	113	3,260,945	231,028
+114	1,276,904	72,626	114	3,510,009	249,064
+115	1,353,312	76,408	115	3,778,529	268,520
+116	1,434,114	80,802	116	4,068,034	289,505
+117	1,518,971	84,857	117	4,380,177	312,143
+118	1,607,595	88,624	118	4,716,738	336,561
+119	1,700,755	93,160	119	5,079,638	362,900
+120	1,799,280	98,525	120	5,470,950	391,312
+121	1,903,065	103,785	121	5,892,911	421,961
+122	2,011,073	108,008	122	6,347,931	455,020
+123	2,124,346	113,273	123	6,838,614	490,683
+124	2,244,006	119,660	124	7,367,765	529,151
+125	2,368,266	124,260	125	7,938,414	570,649
+126	2,497,430	129,164	126	8,553,825	615,411
+127	2,631,909	134,479	127	9,217,523	663,698
+128	2,771,224	139,315	128	9,933,309	715,786
+129	2,917,013	145,789	129	10,705,283	771,974
+130	3,067,048	150,035	130	11,537,868	832,585
+131	3,222,235	155,187	131	12,435,837	897,969
+132	3,383,635	161,400	132	13,404,336	968,499
+133	3,551,467	167,832	133	14,448,918	1,044,582
+134	3,725,130	173,663	134	15,575,574	1,126,656
+135	3,904,206	179,076	135	16,790,764	1,215,190
+136	4,089,485	185,279	136	18,101,461	1,310,697
+137	4,280,974	191,489	137	19,515,183	1,413,722
+138	4,478,917	197,943	138	21,040,043	1,524,860
+139	4,684,816	205,899	139	22,684,790	1,644,747
+140	4,898,446	213,630	140	24,458,865	1,774,075
+141	5,119,881	221,435	141	26,372,451	1,913,586
+142	5,349,513	229,632	142	28,436,532	2,064,081
+143	5,587,084	237,571	143	30,662,960	2,226,428
+144	5,832,707	245,623	144	33,064,516	2,401,556
+145	6,086,897	254,190	145	35,654,992	2,590,476
+146	6,350,606	263,709	146	38,449,264	2,794,272
+147	6,623,252	272,646	147	41,463,378	3,014,114
+148	6,905,759	282,507	148	44,714,647	3,251,269
+149	7,199,598	293,839	149	48,221,744	3,507,097
+150	7,510,827	311,229	150	52,004,816	3,783,072
+151	7,835,138	324,311	151	56,085,593	4,080,777
+152	8,185,908	350,770	152	60,487,519	4,401,926
+153	8,566,254	380,346	153	65,235,884	4,748,365
+154	8,983,087	416,833	154	70,357,967	5,122,083
+155	9,452,180	469,093	155	75,883,199	5,525,232
+156	9,978,231	526,051	156	81,843,326	5,960,127
+157	10,590,938	612,707	157	88,272,594	6,429,268
+158	11,292,080	701,142	158	95,207,949	6,935,355
+159	12,080,597	788,517	159	102,689,242	7,481,293
+160	12,978,687	898,090	160	110,759,467	8,070,225
+161	13,957,900	979,213	161	119,465,000	8,705,533
+162	14,971,249	1,013,349	162	128,855,871	9,390,871
+163	16,103,320	1,132,071	163	138,986,049	10,130,178
+164	17,322,402	1,219,082	164	149,913,755	10,927,706
+165	18,634,617	1,312,215	165	161,701,793	11,788,038
+166	20,062,065	1,427,448	166	174,417,913	12,716,120
+167	21,585,981	1,523,916	167	188,135,201	13,717,288
+168	23,214,900	1,628,919	168	202,932,500	14,797,299
+169	24,936,844	1,721,944	169	218,894,860	15,962,360
+170	26,808,511	1,871,667	170	236,114,028	17,219,168
+171	28,810,492	2,001,981	171	254,688,979	18,574,951
+172	30,975,492	2,165,000	172	274,726,480	20,037,501
+173	33,221,583	2,246,091	173	296,341,707	21,615,227
+174	35,528,463	2,306,880	174	319,658,907	23,317,200
+175	38,089,744	2,561,281	175	344,812,110	25,153,203
+176	40,943,261	2,853,517	176	371,945,902	27,133,792
+177	43,951,402	3,008,141	177	401,216,255	29,270,353
+178	47,181,470	3,230,068	178	432,791,424	31,575,169
+179	50,806,066	3,624,596	179	466,852,915	34,061,491
+180	54,703,511	3,897,445	180	503,596,527	36,743,612
+181	59,258,291	4,554,780	181	543,233,477	39,636,950
+182	64,461,548	5,203,257	182	585,991,620	42,758,143
+183	70,511,600	6,050,052	183	632,116,749	46,125,129
+184	77,114,508	6,602,908	184	681,874,018	49,757,269
+185	84,284,685	7,170,177	185	735,549,461	53,675,443
+186	92,045,555	7,760,870	186	793,451,636	57,902,175
+187	100,330,262	8,284,707	187	855,913,403	62,461,767
+188	109,182,433	8,852,171	188	923,293,832	67,380,429
+189	118,957,009	9,774,576	189	995,980,273	72,686,441
+190	129,861,131	10,904,122	190	1,074,390,578	78,410,305
+191	141,695,103	11,833,972	191	1,158,975,507	84,584,929
+192	154,193,427	12,498,324	192	1,250,221,316	91,245,809
+193	167,565,923	13,372,496	193	1,348,652,558	98,431,242
+194	183,038,936	15,473,013	194	1,454,835,090	106,182,532
+195	200,856,634	17,817,698	195	1,569,379,334	114,544,244
+196	221,282,414	20,425,780	196	1,692,943,784	123,564,450
+197	244,600,416	23,318,002	197	1,826,238,790	133,295,006
+198	271,117,157	26,516,741	198	1,970,030,642	143,791,852
+199	301,163,291	30,046,134	199	2,125,145,977	155,115,335
+200	336,095,513	34,932,222	200	2,292,476,532	167,330,555
+201	374,298,608	38,203,095	201	2,472,984,268	180,507,736
+202	418,187,661	43,889,053	202	2,667,706,901	194,722,633
+203	466,210,448	48,022,787	203	2,877,763,869	210,056,968
+204	520,850,007	54,639,559	204	3,104,362,767	226,598,898
+205	581,627,417	60,777,410	205	3,348,806,291	244,443,524
+206	648,104,789	66,477,372	206	3,612,499,722	263,693,431
+207	721,888,505	73,783,716	207	3,896,959,013	284,459,291
+208	802,632,699	80,744,194	208	4,203,819,496	306,860,483
+209	890,043,017	87,410,318			
+210	984,880,677	94,837,660			
+211	1,085,966,844	101,086,167			
+212	1,196,187,351	110,220,507			
+213	1,315,497,790	119,310,439			
+214	1,443,929,007	128,431,217			
+215	1,582,593,030	138,664,023			
+216	1,730,689,458	148,096,428			
+217	1,891,512,364	160,822,906			
+218	2,064,457,725	172,945,361			
+219	2,249,031,458	184,573,733			
+220	2,449,858,070	200,826,612			
+221	2,667,631,083	217,773,013			
+222	2,902,448,781	234,817,698			
+223	3,160,874,561	258,425,780			
+224	3,440,192,563	279,318,002			
+225	3,750,444,304	310,251,741			
+226	4,100,490,438	350,046,134			
+
+
+Skill Credits
+Level	Total Credits
+2	1
+3	2
+4	3
+5	4
+6	5
+7	6
+8	7
+9	8
+10	9
+12	10
+14	11
+16	12
+18	13
+20	14
+23	15
+26	16
+Level	Total Credits
+29	17
+32	18
+35	19
+40	20
+45	21
+50	22
+55	23
+60	24
+65	25
+70	26
+75	27
+80	28
+85	29
+90	30
+95	31
+100	32
+Level	Total Credits
+105	33
+110	34
+115	35
+120	36
+125	37
+130	38
+140	39
+150	40
+160	41
+180	42
+200	43
+225	44
+250	45
+275	46
+
+
+Skill	Formula	Train
+Cost	Specialization
+Cost	Pre-Trained
+Status	Max Base
+(Sp/T/U)	SetId
+Alchemy Icon.png Alchemy	(C+F)/3	6	6	Unusable	429	401	0	49
+Arcane Lore Icon.png Arcane Lore	F/3	Free	2	N/A	333	305	---	50
+Armor Tinkering Icon.png Armor Tinkering	(F+E)/2	4	AUG	Untrained	526	498	290	51
+Assess Creature Icon.png Assess Creature	(None)	4	2	Unusable	236	208	0	83
+Assess Person Icon.png Assess Person	(None)	2	2	Unusable	236	208	0	52
+Cooking Icon.png Cooking	(C+F)/3	4	4	Unusable	429	401	0	55
+Creature Enchantment Icon.png Creature Enchantment	(F+W)/4	8	8	Unusable	381	353	0	56
+Deception Icon.png Deception	(None)	4	2	Unusable	236	208	0	59
+Dirty Fighting Icon.png Dirty Fighting	(S+C)/3	2	2	Unusable	429	401	0	84
+Dual Wield Icon.png Dual Wield	(C+C)/3	2	2	Unusable	429	401	0	85
+Finesse Weapons Icon.png Finesse Weapons	(C+Q)/3	4	4	Untrained	429	401	193	58
+Fletching Icon.png Fletching	(C+F)/3	4	4	Unusable	429	401	0	60
+Healing Icon.png Healing	(F+C)/3	6	4	Unusable	429	401	0	61
+Heavy Weapons Icon.png Heavy Weapons	(S+C)/3	6	6	Untrained	429	401	193	76
+Item Enchantment Icon.png Item Enchantment	(F+W)/4	8	8	Unusable	381	353	0	62
+Item Tinkering Icon.png Item Tinkering	(F+C)/2	2	AUG	Untrained	526	498	290	63
+Jump Icon.png Jump	(S+C)/2	Free	4	N/A	526	498	---	?
+Leadership Icon.png Leadership	(None)	4	2	Untrained	236	208	0	64
+Life Magic Icon.png Life Magic	(F+W)/4	12	8	Unusable	381	353	0	65
+Light Weapons Icon.png Light Weapons	(S+C)/3	4	4	Untrained	429	401	193	53
+Lockpick Icon.png Lockpick	(C+F)/3	6	4	Unusable	429	401	0	?
+Loyalty Icon.png Loyalty	(None)	Free	2	N/A	236	208	---	66
+Magic Defense Icon.png Magic Defense	(F+W)/7	Free	12	N/A	319	291	---	68
+Magic Item Tinkering Icon.png Magic Item Tinkering	F	4	AUG	Untrained	526	498	290	69
+Mana Conversion Icon.png Mana Conversion	(F+W)/6	6	6	Unusable	333	305	0	70
+Melee Defense Icon.png Melee Defense	(Q+C)/3	10	10	Untrained	429	401	193	71
+Missile Defense Icon.png Missile Defense	(Q+C)/5	6	4	Untrained	352	324	116	72
+Missile Weapons Icon.png Missile Weapons	C/2	6	6	Untrained	381	353	145	54
+Recklessness Icon.png Recklessness	(S+Q)/3	4	2	Unusable	429	401	0	86
+Run Icon.png Run	Q	Free	4	N/A	526	498	---	?
+Salvaging Icon.png Salvaging	(None)	Free	AUG	N/A	236	208	---	73
+Shield Icon.png Shield	(S+C)/2	2	2	Untrained	526	498	290	87
+Sneak Attack Icon.png Sneak Attack	(C+Q)/3	4	2	Unusable	429	401	0	88
+Summoning Icon.png Summoning	(E+W)/3	8	4	Unusable	429	401	0	90
+Two Handed Combat Icon.png Two Handed Combat	(S+C)/3	8	8	Untrained	429	401	193	78
+Void Magic Icon.png Void Magic	(F+W)/4	16	12	Unusable	381	353	0	80
+War Magic Icon.png War Magic	(F+W)/4	16	12	Unusable	381	353	0	81
+Weapon Tinkering Icon.png Weapon Tinkering	(F+S)/2	4	AUG	Untrained	526	498	290	82
+
+
+objectclass = Misc
+Name: Snow Lily
+
+Name: Weave of Melee Defense
+objectclass = Clothing
+
+
+

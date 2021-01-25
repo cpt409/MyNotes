@@ -1,0 +1,126 @@
+on tower:
+052C5-FZH06-08JD3-008AK-99Z31
+
+on ASUS:
+55685-8Z08Q-48CD3-08A2K-188PN
+
+on ASUS inactive:
+H162P-6130N-M89DC-0UC0P-8HEHJ
+
+
+apowersoft key
+Activation Code: 1EF22-1CE1F-MFF9M-811F2
+Activation Guide： https://www.apowersoft.com/faq/register-activate-account.html#_2-2
+
+Download URL: http://download.apowersoft.com/down.php?softid=unlimited
+User Account Center: Go to Apowersoft User Account to keep track of it.
+
+
+apowersoft download capture license:
+302D2-0311M-MFD9Z-136C2
+
+
+
+
+https://ourowiki.ouro-comdev.com/index.php?title=I25_Create_VMWare_15_Virtual_Machine
+
+-------------------
+
+coh vmserver setup:
+1) create new virtual machine
+2) "i will install the OS later"
+3) windows server 2012
+4) set name and location (e:\games\mycoh)
+5) 60gb max disk size, store vd as single file
+6) customize hardware
+7) change memory to 8192gb
+8) click porcessers -> cores = 4
+9) network adapter -> bridged
+10) finish
+11) right-click the VM, select settings
+12) add
+13) hard disk
+14) scsi
+15) use an existing vd
+16) use the vmware v2 image
+17) select first hd (60gb), and click remove
+18) select new hd (128gb) -> advanced -> device node = scsi 0:0
+19) go to folder where vm config file is (e:\vm)
+	find the .vmx file, open with notepad
+	add - firmware = "efi" - as a new line at bottom
+	i also changed scsi0:0.present to false
+	save and close file
+20) run vm and continue with server config from readme file on desktop
+21) admin password is coh123!
+
+
+VM v2 Setup
+
+These steps are common between both version of the v2 VM. 
+If your Start It Up.bat is in C:\COH\bin then your AuthServer will not start. Make sure to place it in C:\COH. Cutting and pasting it in Windows Explorer will update the shortcuts on the desktop appropriately.
+@echo off
+echo Starting Auth Server
+START bin\authserver.exe
+TIMEOUT 2
+echo Starting DB Server
+START C:\coh\bin\dbserver.exe -zonelaunchers 1
+TIMEOUT 2
+echo Starting Launcher Server
+START C:\coh\bin\launcher64.exe -noversioncheck
+TIMEOUT 2
+echo Everything should be launched! Go enjoy COH.
+TIMEOUT 10
+
+On your system, create a shortcut to the client's score.exe with the following parameters in the Target line -patchdir score -patchversion 2019.04.19 -auth <VM IP> -noversioncheck
+You'll need to update the database for your public IP Address. Open the SQL Manager from the shortcut on the desktop, right click on the database, select New Query, paste the following query and execute it (change YOURPUBLICIP): 
+UPDATE cohauth.dbo.server SET ip = 'YOURPUBLICIP' WHERE ID = 1;
+You'll also need to update C:\COH\data\server\db\servers.cfg 
+RouteIp YOURPUBLICIP
+If you're feeling frisky update C:\COH\data\server\db\loadBalanceShardSpecific.cfg, however this is optional: 
+HostRange 192.168.1.0 192.168.1.255
+
+"E:\Games\MyCoH\score\City Of Heroes score\score.exe" -patchdir score -patchversion 2019.04.19 -db 10.0.0.93 -noversioncheck
+
+"E:\Games\MyCoH\score\City Of Heroes score\score.exe"
+
+10.0.0.121
+10.0.0.122
+10.0.0.93
+
+
+Repair Order: # 1482550203
+Xbox One S - 2TB
+Serial: 081672462648
+mfr data: 20160621
+
+
+database for ip address:
+ASUS Laptop:
+databases -> cohauth -> dbo.server -> Paragon, 10.0.0.122, 127.0.0.1, 0, 0, 1
+
+connect to asus with score shortcut:
+"C:\_coh\City Of Heroes score\score.exe" -patchdir score -patchversion 2019.04.19 -db 10.0.0.122 -noversioncheck
+
+use login: test, password any
+
+connect to vm1 on tower:
+"C:\_coh\City Of Heroes score\score.exe" -patchdir score -patchversion 2019.04.19 -db 10.0.0.121 -noversioncheck
+
+//////////////////////////////////////////////////////////////////////////////////////
+wireless spikes:
+netsh wlan show settings
+it will show:
+Auto configuration logic is enabled on interface "Wireless Network Connection"
+
+change it to enabled = no:
+netsh wlan set autoconfig enabled=no interface="Wi-Fi"
+
+it will show:
+Auto configuration has been disabled on interface "Wireless Network Connection"
+
+The spike is because wireless adapter is searching for networks!
+
+(also set WLAN to manual in services)
+///////////////////////////////////////////////////////////////////////////////////////
+
+

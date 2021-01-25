@@ -1,0 +1,42 @@
+
+500-409
+
+nuget packages:
+microsoft.entityframeworkcore
+microsoft.entityframeworkcore.sqlserver
+
+using microsoft...
+using system.componentmodel.datannotations.schema
+using system.LINQ
+
+
+
+
+
+In VS, add a data connection:
+Data Source=500-409;Initial Catalog=TestDB;Integrated Security=True
+
+private const string ConnectionString = @"server=500-409;database=TestDB;trusted_connection=true";
+
+
+
+
+
+Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
+
+in command prompt:
+https://www.sqlshack.com/how-to-connect-and-use-microsoft-sql-server-express-localdb/
+sqllocaldb info
+sqllocaldb info <name>
+
+
+
+server=.;database=Test;trusted_user=true;
+
+  <connectionStrings>
+    <add name="SchoolDBConnectionString"
+         connectionString="Data Source=500-409;Initial Catalog=SchoolDB-ByConnectionString; Integrated Security=true"
+         providerName="System.Data.SqlClient"/>
+  </connectionStrings>
+
+
