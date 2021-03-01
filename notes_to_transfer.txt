@@ -1,12 +1,3 @@
-21 sep 1300z - oct 16 2359z
-ASI in progress
-work performed:
-upgrade system secondary servers
-NIPR will become intermittently as devicees are updated
-
-
-866-335-2769
-
 
 /d/Source/Repos/PWSMain/EFConsole/bin/Debug/netcoreapp3.1
 
@@ -31,12 +22,6 @@ muscle dehydration of 3%
 
 
 https://ourowiki.ouro-comdev.com/index.php?title=I25_Community_Virtual_Machines#Version_One
-
-
-Removing .5 hours of OT on 11/06 and adding it to regular straight hours to balance overall hours for pay period.
-
-
-stonehold for diamond golems
 
 
 
@@ -1032,11 +1017,164 @@ War Magic Icon.png War Magic	(F+W)/4	16	12	Unusable	381	353	0	81
 Weapon Tinkering Icon.png Weapon Tinkering	(F+S)/2	4	AUG	Untrained	526	498	290	82
 
 
-objectclass = Misc
-Name: Snow Lily
 
-Name: Weave of Melee Defense
-objectclass = Clothing
+////////////////////////////////////////////////////////////////////////
+
+
+1/25 - 1/31 (week 7)	3/25 - 4/1 Double Cloaked Ascendency
+cloaked ascendency	conqueror
+tyranny of dragons	heroics
+shadowmantle (dr)	adventures
+
+2/1 - 2/7 (week 8)		2/4 - 2/11 Double DR (Double XP)
+						4/1 - 4/8	Double Ravenloft
+ravenloft			conqueror					
+icewind dale		adventures					
+underdark			heroics						
+
+2/8 - 2/14 (week 1)		2/11 - 2/18 Double all Legacy
+skt					adventures					
+chult				conqueror					
+cloaked ascendency	adventures					
+
+2/15 - 2/21 (week 2)	2/18 - 2/25 Double ToD and Double IWD
+chult				adventures		
+shadowmantle		conqueror		
+icewind dale		heroics			
+
+2/22 - 2/28 (week 3)	2/25 - 3/4 Double Underdark
+vallenhas			adventures
+sharandar			adventures
+skt					heroics			
+tyranny of dragons	conqueror
+
+3/1 - 3/7 (week 4)		3/4 - 3/11 Double Maze Engine (Double XP)
+icewind dale		conqueror
+maze engine			adventures
+ravenloft			heroics			
+
+3/8 - 3/14 (week 5)		3/11 - 3/18 Double SKT
+skt					conqueror
+tyranny of dragons	adventures
+chult				heroics			
+
+3/15 - 3/21 (week 6)	3/18 - 3/25 double chult
+feywild				conqueror
+ravenloft			adventures
+cloaked ascendency	heroics
+
+
+
+
+
+
+Rifters needed for NSS/Mutant:
+NSS:
+3,4,5,6,7,14,16,25,50
+Mutant Issues:
+41, 61, 77
+
+
+
+
+Thank you. Your request has been processed. Your reference number is [196438117]. Please write down your reference number for future reference.
+
+Questions? You can contact Accurate Background Customer Service at:
+
+- United States : 1-800-216-8024
+
+
+jui bao weapons owned:
+(adventurer seals 60-80) drake's greatsword of the avatar of war
+(adventurer seals 60-80) mutilitating greatsword
+(adventurer seals 30-60) greatsword of carnage
+(adventurer seals 10-30) skirmisher's greatsword
+(adventurer seals 10-30) howling greatsword
+
+greatsword of the titan
+fabled iliyanbruen greatsword
+iliyanbruen ancestral greatsword
+undermountain greatsword
+traveler's greatsword
+
+great maul of the blackened jaw
+
+objectclass = MeleeWeapon
+WieldReqValue = 400
+WeaponMasteryCategory = 6 (dagger)
+EquipSkill = 46
+MeleeDefenseBonus >= 1.36
+AttackBonus >= 1.36
+Name = Poniard (change to whatever)
+
+macross/robotech missing videos:
+31,32
+
+WeaponMasteryCategory Table
+1	unarmed
+2	sword
+3	axe
+4	mace
+5	spear
+6	dagger
+7	staff
+8	bow
+9	crossbow
+10	thrown
+11	two-handed
+
+
+11095-6GL5L-H8RJ5-0R3UK-2NYJ5
+1H007-2G353-M8TJC-0822M-38FL1	Tower
+1H007-6GJD3-08JJC-0922K-A4611	ASUS
+
+mac:
+christopher.trimmer@gdit.com
+W!W!
+
+VM:
+username: Christopher Trimmer
+christophertrimmer
+waterfall shift qw
+
+
+
+https://media.tenor.co/videos/904523fa8f69a3ca992093f4f02fdac4/mp4
+
+
+
+
+Do you have any hobbies?
+	programming, learning, exercising, gaming	
+Favorite Type of food?
+	My favorite food is pretty much anything with eggs (omeletes, egg-salad sandwiches, etc...).
+	Sushi.
+	Mostly soft type food (soft tacos, soup, etc). 
+Any dietary concerns?
+	I have to be careful of food I eat due to diabetes.
+	I have to eat non-dairy food.
+Do you have any family (spouse, children, etc.)?
+	I have a 16-year old daughter, and her name is Trinity.  She is very excited at the amount of colleges that are interested in her.  She lives with her Mother.
+How would you describe your personality?
+	I love to learn and work with people.  I feel that going to work should be exciting and fun, while also accomplishing tasks and exceeding expectations.
+	I tend to be a workaholic, especially when in a position I really love.
+	I meant to ask... do we get overtime? :)
+What motivates you?
+	Writing code and learning.  (Sorry I'm kind of a nerd...ha!)
+	Learning new technologies and programming languages.
+	Working on difficult projects.
+	Being able to study and learn my craft is a big motivator for me.
+Do you currently have a mortgage or rent?
+	I currently rent an apartment.
+What is your current address?
+	14 S. East Street 
+	Unit 2
+	Carlisle, PA 17013
+Do you have a laptop to use for training or would you like us to supply you with one?
+	I have a laptop with Win10.
+	I have installed VMWare Workstation Pro, and I have Ubuntu VM that I use for studying Big Data w/Hadoop and various programming languages.
+	The laptop meets all the hardware specs.
+
 
 
 

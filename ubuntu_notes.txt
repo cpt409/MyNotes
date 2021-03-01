@@ -5,6 +5,39 @@ chris
 
 ctrl + alt + t = terminal window
 
+
+sudo dpkg-reconfigure -plow unattended-upgrades
+<yes> <no>
+sudo dpkg --configure -a
+sudo apt update && sudo apt -f install && sudo apt full-upgrade
+
+
+java -version
+sudo apt-get update
+sudo apt-get install default-jdk
+sudo apt-get install scala
+scala
+println("Hello World")
+:q
+sudo apt-get install git
+https://spark.apache.org/downloads.html
+
+tar xvf spark-2.0.2-bin-hadoop2.7.tgz
+cd ....tgz
+cd bin
+./spark-shell
+println("spark shell is running")
+spark-shell (just use spark)
+
+http://localhost:4040  <--- spark
+
+which javac
+readlink -f /usr/bin/javac
+/usr/lib/jvm/java...
+
+
+
+
 location of xampp install
 /opt/lampp/htdocs/
 

@@ -43,7 +43,17 @@ git remote -v to verify
 git remote add upstream remote https url) to create the upstream link
 git remote -v
 
+
 git fetch upstream will update your local copy from DOL
+use this after you have added upstream (see above)
+
+origin is your gitlab version
+upstream is your link to scribble
+
+
+If you just clone from scribble, then:
+git pull origin 
+
 
 if you don't want to overwrite your local changes you merge the brance you want:
 
@@ -53,3 +63,9 @@ if you want to update your github copy, then:
 git push origin master
 
 ///////////////////////////
+
+
+
+
+
+

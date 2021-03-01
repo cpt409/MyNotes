@@ -1,0 +1,888 @@
+
+algorithm palindrome is input: 
+string phrase output: true/false 
+result let length = phrase.length 
+let c = 0 
+while (c <= length/2) 
+if (phrase[c] != phrase[length - 1 - c]) 
+	return false 
+c = c + 1
+return true
+
+
+algorithm removeDuplicates is input:
+LinkedListNode head output: none 
+let current = head 
+let runner = null 
+while (current != null) 
+	runner = current 
+	
+	while (runner.next != null) 
+		if runner.next.data = current.data 
+			runner.next = runner.next.next; 
+		else runner = runner.next 
+	current = current.next
+
+
+
+
+
+
+
+OOP
+First Slide
+Class		template used to instantiante an object
+			determines the states and behaviors of an object
+			define object types and methods
+			blueprint to create an individual object
+			does not consume space
+			sealed = cannot be inherited from;
+						can also be used on methods/properties to override virtual
+						this is to allow a class to be derived from, and prevent
+						them from overriding specific functions
+			static = belongs to the type itself, rather than to a specific object
+				only one copy of the instance
+				if applied to a class, then all members of the class must be static
+				
+
+Object		an instance of a class in memory
+			an entity that has state and behavior
+			contains an address and takes up space in memory
+
+Constructor	special type of method used to initialize the object
+			have no return type
+
+Method		must have a return type (void, etc...)
+
+Reference	variable that stores the pointer to an object in memory
+
+Type		determines what types of objects a reference variable can stores
+			when a class is used as a ref, the ref can only invoke behaviors of the object
+
+Animal someVar = new Animal()
+
+Animal = the class/type of the ref variable
+someVar = name of the ref. does not contain an Animal object; it contains a ref that points to it in memory.
+new Animal() = instantiation of an object (not the object itself).  You never access the object directly.
+
+-----------
+
+Inheritance = is-an relationship
+Creating relationships between objects
+Write code that applies to families or collections of related objects
+Write less code by writing more generic code
+Separating code into re-usable objects
+allows for generic code
+code reusability
+
+Three types in Java:
+single, multilevel, hierarchical
+
+C# adds multiple, hybrid inheritance
+
+Java:
+class Automobile {}
+class Sedan extends Automobile {}
+
+C#:
+class Automobile {}
+class Sedan : Automobile {}
+
+
+Composition = has-a relationship
+aka Aggregation
+Use Composition to refer to when an object can only exist within the main object
+If a dog object for example exists outside owner objects, then it is aggregation
+
+-----------
+
+Polymorphism = "many forms"
+ability for code structures to be treated differently at runtime.
+
+casting = the process of storing a reference to an object in memory inside a reference variable of a type diffent than the object itself.
+
+upcast = store a reference to an object in a base-class reference variable.  Makes it more specific.
+Automobile car = new Sedan()
+
+downcast = take a previously upcasted reference, and store that reference in a variable that is a type closer to that of the actual object being referenced:
+Automobile car = new Sedan()
+Sedan otherCar = (Sedan) car;
+
+You can never downcast past the actual type of object in memory:
+Animal firstRef = new Dog()		// actual object is a dog, being upcast to an animal
+Dog secondRef = (Dog)firstRef()	// dog object being downcast back to a dog
+Labrador thirdRef = (Labrador)secondRef // error, a dog object is not a labrador object
+
+Method Polymorphism:
+Override = method has same signature, but different body
+		also called runtime polymorphism
+
+Overload = same name, but different signature.
+		also called compile-time polymorphism.
+		example of compile time polymorphism
+		
+-----------
+
+Abstraction and Encapsulation
+Abstraction = using simple things to represent complex things
+			aka data hiding -> don't need to know internal workings,
+								just need to know what it does, inputs, outputs
+			hiding implementation; showing only functionality
+			focus on what the object does, not how it does it
+								
+Encapsulation = restricting access to your abstracted code (public, private, protected)
+		wrapping code and data together into a single unit
+		can make class read-only/write-only using properties
+Other ways:
+		Prevent class from being instantiated by declaring it "abstract"
+		prevent class from being derived/extended/inherited
+		create private class nested inside another class to prevent used
+		using namespaces, assemblies, or packages to separate unrelated classes
+		
+Access Modifiers:
+Access:
+	private, default, protected, public
+	
+Non-Access:
+	static, abstract, synchronized, native, volatile, transient
+	
+Generalization (superclass):
+	extracting shared characteristics from two or more classes,
+	and combining them into a generalized superclass
+		
+Specialization (derived class):
+	creating new subclasses from an existing class
+		
+-----------
+
+
+C# Data Types
+The variables in C#, are categorized into the following types:
+
+Value types
+Reference types
+Pointer types
+Value Type
+Value type variables can be assigned a value directly. They are derived from the class System.ValueType.
+
+The value types directly contain data. Some examples are int, char, and float, which stores numbers, alphabets, and floating point numbers, respectively. When you declare an int type, the system allocates memory to store the value.
+
+The following table lists the available value types in C#:
+
+Type	Represents	Range	Default Value
+bool	Boolean value	True or False	False
+byte	8-bit unsigned integer	0 to 255	0
+char	16-bit Unicode character	U +0000 to U +ffff	'\0'
+decimal	128-bit precise decimal values with 28-29 significant digits	(-7.9 x 1028 to 7.9 x 1028) / 100 to 28	0.0M
+double	64-bit double-precision floating point type	(+/-)5.0 x 10-324 to (+/-)1.7 x 10308	0.0D
+float	32-bit single-precision floating point type	-3.4 x 1038 to + 3.4 x 1038	0.0F
+int	32-bit signed integer type	-2,147,483,648 to 2,147,483,647	0
+long	64-bit signed integer type	-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807	0L
+sbyte	8-bit signed integer type	-128 to 127	0
+short	16-bit signed integer type	-32,768 to 32,767	0
+uint	32-bit unsigned integer type	0 to 4,294,967,295	0
+ulong	64-bit unsigned integer type	0 to 18,446,744,073,709,551,615	0
+ushort	16-bit unsigned integer type	0 to 65,535	0
+To get the exact size of a type or a variable on a particular platform, you can use the sizeof method. The expression sizeof(type) yields the storage size of the object or type in bytes. Following is an example to get the size of int type on any machine:
+
+using System;
+namespace DataTypeApplication
+{
+   class Program 
+   {
+      static void Main(string[] args)
+      {
+         Console.WriteLine("Size of int: {0}", sizeof(int));
+         Console.ReadLine();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+Size of int: 4
+
+Reference Type
+Reference types do not contain the actual data stored in a variable, but they contain a reference to the variables.
+
+In other words, they refer to a memory location. Using multiple variables, the reference types can refer to a memory location. If the data in the memory location is changed by one of the variables, the other variable automatically reflects this change in value. Example of built-in reference types are: object, dynamic, and string.
+
+Object Type
+The Object Type is the ultimate base class for all data types in C# Common Type System (CTS). Object is an alias for the System.Object class. The object types can be assigned values of any other types, value types, reference types, predefined or user-defined types. However, before assigning values, it needs type conversion.
+
+When a value type is converted to object type, it is called boxing and on the other hand, when an object type is converted to a value type, it is called unboxing.
+
+object obj;
+obj = 100; // this is boxing
+Dynamic Type
+You can store any type of value in the dynamic data type variable. Type checking for these types of variables takes place at run-time.
+
+Syntax for declaring a dynamic type is:
+
+dynamic <variable_name> = value;
+For example,
+
+dynamic d = 20;
+Dynamic types are similar to object types except that type checking for object type variables takes place at compile time, whereas type checking for dynamic type variables takes place at run time.
+
+String Type
+The String Type allows you to assign any string values to a variable. The string type is an alias for the System.String class. It is derived from object type. The value for a string type can be assigned using string literals in two forms: quoted and @quoted.
+
+For example,
+
+String str = "Tutorials Point";
+A @quoted string literal looks as follows:
+
+@"Tutorials Point";
+The user-defined reference types are: class, interface, or delegate. We will discuss these types in later chapters.
+
+
+Pointer Type
+Pointer type variables store the memory address of another type. Pointers in C# have the same capabilities as pointers in C or C++.
+
+Syntax for declaring a pointer type is:
+
+type* identifier;
+For example,
+
+char* cptr;
+int* iptr;
+We will discuss pointer types in the chapter 'Unsafe Codes'.
+
+
+--------------
+
+
+Interfaces:
+interface defines the "what" part of the contract
+deriving class defines the "how" part of the contract
+can only define properties, methods, events
+contain only the declarations
+cannot be instantiated, only derived and implemented
+a class can implement several interfaces
+since the methods do not provide implementation, that are not considered inheritance
+all members and properties are automatically public
+
+Abstract classes:
+cannot be instantiated, only inherited.
+contain methods that are abstract / have no implementation
+derived class forced to implement them
+can contain concrete methods and abstract methods, or no abstract methods at all
+an interface contains only methdos that must be implemented
+
+use an abstract class when you want to represent a concept with default behaviors, or preset properties
+use interface when you want to guarantee that an object will be able to do certain things
+
+loose difference:
+abstract class = noun
+interface = verb
+
+
+----------------
+
+Exceptions:
+
+try		identifies block of code where exceptions may occur
+catch	
+finally		execute block of code whether an exception is thrown or not
+throw		throw an exception when a problem shows up
+
+Exception Class	Description
+System.IO.IOException	Handles I/O errors.
+System.IndexOutOfRangeException	Handles errors generated when a method refers to an array index out of range.
+System.ArrayTypeMismatchException	Handles errors generated when type is mismatched with the array type.
+System.NullReferenceException	Handles errors generated from deferencing a null object.
+System.DivideByZeroException	Handles errors generated from dividing a dividend with zero.
+System.InvalidCastException	Handles errors generated during typecasting.
+System.OutOfMemoryException	Handles errors generated from insufficient free memory.
+System.StackOverflowException	Handles errors generated from stack overflow.
+
+
+-----------------
+
+
+Unsafe = i.e., pointers
+C# allows using pointer variables in a function of code block when it is marked by the unsafe modifier. The unsafe code or the unmanaged code is a code block that uses a pointer variable.
+
+Pointers
+A pointer is a variable whose value is the address of another variable i.e., the direct address of the memory location. Similar to any variable or constant, you must declare a pointer before you can use it to store any variable address.
+
+The general form of a pointer declaration is:
+
+type *var-name;
+Following are valid pointer declarations:
+
+int    *ip;    /* pointer to an integer */
+double *dp;    /* pointer to a double */
+float  *fp;    /* pointer to a float */
+char   *ch     /* pointer to a character */
+The following example illustrates use of pointers in C#, using the unsafe modifier:
+
+using System;
+namespace UnsafeCodeApplication
+{
+   class Program
+   {
+      static unsafe void Main(string[] args)
+      {
+         int var = 20;
+         int* p = &var;
+         Console.WriteLine("Data is: {0} ",  var);
+         Console.WriteLine("Address is: {0}",  (int)p);
+         Console.ReadKey();
+      }
+   }
+}
+When the above code wass compiled and executed, it produces the following result:
+
+Data is: 20
+Address is: 99215364
+Instead of declaring an entire method as unsafe, you can also declare a part of the code as unsafe. The example in the following section shows this.
+
+
+Retrieving the Data Value Using a Pointer
+You can retrieve the data stored at the located referenced by the pointer variable, using the ToString() method. The following example demonstrates this:
+
+using System;
+namespace UnsafeCodeApplication
+{
+   class Program
+   {
+      public static void Main()
+      {
+         unsafe
+         {
+            int var = 20;
+            int* p = &var;
+            Console.WriteLine("Data is: {0} " , var);
+            Console.WriteLine("Data is: {0} " , p->ToString());
+            Console.WriteLine("Address is: {0} " , (int)p);
+         }
+         
+         Console.ReadKey();
+      }
+   }
+}
+When the above code was compiled and executed, it produces the following result:
+
+Data is: 20
+Data is: 20
+Address is: 77128984
+
+Passing Pointers as Parameters to Methods
+You can pass a pointer variable to a method as parameter. The following example illustrates this:
+
+using System;
+namespace UnsafeCodeApplication
+{
+   class TestPointer
+   {
+      public unsafe void swap(int* p, int *q)
+      {
+         int temp = *p;
+         *p = *q;
+         *q = temp;
+      }
+      
+      public unsafe static void Main()
+      {
+         TestPointer p = new TestPointer();
+         int var1 = 10;
+         int var2 = 20;
+         int* x = &var1;
+         int* y = &var2;
+         
+         Console.WriteLine("Before Swap: var1:{0}, var2: {1}", var1, var2);
+         p.swap(x, y);
+
+         Console.WriteLine("After Swap: var1:{0}, var2: {1}", var1, var2);
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+Before Swap: var1: 10, var2: 20
+After Swap: var1: 20, var2: 10
+
+Accessing Array Elements Using a Pointer
+In C#, an array name and a pointer to a data type same as the array data, are not the same variable type. For example, int *p and int[] p, are not same type. You can increment the pointer variable p because it is not fixed in memory but an array address is fixed in memory, and you can't increment that.
+
+Therefore, if you need to access an array data using a pointer variable, as we traditionally do in C, or C++, you need to fix the pointer using the fixed keyword.
+
+The following example demonstrates this:
+
+using System;
+namespace UnsafeCodeApplication
+{
+   class TestPointer
+   {
+      public unsafe static void Main()
+      {
+         int[]  list = {10, 100, 200};
+         fixed(int *ptr = list)
+         
+         /* let us have array address in pointer */
+         for ( int i = 0; i < 3; i++)
+         {
+            Console.WriteLine("Address of list[{0}]={1}",i,(int)(ptr + i));
+            Console.WriteLine("Value of list[{0}]={1}", i, *(ptr + i));
+         }
+         
+         Console.ReadKey();
+      }
+   }
+}
+When the above code was compiled and executed, it produces the following result:
+
+Address of list[0] = 31627168
+Value of list[0] = 10
+Address of list[1] = 31627172
+Value of list[1] = 100
+Address of list[2] = 31627176
+Value of list[2] = 200
+
+Compiling Unsafe Code
+For compiling unsafe code, you have to specify the /unsafe command-line switch with the command-line compiler.
+
+For example, to compile a program named prog1.cs containing unsafe code from command line, use the command:
+
+csc /unsafe prog1.cs
+If you are using Visual Studio IDE then you need to enable use of unsafe code in the project properties.
+
+To do this:
+
+Open Project Properties by double clicking the Properties node in the Solution Explorer.
+
+Click on the Build tab.
+
+Select the option "Allow unsafe codes".
+
+-------------
+
+String
+
+	Properties	chars, length
+	
+	Compare (static):
+	String.Compare(str1, str2) == 0 ... use for equality
+
+	Contains (returns bool):
+	string newStr = "this is a test";...
+	if (newStr.Contains("test");...
+	
+	Substring (returns the new string):
+	string sub = newStr.Substring(23);
+	
+	Join (static)
+	String.Join("\n", newStr);
+	
+
+-------------
+
+Delegates
+C# delegates are similar to pointers to functions in C or C++. A delegate is a reference type variable that holds the reference to a method. The reference can be changed at runtime.
+
+Delegates are especially used for implementing events and the call-back methods. All delegates are implicitly derived from the System.Delegate class.
+
+Declaring Delegates
+Delegate declaration determines the methods that can be referenced by the delegate. A delegate can refer to a method which has the same signature as that of the delegate.
+
+For example, consider a delegate:
+
+public delegate int MyDelegate (string s);
+The preceding delegate can be used to reference any method that has a single string parameter and returns an int type variable.
+
+Syntax for delegate declaration is:
+
+delegate <return type> <delegate-name> <parameter list>
+
+Instantiating Delegates
+Once a delegate type is declared, a delegate object must be created with the new keyword and be associated with a particular method. When creating a delegate, the argument passed to the new expression is written similar to a method call, but without the arguments to the method. For example:
+
+public delegate void printString(string s);
+...
+printString ps1 = new printString(WriteToScreen);
+printString ps2 = new printString(WriteToFile);
+Following example demonstrates declaration, instantiation, and use of a delegate that can be used to reference methods that take an integer parameter and returns an integer value.
+
+using System;
+
+delegate int NumberChanger(int n);
+namespace DelegateAppl
+{
+   class TestDelegate
+   {
+      static int num = 10;
+      public static int AddNum(int p)
+      {
+         num += p;
+         return num;
+      }
+
+      public static int MultNum(int q)
+      {
+         num *= q;
+         return num;
+      }
+      public static int getNum()
+      {
+         return num;
+      }
+
+      static void Main(string[] args)
+      {
+         //create delegate instances
+         NumberChanger nc1 = new NumberChanger(AddNum);
+         NumberChanger nc2 = new NumberChanger(MultNum);
+         
+         //calling the methods using the delegate objects
+         nc1(25);
+         Console.WriteLine("Value of Num: {0}", getNum());
+         nc2(5);
+         Console.WriteLine("Value of Num: {0}", getNum());
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+Value of Num: 35
+Value of Num: 175
+
+Multicasting of a Delegate
+Delegate objects can be composed using the "+" operator. A composed delegate calls the two delegates it was composed from. Only delegates of the same type can be composed. The "-" operator can be used to remove a component delegate from a composed delegate.
+
+Using this property of delegates you can create an invocation list of methods that will be called when a delegate is invoked. This is called multicasting of a delegate. The following program demonstrates multicasting of a delegate:
+
+using System;
+
+delegate int NumberChanger(int n);
+namespace DelegateAppl
+{
+   class TestDelegate
+   {
+      static int num = 10;
+      public static int AddNum(int p)
+      {
+         num += p;
+         return num;
+      }
+
+      public static int MultNum(int q)
+      {
+         num *= q;
+         return num;
+      }
+      
+      public static int getNum()
+      {
+         return num;
+      }
+
+      static void Main(string[] args)
+      {
+         //create delegate instances
+         NumberChanger nc;
+         NumberChanger nc1 = new NumberChanger(AddNum);
+         NumberChanger nc2 = new NumberChanger(MultNum);
+         nc = nc1;
+         nc += nc2;
+         
+         //calling multicast
+         nc(5);
+         Console.WriteLine("Value of Num: {0}", getNum());
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+Value of Num: 75
+
+Using Delegates
+The following example demonstrates the use of delegates. The delegate printString can be used to reference a method that takes a string as input and returns nothing.
+
+We use this delegate to call two methods, the first prints the string to the console, and the second one prints it to a file:
+
+using System;
+using System.IO;
+
+namespace DelegateAppl
+{
+   class PrintString
+   {
+      static FileStream fs;
+      static StreamWriter sw;
+      
+      // delegate declaration
+      public delegate void printString(string s);
+
+      // this method prints to the console
+      public static void WriteToScreen(string str)
+      {
+         Console.WriteLine("The String is: {0}", str);
+      }
+      
+      //this method prints to a file
+      public static void WriteToFile(string s)
+      {
+         fs = new FileStream("c:\\message.txt",
+         FileMode.Append, FileAccess.Write);
+         sw = new StreamWriter(fs);
+         sw.WriteLine(s);
+         sw.Flush();
+         sw.Close();
+         fs.Close();
+      }
+      
+      // this method takes the delegate as parameter and uses it to
+      // call the methods as required
+      public static void sendString(printString ps)
+      {
+         ps("Hello World");
+      }
+      static void Main(string[] args)
+      {
+         printString ps1 = new printString(WriteToScreen);
+         printString ps2 = new printString(WriteToFile);
+         sendString(ps1);
+         sendString(ps2);
+         Console.ReadKey();
+      }
+   }
+}
+When the above code is compiled and executed, it produces the following result:
+
+The String is: Hello World
+
+------------
+
+DDL = Define/Create new data structures (Create, Alter, Drop) 
+DML = Modify existing data (Select, Insert, Update, Delete) ...CRUD
+DCL = Manage access to the database (Grant/Revoke)
+TCL = Savepoint, Rollback, Commit
+
+Group by = used with aggregate functions (sum(salary), count(population), etc)
+
+subquery = query within a query; inner query; nested query
+select col1, col2
+	from (select col1, col2
+			from table);
+			
+select * from cities
+	where population =
+		(select min(population)
+			from cities);
+
+To understand it: start with inner query -> it is getting a single value, the record
+											with the lowest population, and returning
+											that value to the outer query
+											If two records have same value, then both
+											records will be returned.
+											
+Scalar = returning a single value from a query.
+
+Transactions:
+commit		save changes
+rollback	undo changes
+savepoint	points within groups of transactions at which to rollback
+set transaction		specify characteristics of transactions
+
+Properties of Transactions:
+Atomicity	ensures all transactions are completed successfully, otherwise entire
+			transaction is aborted and rolled back.
+Consistency		ensures database properly changes states upon a successfully committed
+				transaction upholding any constraints.
+Isolation		enables transactions to operate independently of and transparent
+				of each other.
+Durability		ensures that the result or effect of a committed transaction persists
+				in case of a system failure.
+				
+				
+commands:
+Release Savepoint	remove a savepoint you may have created
+Set Transaction		specify characteristics of transactions.
+					make a transaction Read/Write or Read Only.				
+
+
+------------
+
+
+Phases of SDLC
+Investigation
+System Analysis
+Design
+Testing
+Operations and Maintenance
+
+
+
+-----------------
+
+HTML
+	&nbsp	non-breaking space to specify that words should not be
+			separate on different lines.
+			
+Tags	used to format and render content
+		<Tag Name> can be self closing, like <img>, <br />, <hr />
+		<!DOCTYPE html>
+		<html>
+			<head>
+				<title></title>
+			</head>
+			<body>
+				<h1></h1>
+				<p></p>
+				<img src="img_chania.jpg" alt="Flowers in Chania">
+			</body>
+		</html>
+		
+		img is a self-closing tag
+		src is attribute
+		
+
+Elements	these are what the tags are associated with.
+			<p>, <h1>, etc...
+			<img>, <hr />, <br />
+			
+			Root element is <!DOCTYPE>
+				<html> is descendant
+					all other elements are descendant...
+					
+			Tags compose elements
+			For example: <p> is a starting tag, </p> is a closing tag
+			<p>This is a paragraph</p> is a paragraph element.
+			
+Attributes	define the characteristics of an HTML element
+			placed inside the opening tag
+			made of two parts: name, value
+			name is the property you want to set
+			value is what you want the value of the property to be
+			<p align="left">Left Align</p>
+			
+			Core Attributes:
+			id		used to uniquely identify an element (i.e., give name to a paragraph)
+			title	often displayed as a tooltip when mouse hovers over element
+			class	to associate element with a class of styles from stylesheet
+			style	apply CSS rules directly within the element
+			
+			
+-----------------
+
+CSS		handles look and feel part of a webpage
+		can be added:
+			inline	using style attribute in html elements
+			<h1 style="color:blue;">This is blue</h1>
+			
+			internal	using <style> elements in the <head> section
+						define style for html page
+						
+			external	by using an external css file
+						defines for many html pages
+						
+
+Style Rules are made of three parts:
+	Selector	identifies which elements a style will be applied to
+	Property	the specific attribute to change (color, border, width, etc)
+	Value		specify what the property is set to
+	
+	selector { property: value }
+	table { border: 1px solid #C00; }
+	
+	Element Selectors	apply style to all elements of same type
+						to apply style to all h1's:
+						h1 { color: #36CFFF; }
+
+	Universal Selector	matches all elemeents on the page
+						* { color: #36CFFF }
+						
+	Descendant Selector		only apply style to element that lies inside of another:
+						ul li { color: #000000; }
+						
+	Class Selectors		apply style based on class attribute.
+						great way to apply a style to multiple elements.
+						.black { color: #000000; }
+						
+						<p class="center bold">
+							This paragraph will be style with classes center and bold.
+						</p>
+						
+	ID selectors		style based on the id of an element
+						#black { color: #000000 } for all elements tha have id set to black
+						
+						h1#black { color: #000000} for only h1 elements that have id set to black
+						
+	To pair selectors:	#black h2 { color: #000000 } all level 2 headings will have a color of black if those headings lie within tags that their id attribute set to black
+	
+	Child Selectors		body > p { color: #000000 }
+	
+	Attribute Selectors		input[type="text"] { color: #000000 }
+	
+	Grouping Selectors		h1, h2, h3 {
+										color: #36c;
+										font-weight: normal;
+										letter-spacing: .4em;
+										margin-bottom: 1em;
+										text-transform: lowercase;
+										}
+							Above will apply specified styles to h1, h2, h3
+	
+-------------
+
+Namespace		keep set of names separate from another
+
+-------------
+
+Interfaces:
+syntactical contract that all classes inheriting the interface should follow
+the interface defines the what, the derived class defines the how
+can define properties, methods, and events
+
+-------------
+
+Collections:
+		specialized classes for data storage and retrieval
+
+		ArrayList	ordered collection.
+					can be indexed.
+					alternative to an array.
+					can resize itself
+
+			Arrays		basic. not a collection class.
+						continguous memory
+						fixed-size, sequential
+						reference type, so must be initialized with new
+			
+		HashTable	collection of Key-Value-Pairs
+					access elements using key, and key value
+					
+		Stack		LIFO
+					adding = push, remove = pop
+		
+		Queue		FIFO
+					adding = enqueue, remove = deque
+					
+-------------
+
+SQL
+	DDL	data definition language	(create, alter, drop)
+	DML 							(select, insert, update, delete)
+	DCL	data control language		(grant, revoke)
+	TCL transaction control			(savepoint, rollback, commit)
+	
+-------------
+
+
+JavaScript
+
+declare variables		var x, y;
+strings					'one quote', or "double quote"
+
+==		does type conversion before doing the equality conversion
+===		tests for strict equality; i.e., if the two values are not same type, 
+		it will be false result
+
+
+
+
+

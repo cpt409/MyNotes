@@ -1,0 +1,609 @@
+
+ubuntu_eit
+name = Chris
+comp name = cneit
+username = ceit
+pw = !@QWASZX
+root pw = !@QWASZX
+
+sudo apt update (will only show packages that need update)
+sudo apt upgrade (actually installs the updates)
+
+-- create root account:
+to run a window as super user (su)
+sudo -i, or sudo su
+command prompt changes from $ to #
+
+to set password:
+sudo passwd root
+
+to disable root pwd:
+sudo passwd -l root
+
+-- add a user:
+sudo adduser <username>
+verify:
+cat /etc/passwd   
+or
+grep '^<username>' /etc/passwd
+
+-- add a user to sudo access:
+sudo usermod -aG sudo <username>
+
+-- add user group:
+sudo addgroup hadoop
+sudo adduser --ingroup hadoop hdoop
+
+-- install notepad++
+sudo snap install notepad-plus-plus
+
+
+
+////////////////////   JAVA  ////////////////////////////
+
+type java -version first to see what is listed
+check openjdk website to see what latest version is...
+
+sudo apt install openjdk-14-jdk -y
+sudo apt install openjdk-14-jre -y
+
+...or
+sudo apt install default-jdk
+sudo apt install default-jre
+
+to set which java is default:
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+
+which javac
+readlink -f /usr/bin/javac
+this shows the path:
+/usr/lib/jvm/java-14-openjdk-amd64/bin/java
+/usr/lib/jvm/java-14-openjdk-amd64/bin/javac
+
+modify .bashrc file:
+export JAVA_HOME=/usr/lib/jvm/java-14-openjdk-amd64
+export PATH=$PATH:$JAVA_HOME/bin 
+
+source ~/.bashrc
+
+now test:
+echo $JAVA_HOME
+echo $PATH
+
+use gedit or nano to create a hello.java file
+class hello{
+	public static void main(String args[]){
+		System.out.println("Hello World");
+	}
+}
+
+javac hello.java
+java hello
+
+
+////////////////////   HADOOP  ////////////////////////////
+
+1) set up user SSH and user acct
+install ssh server:
+sudo apt-get install openssh-server openssh-client -y
+
+check if ssh service is running:
+sudo systemctl status sshd
+
+verify if ssh is listening on port 22:
+sudo apt-get install net-tools
+netstat -tulpn | grep 22^
+
+to enable SSH through firewall:
+sudo ufw status
+sudo ufw allow ssh
+
+ssh is for client
+sshd is for server
+
+disable ssh server:
+sudo systemctl stop sshd
+
+service ssh start/stop
+
+check to see if ssh starts at system boot:
+sudo systemctl list-unit-files | grep enabled | grep ssh
+if ssh is not listed:
+sudo systemctl enable ssh
+
+
+2) create hdoop user:
+sudo adduser hdoop
+(should get output, and create passwd, and user info)
+
+login to user acct:
+su - hdoop (use the dash)
+
+the -P '', means to not use a password for the key, this is so you don't have type the password everything hadoop accesses a node:
+create keys so user can ssh:
+doop2@chris-eit:~$ ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+Generating public/private rsa key pair.
+Created directory '/home/hdoop2/.ssh'.
+Your identification has been saved in /home/hdoop2/.ssh/id_rsa
+Your public key has been saved in /home/hdoop2/.ssh/id_rsa.pub
+
+cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+chmod 0600 ~/.ssh/authorized_keys
+
+ssh localhost
+
+
+3) download/install hadoop:
+download from:  https://hadoop.apache.org
+
+wget https://apache.claz.org/hadoop/common/hadoop-3.2.2/hadoop-3.2.2.tar.gz
+
+tar xzf hadoop-3.2.2.tar.gz
+
+mv hadoop-3.2.2/* hadoop/
+
+remove files/folders:  rm -r -f /path
+
+
+---- Standalone Mode:
+modify .bashrc file:
+export HADOOP_HOME=/home/hdoop2/hadoop
+export HADOOP_INSTALL=$HADOOP_HOME
+export HADOOP_MAPRED_HOME=$HADOOP_HOME
+export HADOOP_COMMON_HOME=$HADOOP_HOME
+export HADOOP_HDFS_HOME=$HADOOP_HOME
+export YARN_HOME=$HADOOP_HOME
+export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
+export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin
+export HADOOP_OPTS="-Djava.library.path=$HADOOP_HOME/lib/native"
+
+source ~/.bashrc
+
+make sure hadoop is working:
+hadoop version
+
+check Mapreduce jar file:
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.2.jar
+
+hadoop jar /home/hdoop2/hadoop/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.2.2.jar wordcount  hadoop_testing output 
+
+cat output/*
+
+
+
+---- Pseudo Distributed Mode
+make sure all of those variables at the top are in .bashrc file
+
+	edit hadoop-env.sh file:
+nano $HADOOP_HOME/etc/hadoop/hadoop-env.sh
+
+uncomment the #JAVA_HOME variable
+add full path that point to the openJDK install
+which javac
+readlink -f /usr/bin/javac
+export JAVA_HOME=/usr/lib/jvm/java-14-openjdk-amd64
+
+	-- edit core-site.xml file in same directory:
+<configuration>
+	<property>
+	  <name>hadoop.tmp.dir</name>
+	  <value>/home/hdoop2/tmpdata</value>
+	</property>	
+   <property>
+      <name>fs.default.name</name>
+      <value>hdfs://localhost:9000</value> 
+   </property>
+</configuration>
+
+create a directory in /home/hdoop2/tmpdata
+
+	
+	-- edit hdfs-site.xml file:
+<configuration>
+        <property>
+                <name>dfs.replication</name>
+                <value>1</value>
+        </property>
+        <property>
+                <name>dfs.name.dir</name>
+                <value>/home/hdoop2/dfsdata/namenode</val>
+        </property>
+        <property>
+                <name>dfs.data.dir</name>
+                <value>/home/hdoop2/dfsdata/datanode</val>
+        </property>
+</configuration>
+
+
+	edit yarn-site.xml
+<configuration>
+   <property>
+      <name>yarn.nodemanager.aux-services</name>
+      <value>mapreduce_shuffle</value> 
+   </property>
+</configuration>
+
+... use this one ....
+<configuration>
+	<property>
+	  <name>yarn.nodemanager.aux-services</name>
+	  <value>mapreduce_shuffle</value>
+	</property>
+	<property>
+	  <name>yarn.nodemanager.aux-services.mapreduce.shuffle.class</name>
+	  <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+	</property>
+	<property>
+	  <name>yarn.resourcemanager.hostname</name>
+	  <value>127.0.0.1</value>
+	</property>
+	<property>
+	  <name>yarn.acl.enable</name>
+	  <value>0</value>
+	</property>
+	<property>
+	  <name>yarn.nodemanager.env-whitelist</name>   	  <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PERPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
+	</property>
+</configuration>
+
+
+	edit mapred-site.xml
+$ cp mapred-site.xml.template mapred-site.xml   <--- template file not there
+
+now edit mapred-site.xml:
+<configuration>
+   <property> 
+      <name>mapreduce.framework.name</name>
+      <value>yarn</value>
+   </property>
+</configuration>
+
+
+Start HADOOP
+-- on first run, you have to format the hdfs:
+hdfs namenode -format
+then:
+./start-dfs.sh (or try without the ./)
+then:
+start-yarn.sh
+jps <---- verifies the processes are running (should be 6 total)
+	DataNode
+	SecondaryNameNode
+	NameNode
+	NodeManager
+	ResourceManager
+	Jps
+
+Access from Browsers:
+http://localhost:9870	default for hadoop namenode ui
+http://localhost:9864	default for datanodes
+http://localhost:8088	default for YARN resource manager
+http://localhost:19888	check Mapreduce jobhistory server  //didn't work
+
+
+Shutdown all Hadoop services:
+stop-all.sh
+
+/////////////////////////////////////////////////////////////////
+
+Basic Mapreduce exercise:
+
+this will show list of mapreduce examples:
+hdoop/hadoop/share/hadoop/mappreduce/hadoop-mapreduce/hadoop-mapreduce-examples-3.2.2.jar
+hadoop jar $HADOOP_HOME/...mapreduce/hadoop-mapreduce-examples-3.2.2.jar
+
+
+make sure .sh is started...
+
+-- Inserting data into HDFS:
+$HADOOP_HOME/bin/hadoop fs -mkdir /user
+$HADOOP_HOME/bin/hadoop fs -mkdir /input
+hadoop dfs -copyFromLocal /home/hdoop/input/* /user/input
+$HADOOP_HOME/bin/hadoop fs -ls /user/input
+
+use the -copyFromLocal instead...
+$HADOOP_HOME/bin/hadoop fs -put /home/hdoop/input/* /user/input
+
+if you get permission denied on the normal folder, change permissions on folder:
+sudo chmod -R o+rw /home/hdoop/input2
+
+WordCount:
+run this command from the mapreduce folder: 
+cd $HADOOP_HOME/share/hadoop/mappreduce
+hadoop jar hadoop-mapreduce-examples-3.2.2.jar wordcount /user/input output
+
+the folders are in HDFS (won't see them with normal ls)
+also, /user/input is its own directory (not sub dir of bin or anything else)
+also, the output directory is in root HDFS folder
+HDFS is it's own separate filesystem
+
+to view output folder:
+hadoop fs -ls output
+you want to read the part-r-00000 file
+hadoop fs -cat output/part-r-00000
+
+to get file to normal directory:
+hadoop fs -get output/ /home/hdoop/   <--- this will copy the output folder, so don't need to create one here
+
+/////////////////
+
+Python mapreducer:
+
+
+
+
+
+./bin/hadoop jar contrib/streaming/hadoop-streaming-1.2.1.jar -input myinput -output myoutput -mapper /home/expert/hadoop-1.2.1/mapper.py -reducer /home/expert/hadoop-1.2.1/reducer.py
+
+hduser@ubuntu:/usr/local/hadoop$ 
+bin/hadoop jar contrib/streaming/hadoop-*streaming*.jar \
+-file /home/hduser/mapper.py    -mapper /home/hduser/mapper.py \
+-file /home/hduser/reducer.py   -reducer /home/hduser/reducer.py \
+-input /user/hduser/gutenberg/* -output /user/hduser/gutenberg-output
+
+./bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.2.jar \
+-files /home/hdoop2/mapper.py -mapper /home/hdoop2/mapper.py \
+-files /home/hdoop2/reducer.py -reducer /home/hdoop2/reducer.py \
+-input /home/hdoop2/textfiles/* -output /user/gutenberg-output
+
+./bin/hadoop jar $HADOOP_HOME/share/hadoop/tools/lib/hadoop-streaming-3.2.2.jar \
+-file /home/hdoop2/mapper.py -mapper /home/hdoop2/mapper.py \
+-file /home/hdoop2/reducer.py -reducer /home/hdoop2/reducer.py \
+-input /user/gutenberg -output /user/gutenberg-output
+
+echo "foo foo quux labs foo bar quux" | /home/hduser/mapper.py | sort -k1,1 | /home/hduser/reducer.py
+
+
+/////////////////////////////////  noll notes //////////////////////////
+
+add a dedicated hadoop user:
+$ sudo addgroup hadoop
+$ sudo adduser --ingroup hadoop hduser
+
+create ssh key
+user@ubuntu:~$ su - hduser
+hduser@ubuntu:~$ ssh-keygen -t rsa -P ""
+hduser@ubuntu:~$ cat $HOME/.ssh/id_rsa.pub &gt;&gt; $HOME/.ssh/authorized_keys
+
+Hadoop install:
+download hadoop tar file, to /usr/local
+$ cd /usr/local
+$ sudo tar xzf hadoop-1.0.3.tar.gz
+$ sudo mv hadoop-1.0.3 hadoop
+$ sudo chown -R hduser:hadoop hadoop
+(this will install in /usr/local/hadoop)
+
+update hduser .bashrc file:
+# Set Hadoop-related environment variables
+export HADOOP_HOME=/usr/local/hadoop
+
+# Set JAVA_HOME (we will also configure JAVA_HOME directly for Hadoop later on)
+export JAVA_HOME=/usr/lib/jvm/java-6-sun
+
+# Some convenient aliases and functions for running Hadoop-related commands
+unalias fs &> /dev/null
+alias fs="hadoop fs"
+unalias hls &> /dev/null
+alias hls="fs -ls"
+
+# Add Hadoop bin/ directory to PATH
+export PATH=$PATH:$HADOOP_HOME/bin
+
+-- modify hadoop-env.sh
+uncomment the Java export and modify it:
+export JAVA_HOME=/usr/lib/jvm/java-6-sun
+
+-- conf-site.xml
+$ sudo mkdir -p /app/hadoop/tmp
+$ sudo chown hduser:hadoop /app/hadoop/tmp
+# ...and if you want to tighten up security, chmod from 755 to 750...
+$ sudo chmod 750 /app/hadoop/tmp
+
+<property>
+  <name>hadoop.tmp.dir</name>
+  <value>/app/hadoop/tmp</value>
+  <description>A base for other temporary directories.</description>
+</property>
+
+<property>
+  <name>fs.default.name</name>
+  <value>hdfs://localhost:54310</value>
+  <description>The name of the default file system.  A URI whose
+  scheme and authority determine the FileSystem implementation.  The
+  uri's scheme determines the config property (fs.SCHEME.impl) naming
+  the FileSystem implementation class.  The uri's authority is used to
+  determine the host, port, etc. for a filesystem.</description>
+</property>
+
+-- mapred-site.xml  <----------- verify this
+<property>
+  <name>mapred.job.tracker</name>
+  <value>localhost:54311</value>
+  <description>The host and port that the MapReduce job tracker runs
+  at.  If "local", then jobs are run in-process as a single map
+  and reduce task.
+  </description>
+</property>
+
+-- hdfs-site.xml
+<property>
+  <name>dfs.replication</name>
+  <value>1</value>
+  <description>Default block replication.
+  The actual number of replications can be specified when the file is created.
+  The default is used if replication is not specified in create time.
+  </description>
+</property>
+
+
+-- format filesystem:
+hduser@ubuntu:~$ /usr/local/hadoop/bin/hadoop namenode -format
+
+-- start the system:
+hduser@ubuntu:~$ /usr/local/hadoop/bin/start-all.sh
+
+-- verify
+use jps
+or
+sudo apt install net-tools
+sudo netstat -plten | grep java
+(this should list all the ports)
+
+/////////////////////////////////////////////////
+
+Mapper.py
+save file to /home/hdoop/mapper.py
+give execution privileges
+chmod +x /home/hdoop/mapper.py
+
+#!/usr/bin/env python
+"""mapper.py"""
+
+import sys
+
+# input comes from STDIN (standard input)
+for line in sys.stdin:
+    # remove leading and trailing whitespace
+    line = line.strip()
+    # split the line into words
+    words = line.split()
+    # increase counters
+    for word in words:
+        # write the results to STDOUT (standard output);
+        # what we output here will be the input for the
+        # Reduce step, i.e. the input for reducer.py
+        #
+        # tab-delimited; the trivial word count is 1
+        print '%s\t%s' % (word, 1)
+
+Reducer.py
+save and give perms same as above...
+#!/usr/bin/env python
+"""reducer.py"""
+
+from operator import itemgetter
+import sys
+
+current_word = None
+current_count = 0
+word = None
+
+# input comes from STDIN
+for line in sys.stdin:
+    # remove leading and trailing whitespace
+    line = line.strip()
+
+    # parse the input we got from mapper.py
+    word, count = line.split('\t', 1)
+
+    # convert count (currently a string) to int
+    try:
+        count = int(count)
+    except ValueError:
+        # count was not a number, so silently
+        # ignore/discard this line
+        continue
+
+    # this IF-switch only works because Hadoop sorts map output
+    # by key (here: word) before it is passed to the reducer
+    if current_word == word:
+        current_count += count
+    else:
+        if current_word:
+            # write result to STDOUT
+            print '%s\t%s' % (current_word, current_count)
+        current_count = count
+        current_word = word
+
+# do not forget to output the last word if needed!
+if current_word == word:
+    print '%s\t%s' % (current_word, current_count)
+	
+
+Test:
+echo "foo foo quux labs foo bar quux" | /home/hduser/mapper.py
+echo "foo foo quux labs foo bar quux" | /home/hduser/mapper.py | sort -k1,1 | /home/hduser/reducer.py
+use textbook files:
+hduser@ubuntu:~$ cat /tmp/gutenberg/20417-8.txt | /home/hduser/mapper.py
+
+copy files to HDFS:
+hduser@ubuntu:/usr/local/hadoop$ bin/hadoop dfs -copyFromLocal /tmp/gutenberg /user/hduser/gutenberg
+hduser@ubuntu:/usr/local/hadoop$ bin/hadoop dfs -ls
+
+Run the mapreduce job:
+Need to use updated streaming location:
+hadoop jar hadoop-streaming-3.2.2.jar -mapper /home/hdoop/pyfiles/mapper.py -reducer /home/hdoop/pyfiles/reducer.py -input /user/input -output /user/pyoutput
+
+Check results stored in HDFS:
+hduser@ubuntu:/usr/local/hadoop$ bin/hadoop dfs -ls /user/hduser/gutenberg-output
+hduser@ubuntu:/usr/local/hadoop$ bin/hadoop dfs -cat /user/hduser/gutenberg-output/part-00000
+
+Improved code:
+mapper.py
+#!/usr/bin/python
+"""A more advanced Mapper, using Python iterators and generators."""
+
+import sys
+
+def read_input(file):
+    for line in file:
+        # split the line into words
+        yield line.split()
+
+def main(separator='\t'):
+    # input comes from STDIN (standard input)
+    data = read_input(sys.stdin)
+    for words in data:
+        # write the results to STDOUT (standard output);
+        # what we output here will be the input for the
+        # Reduce step, i.e. the input for reducer.py
+        #
+        # tab-delimited; the trivial word count is 1
+        for word in words:
+            print '%s%s%d' % (word, separator, 1)
+
+if __name__ == "__main__":
+    main()
+	
+	
+reducer.py
+#!/usr/bin/python
+"""A more advanced Reducer, using Python iterators and generators."""
+
+from itertools import groupby
+from operator import itemgetter
+import sys
+
+def read_mapper_output(file, separator='\t'):
+    for line in file:
+        yield line.rstrip().split(separator, 1)
+
+def main(separator='\t'):
+    # input comes from STDIN (standard input)
+    data = read_mapper_output(sys.stdin, separator=separator)
+    # groupby groups multiple word-count pairs by word,
+    # and creates an iterator that returns consecutive keys and their group:
+    #   current_word - string containing a word (the key)
+    #   group - iterator yielding all ["&lt;current_word&gt;", "&lt;count&gt;"] items
+    for current_word, group in groupby(data, itemgetter(0)):
+        try:
+            total_count = sum(int(count) for current_word, count in group)
+            print "%s%s%d" % (current_word, separator, total_count)
+        except ValueError:
+            # count was not a number, so silently discard this item
+            pass
+
+if __name__ == "__main__":
+    main()
+	
+
+
+
+
+
+
+
+
+
+

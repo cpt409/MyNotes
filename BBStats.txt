@@ -1,4 +1,15 @@
 
+
+BT is based on ERA (wOBA values would not count here)
+Walks = need OBP.  subtract OBP from ERA.
+
+
+Pitchers use ERA for determining the Pitcher Die (use FIP instead)
+
+
+Handedness =	need to know if they are R, L, S hitters
+				need to know if pitcher is R, L
+
 ///////////////////////////////////////////////  Fielding Stats
 
 100+ Games to qualify
@@ -145,6 +156,17 @@ poor			-12
 aweful			-20
 
 
+Use wOBA instead of OBP:
+wOBA Rules of Thumb
+Rating			wOBA
+Excellent		.400
+Great			.370
+Above Average	.340
+Average			.320
+Below Average	.310
+Poor			.300
+Awful			.290
+*************************
 OBP
 Rating			OBP
 Excellent		0.390
@@ -203,17 +225,17 @@ Awful							-20
 
 
 Batting:
-P++		35HR, .540 SLG, .250 ISO
-P+		20HR, .450 SLG, .170 ISO
-C+		35 doubles, k% of 10% or less	(2B, k%)
-S+		20 Steals, 4 BsR				(SB, and use wSB instead of BSR)
+P++		35HR, .540 SLG, .250 ISO		(use ISO)
+P+		20HR, .450 SLG, .170 ISO		(use ISO)
+C+		35 doubles, k% of 10% or less	(k%)
+S+		20 Steals, 4 BsR				(use BSR)
 D+		8.0 Def, a Gold Glove			(Def)
 
-P--		0-5HR, .090 ISO
-P-		6-10HR, .120 ISO
-C-		K% of 25% or higher
-S-		0 steals, -4 BsR
-D-		-12 Def
+P--		0-5HR, .090 ISO					(ISO)
+P-		6-10HR, .120 ISO				(ISO)
+C-		K% of 25% or higher				(k%)
+S-		0 steals, -4 BsR				(BsR)
+D-		-12 Def							(Def)
 
 
 Pitching: (use Fangraph)
@@ -240,10 +262,6 @@ Main:
 https://www.fangraphs.com/index.aspx
 
 
-
-
-
-
 Available 2015+
 xwOBA	expected weighted on-base average
 xBA		expected batting average
@@ -253,6 +271,21 @@ tell story of quality and amount of contact, not outcomes
 
 xERA	translation of xwOBA to ERA  scale
 BBE		batted ball event - any batted ball that produces result
+
+On FanGraphs:
+
+2001 and below: because they are missing GB%, so use FIP for pitching
+
+Batting (502 plate appearances)
+Name	Team	G	PA	ISO	k%	BsR	Def	wOBA
+
+Pitching:
+Create two tables:
+Starters need 162 IP
+Relievers just include them all...
+Name	Team	IP	K/9	FIP	BB/9	
+
+
 
 
 

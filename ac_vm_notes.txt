@@ -5,11 +5,6 @@
 	-- use Ctrl + G to get inside the VM window first
 
 
-vm1:
-user = vm1
-pw = tops
-10.0.0.220
-
 ------------
 
 vm2:
@@ -126,6 +121,18 @@ CREATE TABLE `character_friends` (
 )
 COLLATE='latin1_swedish_ci'
 ENGINE=InnoDB
+
+
+USE GDLE;
+UPDATE accounts AS a
+SET a.access = 6
+WHERE username = "boatymcboatface";
+
+
+
+
+
+
 
 
 

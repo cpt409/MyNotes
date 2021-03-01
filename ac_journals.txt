@@ -1,0 +1,172 @@
+Notes:
+Item 16MMD
+Life 24MMD
+Creature 40MMD
+War 16MMD
+Void 4MMD
+
+
+Portal Ties:
+1 = TN
+2 = 110 eaters
+Lifestone Tie = Candeth
+Lifestone Sending = 
+
+
+
+
+Candeth Keep
+87.5S, 67.1W
+Go to Wai Jou
+tent = 62.3S, 51.4W
+talk to merchants, then salvage
+
+
+Tanada 1 (House of Storms): Level 80
+Speak to Sayuji Jina in Shoushi at 33.3S,72.8E.
+Go to the Tanada House of Storms at 68.1S 45.5E (80+).
+Shortcut: Shoushi to Kara (33.1S 73.2E), 
+Kara to Yukikaze Portal (82.8S 48.2E), run to 68.1S 45.5E
+3x kill end guy, loot medallion, give to shrine
+(storms, wind, breath)
+Enter the Enlightened Master's Chambers portal.
+loot the Enlightened Master's Medallion.
+Return to Sayuji Jina in Shoushi at 33.3S, 72.8E.
+
+
+Tanada 2 (House of Earth): Level 80
+Talk to Sayuji Jina in Shoushi.
+Give the Folded Missive to Ookami Kiri (12.0S, 42.6E) in Yanshi, to get A Formal Request.
+Go to the Tanada House of Earth at 66.3N 7.6E.
+Short cut: Crater to Shaky Ledge Cottages Portal at 66.3N,14.3E
+3x kill end guy, loot medallion, give to shrine
+(earth, stone, metal)
+Enter the Enlightened Master's Chambers portal.
+Hand A Formal Request to Master Seijuro to get a Medallion of the Sword.
+Give the Medallion of the Sword to Ookami Kiri (12.0S, 42.6E) in Yanshi, to get a Sealed Missive.
+Give the Sealed Missive to Sayuji Jina (33.3S, 72.8E) in Shoushi, to get a Tachi of Grace and some experience.
+
+
+Tanada 3 (House of Water): Level 80
+Meshenq at 13.8N, 0.6E in Zaikhal. 
+Put on the Tanada Gate Medallion (necklace)
+dungeon at 85.3S, 5.8W.
+Route: From Qalaba'r, take the Land Bridge Villas portal at 74.9S, 17.9E.
+Kill Consul to the Tanada, loot the Tanada Consul's Message Shard
+Give message shard to Diyas al-Yat at 13.8N, 0.1E in Zaikhal.
+He will return Tanada House of Water Orders.
+Give your Tanada Gate Medallion to Diyas al-Yat and he will return a Channeled Tanada Medallion.
+[OPTIONAL] If you don't want the medallion, hand it back to Diyas al-Yat for additional XP.
+Now head back to Meshenq at 13.8N, 0.6E
+hand him the Tanada House of Water Orders
+receive XP and a Copy of Tanada House of Water Orders.
+
+
+Tanada 4 (House of Black Water): Level 80
+Head to Sawato and speak with Pau Yajin (28.8S 59.4E).
+Run to 24.2S, 57.1E.
+Enter the tunnel dug in the ground, proceed into cave.
+Kill Black Water Gatekeeper. Loot Black Water Key, used to open nearby Black Water Threshold (resistance 9999).
+Enter Blacaaaak Water Temple just behind the threshold (no level restrictions, cannot be tied, recalled, or summoned).
+Proceed through dungeon. Kill Master of the Depths located at the end. Loot Jade Medallion of the Depths.
+Portal Recall to return to Sawato. If you do not have item magic, hit the surface portal nearby and run back to Sawato. Give Pau Yajin the Jade Medallion of the Depths.
+Run back to the temple at 24.2S, 57.1E. Use the Shrine of Black Water in the Mage Tower to enter the final dungeon.
+Proceed through the dungeon. CAUTION: Fists of the Depths can do massive damage - their critical hits are typeless damage.
+Kill Watcher of the Black Water. Loot Mask of the Watcher of Black Water and Black Water Watcher's Shard.
+Return to Sawato. Give Pau Yajin the Mask of the Watcher of Black Water for your reward.
+[OPTIONAL] Return the Mask of the Watcher of Black Water to Pau Yajin for a bonus experience reward.
+[OPTIONAL] Bring Black Water Watcher's Shard to Diyas al-Yat for translation.
+
+
+Tanada 5 (House of Fire): Level 100
+Speak to Tanada Sajo at 38.9S, 83.3E in
+ Hebian-To
+From Baishi, enter the Chamber of Scrolls at 52.2S, 63.2E.
+Find the portal to the Chamber of Air (right hand rule and down gets you there eventually)
+Kill the Air Stasis Resonator and loot the Scroll of Air
+Enter the portal to the Chamber of Earth
+Kill the Earth Stasis Resonator and loot the Scroll of Earth:
+Enter the portal to the Chamber of Water
+Kill the Water Stasis Resonator and loot the Scroll of Water:
+Return to Tanada Sajo and talk with her. She will take all 3 scrolls from you, and then portal you to a small room with an NPC named Tanada Han-Tu, and 3 other Tanada Masters: Tanada Ganza, Tanada Hido and Tanada Shouka behind him.
+Speak to Tanada Han-Tu, and he'll give you XP and the Fist of Enlightenment!
+You may turn in the Fist of Enlightenment to Tanada Sajo if you do not want it for up to 16,241,572 experience. (5% of your next level, capping at level 150)
+
+
+Candeth Wand:
+Virindi Paradox KT (75): 32mil
+Guard Li -> Wai Jou
+61.8S, 51.3W
+Virindi Quidiox KT (75): 32mil
+Guard Alfric -> Candeth Keep
+87.9S, 67.4W
+Virindi Paradox KT (75): 46mil
+Guard Taziq -> Qalaba'r
+74.3S, 19.1E
+(check Whispering Caverns, Harraag's Hideout, Monouga Library)
+Virindi Quidiox KT (75): 32mil
+Guard Q'alia -> AB
+60.0S, 88.0W
+(check Chaos Virindi Cave, Archive dungeon)
+Get all four pieces of the wand:
+Ornate Brass Band -> Carved Wooden
+Harden Blue Crystal -> Uncapped ...
+Barely Compreh Scroll -> Unpowered..
+Give final item to Pagrok in Candeth:
+He gives you recall spell.
+
+
+Soul Hunter (13 days) (level 60)
+Talk to Hasin Lin at 28.9S, 59.3E, in Sawato.
+Enter Soul Hunter's Lair at 27.7S, 55.8E.
+Make your way to the end of the dungeon.
+[OPTIONAL] If you wish, you can skip ahead in the dungeon by making a sacrifice. This is not required, and places a quest flag on your character as a Falatacot helper.
+Pick up the Sacrificial Goblet and the Sacrificial Knife
+Use the knife on the goblet to create a Filled Sacrificial Goblet.
+Give the filled goblet to the Altar of Urdhinivix
+You are now flagged to enter the Soul Hunter's Chambers, a shortcut portal that leads further into the dungeon.
+Kill the Soul Hunter and loot the Soul Hunter's Untranslated Orders. It drops 1 per kill.
+Bring this text to Fanzen San the Translator at 39.2S 81.6E, near Hebian-To, for translation and Soul Hunter's Orders.
+Return to Hasin Lin, and hand him the translation to get the experience and a Copy of Soul Hunter's Orders.
+
+
+Shade of Iron
+ayan baqur
+mekhmet
+
+
+Sword of Bellenesse
+Enter the Cave of the Escaped Thief at 71.1N, 50.2W (near the Beach Fort).
+Tip: From Mayoi run to the Lady Maila Estates Portal at 60.9S, 80.3E.
+Alternate Route: From Stonehold run to The Pit, jump to the bottom and take the Portal to the Beach Fort.
+Hug the left wall to the bottom of the dungeon until you reach an Escaped Thief surrounded by 4 Abhorrent Eaters.
+Kill the thief and loot The Sword of Bellenesse
+Turn it back in to NPC for more xp.
+
+
+Shield of Yanshii (lvl 100)
+Get Repugnant Kill task
+eastwatch
+Xun Yu in tower
+
+go to yanshii
+talk to guard adrana
+go to 11.8s 39.0e
+
+this part is only for first time flag:
+stick left to kill underminer leader
+get notes, return to guard at Yanshii
+
+on following times just talk to
+guard adrana and go to cavern
+stick right
+take portal to yanshi lower undermine
+take portal to yanshi upper undermine
+stick up and left
+fight swarm matron
+get claw and give back to yanshii
+
+
+
+
+
