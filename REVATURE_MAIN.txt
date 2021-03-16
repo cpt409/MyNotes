@@ -1,0 +1,428 @@
+
+//////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////  Zoom  //////////////////////////////////////////////
+Zoom:
+Main:
+https://revature.zoom.us/j/93857863375?pwd=V01iRERYSnRvQnZSWmlOYU1NVitydz09
+passId:		93857863375
+passcode:	V01iRERYSnRvQnZSWmlOYU1NVitydz09
+
+Mark:
+Meeting ID:		845 885 8703
+Host:			Mark Moore
+Passcode:		j1f#yqKk
+Numeric Passcode:	82641604
+Participant ID:		270825
+https://revature.zoom.us/j/8458858703?pwd=SkdqUDc3STBWMHhoaGhmbnpMYkRZQT09
+
+My Zoom:
+My personal meeting ID:		578 882 8873
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////  Slack  /////////////////////////////////////////////
+
+Slack:
+revaturepro.slack.com
+christopher.trimmer@revature.net
+03012021-dotnet-uta
+Member ID: U01PRSWUV7V
+
+
+Fred slack:
+https://join.slack.com/t/revaturepro/shared_invite/zt-n2degcte-bDCDWHbq2EPwhBAy_hPA1Q
+https://join.slack.com/t/revaturepro/shared_invite/zt-n9hdupjo-ikM0OvM8WvSPZ~k~KxIzUw
+
+Mark Moore slack:
+https://join.slack.com/t/revature-2qu3256/shared_invite/zt-mv65v5b6-3WpxvMU8~asORnKhleQWqw
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////  HR  ////////////////////////////////////////////////
+
+emails:
+hr@revature.com
+connect@revature.com
+itsupport@revature.com
+timesheet@revature.com
+payroll@reature.com
+housing@revature.com
+kyle.taylor
+fred.belotte
+Emily.baillie@revature.com
+antony.xavier@revature.com
+Alexandra.fingerhut@revature.com
+
+Email-Id	christopher.trimmer@revature.net
+Password	Warl0rd!@#
+
+Email:
+https://mail.revature.net
+
+http://connect.revature.net/
+https://workforcenow.adp.com/
+
+Timesheet:
+https://rev2.force.com/revature/
+
+Revature Pro:
+https://app.revature.com/dashboard
+
+Revature:
+Two-Factor Authentication Backup Codes
+747220
+864505
+760443
+113908
+741844
+996261
+278957
+773561
+265472
+188872
+
+QC Survey:
+https://docs.google.com/forms/d/e/1FAIpQLSctgsH-__acrraIWMPDsV3XSFmTAujJNIxK9zKEhATsYsKHSw/viewform
+
+////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////  SonarCloud  //////////////////////////////////////
+
+SonarCloud.io/account
+cpt409
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////   Git Bash Notes  ///////////////////////////////////
+
+git config --global user.name "Christopher Trimmer"
+git config --global user.email chrisschoolacct@yahoo.com
+
+rm -rf <dir>
+(recursive, force)
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////  License //////////////////////////////////////////////
+https://choosealicense.com/
+
+Copyright (c) <year> <copyright holders>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////   Git Notes ///////////////////////////////////////
+
+code.likeagirl.io
+
+----------- For branch repo: -----------------
+https://github.com/03012021-dotnet-uta
+clone: https://github.com/03012021-dotnet-uta/03012021BatchRepository.git
+gh repo clone 03012021-dotnet-uta/03012021BatchRepository
+
+Create new clone:
+create new folder
+git clone https://....
+go into the cloned folder
+this is where you git pull/fetch/switch... etc.
+
+My location of BatchRepo:
+/Source/Repos/Revature_New/BatchRepository/03012021BatchRepository
+go into 03102...
+git pull (to git updates)
+git fetch
+
+git checkout main
+git switch PdfsBranch
+
+Branches:
+	PdfsBranch
+	demosBranch
+	resources
+	CodingChallenges
+	main
+-----------------------------------------------	
+
+-----------  Git Commands ----------------
+
+https://github.com/03012021-dotnet-uta/ChristopherTrimmer_p0.git
+
+git status
+git add .
+git commit -m "commit msg"
+git push origin master
+git push -u origin main
+
+git remote add origin https://
+git remote remove origin
+git remote -v
+
+New Repo:
+create folder
+touch README.md
+git init
+git add README.md
+git branch -M main
+git remote origin <https>
+git push -u origin main
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////   DotNet Notes ///////////////////////////////////////
+
+
+dotnet new console --name HelloWorld
+code .
+dotnet run --project HelloWorld/HelloWorld.csproj
+
+
+Keybind:
+{
+  "key": "ctrl+alt+t",
+  "command": "shellLauncher.launch"
+}
+
+
+----------------------  Create Solution and Projects ------------------------
+dotnet new solution -n PizzaBox
+dotnet new console --name PizzaBox.Client
+dotnet new classlib -n PizzaBox.Domain
+dotnet new classlib -n PizzaBox.Storing
+dotnet new xunit -n PizzaBox.Testing
+
+Connect Projects to Solution:
+dotnet sln add PizzaBox.Client/PizzaBox.Client.csproj
+dotnet sln add **/*.csproj
+
+Create reference from Client to Domain:
+Go to root directory:
+dotnet add PizzaBox.Client/PizzaBox.Client.csproj reference
+								PizzaBox.Domain/PizzaBox.Domain.csproj
+dotnet add PizzaBox.Domain/PizzaBox.Domain.csproj reference
+								PizzaBox.Storing/PizzaBox.Storing.csproj
+
+Test Build and Run:
+dotnet build
+donet run -p PizzaBox.Client/PizzaBox.Client.csproj
+
+-------------------------------------------------------------------------------
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////  EF Core ////////////////////////////////////////////////
+
+in visual studio:
+install-package Microsoft.EntityFrameworkCore -Version 2.0 (for all packages)
+
+dotnet new sln -n "PizzaBox"
+dotnet new console -n "PizzaBox.Client"
+dotnet new classlib -n "PizzaBox.Domain"
+dotnet new classlib -n "PizzaBox.Storing"
+dotnet new xunit -n "PizzaBox.Testing"
+dotnet sln add **/*.csproj
+
+dotnet add PizzaBox.Storing/PizzaBox.Storing.csproj reference PizzaBox.Domain/PizzaBox.Domain.csproj
+dotnet add PizzaBox.Client/PizzaBox.Client.csproj reference PizzaBox.Domain/PizzaBox.Domain.csproj
+dotnet add PizzaBox
+
+mkdir PizzaBox.Domain/Models
+mkdir PizzaBox.Domain/Abstracts
+mkdir PizzaBox.Domain/Singletons
+mkdir PizzaBox.Domain/Interfaces
+mkdir PizzaBox.Storing/Repositories
+mkdir PizzaBox.Storing/Interfaces
+mkdir PizzaBox.Testing/Tests
+touch PizzaBox.Storing/Repositories/StoreRepository.cs
+touch PizzaBox.Storing/Repositories/CustomerRepository.cs
+touch PizzaBox.Storing/Repositories/ComponentRepository.cs
+touch PizzaBox.Storing/Repositories/PizzaRepository.cs
+touch PizzaBox.Storing/Repositories/OrderRepository.cs
+touch PizzaBox.Storing/Interfaces/IStoreRepository.cs
+touch PizzaBox.Storing/Interfaces/ICustomerRepository.cs
+touch PizzaBox.Storing/Interfaces/IComponentRepository.cs
+touch PizzaBox.Storing/Interfaces/IPizzaRepository.cs
+touch PizzaBox.Storing/Interfaces/IOrderRepository.cs
+touch PizzaBox.Domain/Abstracts/AStore.cs
+touch PizzaBox.Domain/Abstracts/APizza.cs
+touch PizzaBox.Domain/Abstracts/ACustomer.cs
+touch PizzaBox.Domain/Abstracts/AComponent.cs
+touch PizzaBox.Domain/Abstracts/AOrder.cs
+touch PizzaBox.Domain/Models/Pittsburgh.cs
+touch PizzaBox.Domain/Models/TampaBay.cs
+touch PizzaBox.Domain/Models/CheesePizza.cs
+touch PizzaBox.Domain/Models/Customer.cs
+touch PizzaBox.Domain/Models/VeggiePizza.cs
+touch PizzaBox.Domain/Models/MeatPizza.cs
+touch PizzaBox.Domain/Models/CustomPizza.cs
+touch PizzaBox.Domain/Models/Crusts.cs
+touch PizzaBox.Domain/Models/Toppings.cs
+touch PizzaBox.Domain/Models/Sizes.cs
+touch PizzaBox.Domain/Models/PizzaBoxContext.cs
+touch PizzaBox.Testing/Tests/StoreTests.cs
+touch PizzaBox.Testing/Tests/PizzaTests.cs
+touch PizzaBox.Testing/Tests/CustomerTests.cs
+touch PizzaBox.Testing/Tests/ComponentTests.cs
+touch PizzaBox.Testing/Tests/OrderTests.cs
+touch PizzaBox.Client/StoreController.cs
+touch PizzaBox.Client/PizzaController.cs
+touch PizzaBox.Client/ComponentController.cs
+touch PizzaBox.Client/CustomerController.cs
+touch PizzaBox.Client/OrderController.cs
+rm PizzaBox.Domain/Class1.cs
+rm PizzaBox.Storing/Class1.cs
+
+mkdir PizzaBox.Domain/Models -- this is created for you if using DBFirst
+
+if in same directory then you don't need to add project name:
+dotnet add PizzaBox.Domain/ package Microsoft.EntityFrameworkCore  
+dotnet add PizzaBox.Domain/ package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add PizzaBox.Domain/ package Microsoft.EntityFrameworkCore.Tools
+dotnet add PizzaBox.Domain/ package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add PizzaBox.Domain/ package Microsoft.EntityFrameworkCore.Design
+dotnet add PizzaBox.Domain/ package Microsoft.EntityFrameworkCore.Tools.DotNet
+
+dotnet add PizzaBox.Storing/ package Microsoft.EntityFrameworkCore  
+dotnet add PizzaBox.Storing/ package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add PizzaBox.Storing/ package Microsoft.EntityFrameworkCore.Tools
+dotnet add PizzaBox.Storing/ package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add PizzaBox.Storing/ package Microsoft.EntityFrameworkCore.Design
+dotnet add PizzaBox.Storing/ package Microsoft.EntityFrameworkCore.Tools.DotNet
+
+
+
+dotnet ef -p PizzaBox.Domain/ dbcontext scaffold "Server=500-409;Database=PizzaBoxDBMain;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+
+
+using Microsoft.EntityFrameworkCore;
+
+(create models) just normal classes
+create context	
+    public class SchoolContext : DbContext
+    {
+        public DbSet<Student> Students { get; set; }
+        public DbSet<Course> Courses { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        { 
+            optionsBuilder.UseSqlServer(@"Server=500-409;Database=<Insert Name>;Trusted_Connection=True;");
+        }
+    }
+	
+Add Migration:
+dotnet ef migrations add CreateSchoolDB
+dotnet ef -p PizzaBox.Domain/ migrations add ...
+dotnet ef -p database update
+
+(pm > add-migration CreateSchoolDB)
+pm > update-database -verbose
+
+CREATE:
+using (var context = new SchoolContext()) {
+
+                var std = new Student()
+                {
+                     Name = "Bill"
+                };
+
+                context.Students.Add(std);
+                context.SaveChanges();
+
+QUERY:
+private static void Main(string[] args)
+{
+    var context = new SchoolContext();
+    var studentsWithSameName = context.Students
+                                      .Where(s => s.FirstName == GetName())
+                                      .ToList();
+}
+
+public static string GetName() {
+    return "Bill";
+}
+
+Eager loading using Include()
+var context = new SchoolContext();
+
+var studentWithGrade = context.Students
+                           .Where(s => s.FirstName == "Bill")
+                           .Include(s => s.Grade)
+                           .FirstOrDefault();
+
+
+Then Include for multilevel of related entitiees:
+var context = new SchoolContext();
+
+var student = context.Students.Where(s => s.FirstName == "Bill")
+                        .Include(s => s.Grade)
+                            .ThenInclude(g => g.Teachers)
+                        .FirstOrDefault();
+
+
+UPDATE Data:
+using (var context = new SchoolContext())
+{
+    var std = context.Students.First<Student>(); 
+    std.FirstName = "Steve";
+    context.SaveChanges();
+}
+
+DELETE Data:
+using (var context = new SchoolContext())
+{
+    var std = context.Students.First<Student>();
+    context.Students.Remove(std);
+
+    // or
+    // context.Remove<Student>(std);
+
+    context.SaveChanges();
+}
+
+
+put context classes in main for now
+make sure class has a <class>Id field (primary key error)
+
+
+public class StoreContext : DbContext
+{
+	public DbSet<AStore> Stores {get; set;}
+	public DbSet<APizza> Pizzas {get; set;}
+
+	protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+	{			optionsBuilder.UseSqlServer(@"Server=500-409;Database=PizzaDB;Trusted_Connection=True;");
+	}
+
+}    
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+List<ACustomer> GetAll();
+ACustomer GetCustomer(int customerId);
+void Insert(ACustomer customer);
+void Update(ACustomer customer);
+void Delete(int customerId);
+void Save();
+
+
+

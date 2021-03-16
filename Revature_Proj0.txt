@@ -1,0 +1,759 @@
+PizzaBox is a console-based pizza ordering application.
+
+architecture (REQUIRED)
+[solution] PizzaBox.sln
+[project - console] PizzaBox.Client.csproj
+[project - classlib] PizzaBox.Domain.csproj
+[folder] Abstracts
+[folder] Interfaces
+[folder] Models
+[project - classlib ] PizzaBox.Storing.csproj
+[folder] Repositories
+[project - xunit] PizzaBox.Testing.csproj
+[folder] Tests
+requirements
+The application is centered around the interaction of 4 main objects:
+
+Customer
+Order
+Pizza
+Store
+store
+[required] there should exist at least 2 stores for a customer to choose from
+[required] each store should be able to view any and all of their placed orders
+[required] each store should be able to view any and all of their sales (weekly, monthly, quarterly)
+
+order
+[required] each order must be able to modify its collection of pizzas
+[required] each order must be able to compute its pricing
+[required] each order must be limited to a total pricing of no more than $250
+[required] each order must be limited to a collection of pizzas of no more than 50
+
+pizza
+[required] each pizza must be able to have a crust
+[required] each pizza must be able to have a size
+[required] each pizza must be able to have toppings
+[required] each pizza must be able to compute its pricing
+[required] each pizza must have no less than 2 default toppings
+[required] each pizza must have no more than 5 total toppings
+customer
+[required] must be able to view its order history
+[required] must be able to only order from 1 location in a 24-hour period with no reset
+[required] must be able to only order once in a 2-hour period
+technologies
+.NET Core - C#
+.NET Core - EF + SQL
+.NET Core - xUnit
+
+timelines
+due on Mar-15 at 11p Central
+present on Mar-17 starting at 9.30a Central
+implement as many requirements as you can (don't push to get all done)
+should be an mvp status (able to order at least 1 pizza)
+
+as a customer
+should be able to launch application
+should be able to view all stores
+should be able to select a store
+should be to place an order
+with either custom or preset pizzas
+
+if custom
+select crust, size and toppings
+if preset
+select pizza and its size
+
+see a tally of my order
+add or remove more pizzas
+and checkout when complete with latest order
+see my order history
+make a new order
+
+store story
+as a store, i should be able do this:
+access the application
+select options for order history, sales
+if order history
+select options for all store orders and orders associated to a user (filtering)
+if sales
+see pizza type, count, revenue by week or by month
+
+
+the goal is to try to complete as many reqs as you can in the time alloted. :)
+
+
+///////////////////////////////////////////////////////////////////////
+
+readme
+dotnet
+dotnet new, create a new project or solution
+dotnet build, compile project or solution
+dotnet run, execute project or solution
+dotnet test, run unit tests
+dotnet watch, reload runtime on code changes
+dotnet - keywords
+CLR (VES, BCL, CTS, JIT)
+MSIL (CIL, CLI)
+Managed Code, Unmanaged Code
+OOP (abstraction, encapsulation, inheritance, polymorphism)
+Compiler
+Assembly (.dll, .exe, .svc)
+.NET Platform, .NET Standard, .NET Core
+Languages (C#, F#, JS, TS, VB.NET, Python)
+git
+git init, initialize local machine environment
+git add, select file changes to track
+git config, configure local environment
+git status, review current file changes
+git commit, save file changes to version control system
+git clone, copy/link remote machine environment to local machine environment
+git push, copy/link/sync local machine environment to remote machine environment
+git - keywords
+VCS (centralized, distributed)
+SCM
+Branch
+Gitignore, License, Readme
+bash
+pwd, print current workig directory
+ls, list resources in current path
+cd, navigate to path
+mkdir, create a directory
+touch, create a file
+rm, remove/delete a resource
+man, read help file
+
+
+////////////////////////////////////////////////////////////////
+
+
+questions
+	### explain the .NET Platform?
+The .Net platform is a Framework that enables software developers to write a myriad of application types (Windows Apps, Web apps, Web services).  It is composed of class libraries and a Common Language Runtime (code execution), that enables interopability among components and languages that operate using .Net.
+everything combined now:  .Net core, Xamarin, BCL
+languages, runtimes, libraries
+Components: ASP.Net, WinForms, EF, ADO.Net, XML, WCF, etc.
+https://www.youtube.com/watch?v=bEfBfBQq7EE
+
+
+	### what are some characteristics of the C# language?
+It is a type-safe Object Oriented language.
+OOP = projects can be structured -> broken up into smaller, modular, manageable pieces that helps make development and maintenance easier.
+	Supports:
+		Encapsulation:	ability to hide implementation details.
+						wrapping data/methods into a single unit.
+						security - restricting direct access to abstracted data.
+		Inheritance:	ability to allow build new class from existing class.
+						acquire properties/behaviours of a base class.
+						re-use characteristics of parent class.
+		Polymorphism:	treated related classes in a similar manner.
+						subclass can inherit fuctionalities or behavior of base class.
+		Abstraction:	showing only essential/necessary features
+						hide other irrelevant information
+						seperate relevant data from the irrelevant details to simplify.
+
+Since it is part of the .Net Framework, it is interoperable with components and languages that are within the Framework.
+Easy:			Automatic memory management and garbage collection.
+Strongly typed:	enforces strict restrictions on intermixing values of different types.
+				variables for example are automatically assigned a default value.
+type safe:		cannot perform unsafe casts (like double to bool).
+				value types initialized to 0, ref types initialized to NULL.   arrays are bound checked.
+garbage collection
+exception handling
+
+
+	### what is the role of a compiler?
+high level language to low level language.
+translate human text code into object/assembly instructions that is understood by the computer to execute the code.  it checks for syntax errors.
+
+
+	### explain the lifecycle of a C# code?
+C# Code -> .Net Compiler -> Assembly (dll/exe) -> .Net execution engine (mscoree.dll; comprised of class loader -> jitter -> platform instructions -> execution (also brings in mscorlib.dll (core base class library).
+
+you write the human readable code
+compiler translates it to an assembly (dll or exe)
+the assembly contains manifest, CIL instructions, and metadata
+JIT compiler translates CIL code to meaningful CPU instructions
+
+MSIL	same as CIL - .Net code compiled into Intermediate lang before JIT.
+CIL		common intermediate language	= bytecode.  not compiled until absolutely necessary (JIT).  contain metadata of every type.  Sits above the specific platform instruction set.  Benefit is that CIL code is portable.
+CLI		common language infrastructure	= minimal set of namespaces that represent the
+		core services expected by a distribution of the .Net platform.
+		enables an application written in any prog language to be run on any OS
+		using a "common" runtime program rather than a language-specific one.
+Open source.
+Three major implementations of the CLI beyond .Net Platform:
+The Mono Project	Linux, Mac, IoS, Android, Windows
+Xamarin SDK			GUI for mobile
+.Net Core			cross-platform version of .Net
+
+(CLR = managed code; outside CLR = unmanaged code)
+CLS = common language specification = facilitates interoperability between languages and defines the subset of common type system (CTS) -> cross-language integration.
+Compiler = high level lang to low level lang
+assembly = the binary blob that is created from the .dll and .exe
+
+CLR = common language runtime = code execution
+	= tranforms source code into CIL
+	= locate, load, manage .Net objects
+	= memory management, coordinating threads
+	
+	
+
+	### what are some benefits of the CLR?
+Enables writing managed code.
+manages the execution of programs written in different languages.
+transforms source code into CIL.
+Enables interoperability with unmanaged code.
+write code on various platforms.
+provides memory management
+	-cross-language integration
+	-cross-language exception handling
+	-enhanced security
+	-versioning and deployment support
+	-simplified model for component interaction
+	-debugging and profiling services.
+
+
+CTS = common type system = cross-language integration
+	= all possible datatypes, etc. supported by runtime,
+	= how datatypes interact with each other
+	= how they are represented in metadata
+	
+CLS	= common language specification
+	= subset of CTS types that all .Net languages agree on so that they are interoperable.
+	= if you write CLS-compliant code, it work across the board
+
+VES = virtual execution system = virtual run-time system where managed code is executed.  CLR is the .Net implementation of a VES.
+
+BCL = base class library = runtime libraries that support common functions (exception handling, IO, threading, etc.)
+
+.Net Framework = BCL
+.Net Core = .Net Core class library
+Xamarin = Mono class library
+
+
+	### what is a version control system?
+VCS = version control system = GIT
+	SCM = source code management
+DVCS = distributed VCS = peer-to-peer model = code base is distributed amongs individual computers.  entire history of code is mirrored to each system. master copy of code base is kept on client machine, rather than on server.  make changes without locking the code, then they request to merge to code.  (Git)
+CVCS = centralized version control system = single, central master copy of code base.  pieces that are being worked on locked/checked out.  (CVS and Subversion.)
+
+Performance better with DVCS.
+DVCS also don't need to be connected to network.
+cvs - access control is easier; don't have to merge different versions of code.
+
+git lifecycle:
+git clone [ url ] or git pull from master branch.
+git checkout –b [ branchName ] (Create a new “feature” branch and switch to it.)
+Make changes to add a feature.
+git add . (Add all changes made to tracking)
+git commit –m “This message tells what the changes are” (Add to staging)
+git pull (to be 100% sure no changes were made to the master branch while you were working)
+git push
+Go online and make a pull request (PR) to master.
+
+
+	### what are modifiers? list a few?
+	abstract					requires implementation.  
+								as a class, cannot be instantiated
+	async						
+	const						cannot be modified.  compile-time.
+	event						
+	extern						
+	in (generic modifier)
+	new (member modifier)		hides a member that is inherited from base class
+	out (generic modifier)		
+	override					allows to provide a new implementation on a 
+								method inherited from a base class.
+	readonly					run-time.  can be changed.
+								field = assignment can only occur as part of declaration.
+								value type = makes it immutable.
+								ref type = must always refer to the same object.
+								struct = the type becomes immutable.
+								member = cannot modify the state of the structure.
+								return from readonly method = method returns a reference and writes aren't allowed to that reference.
+	sealed						on a class, it cannot be derived from.
+								on a member, it cannnot be overriden.
+	static						belongs to a type not an instance object.
+								also used as part of using static directive.
+	unsafe						used for pointers
+	virtual						allows method/property/etc. to be overridden.
+	volatile					field might be modified by multiple threads.
+	
+class modifiers:
+abstract						
+sealed							
+internal
+new								used with nested classes.
+								"New" hides inherited member w/same name
+private
+public
+
+Methods:
+virtual		can be overriden
+abstract	must be overriden
+sealed		cannot be overriden
+
+internal	
+private		
+protected	give derived classes access to methods in base class
+protected internal		method is accessible to assembly, and to types in derived assembly
+public		
+
+static	declare to belong to type, not to an object
+		cannot create object of static class
+		associated with class, not an instance
+		used when data and behavior of class do not depend on object
+		shared by all instances of class
+		an instance field has separate copy for each instance
+
+Parameter:
+ref		parameter passed may be modified by the method
+in		parameter passed cannot be modified by method
+out		parameter passed must be modified by method
+params	in signature method (params double[] values...
+		in calling method (4.0, 3.0, 3.0)...
+
+ref and in - parm  must have been initialized before being passed
+ref, in, out cannot be used with async
+
+
+	### what are access modifiers? how would you rank them?
+private = this class only
+private protected = this class, or types derived from containing class
+protected = derived classes
+protected internal = this class, child classes, classes within same assembly
+					accessible in derived class in another assembly
+					hides variables/functions from other class objects,
+					except a child class within same application
+internal = current assembly (.exe, .dll) (default)					
+public = access isn't limited
+
+
+	### what are the different scopes in a C# code?
+scope = enclosing context or region that defines where a name is accessible, and/or can be used without qualification.  defines visibility of a name.  outer scope is visible to an inner scope.
+Declaration space = enclosing context or region in which no two entities are allowed to have the same name.
+block scope				loops, try/catch, etc.
+method/procedure scope	local variables	
+module scope			class/struct
+namespace scope			gruoping of semantically related types contained in an assembly or multiple assemblies.
+.Net framework DLLs located in global assembly cache (GAC)
+c:\windows\assembly\gac
+
+
+	### what are reference types?
+can be derived from any object except system.valuetype,
+as long as it is not sealed.
+goes out of scope when it is garbage collected.
+
+
+	### what are value types?
+lifetime of object is the scope in which it is defined
+it has a predictable lifetime
+
+system.object	-> system.valuetype	
+
+
+	### what is the role of the using statement?
+used to ensure unmanaged objects are disposed of.
+using directive = import namespaces
+
+
+	### what is a shell?
+window/user interface that hosts commands to be used in a system
+shell runs in an emulator
+CLI (cmd shell, bash shell)
+
+
+	### what is an emulator?
+connecting terminal on one machine with programs on another
+
+
+	### what is garbage collection?
+manages allocation and release of memory.
+automatic memory manager.
+
+
+	### difference between managed vs unmanaged code?
+Managed code is code that is part of the .Net runtime (i.e., assemblies).
+Unmanaged code is code that cannot be directly hosted by .Net.
+
+
+	### name some commands you used in .NET? what do they do?
+dotnet new solution -n "PizzaBox"
+dotnet new console -n PizzaBox.Client
+dotnet build
+dotnet run -p xyz.client/xyz.csproj
+
+
+	### name some commands you used in bash? what do they do?
+mkdir
+ls -al
+touch
+
+	### name some commands you used in git? what do they do?
+git add .
+git commit -m "updates"
+git push origin master
+
+
+	### what is unit testing?
+testing functions in silos
+don't need to run the app
+individual units of code are tested.
+breakdown code into small, testable, behaviours
+
+Arrange		initialize objects, set values, etc.
+
+Act			invokes method under test
+
+Assert		verifies the action behaves as expected
+
+
+	### what is serialization?
+converting objects into a stream to store the state of an object / vice-versa.
+JSON:
+System.Text.JSON
+XML:
+System.Runtime.Serialization
+
+
+	### what is N-tier architecture?
+N is the number of layers of an application.
+Layers represent logical/functional division of major components of an application.
+each tier separated into deployable components.
+pros: enables code maintainability, loose coupling, code reuse
+typically:
+presentation layer
+business logic layer
+data access layer
+model, view, controller
+
+correct way:  ui -> business logic -> data access logic -> data
+
+
+Runtime:
+portability	(code run on multiple OS)
+interoperability (multiple languages)
+Memory management
+
+
+///////////////////////////////////////////////////
+
+
+in Astore, remove abstract
+make the constructor protected:
+protected AStore()
+or
+[Serializable(typeof())]
+
+
+
+///////////////////////////////////////////////////////
+
+"Hi Mr. Gates, It is so nice to meet you here at Whole Foods Market!   Wow, are those Macintosh Apples in your shopping basket!?
+
+
+
+My name is Chris Trimmer, I am an avid technologist and have been working in the IT field most of my life.  In college I primarily studied C++, C#, and MS-SQL.  I even worked for the State of New Mexico as a web developer using PHP and MySQL.  Most of my career, I have been a Network Engineer/Administrator, supporting the military and Government.  I feel like I have a well-rounded background, and I can be a valuable asset to your company!"
+
+
+How can I be valuable ->  what projects have I worked on
+Specific projects:
+
+Where do I want to go with software development?
+What do you want to do:
+
+/////////////////////////////////////////////////////////
+
+
+Updated Requirements
+
+pizzabox
+PizzaBox is a console-based pizza ordering application.
+
+architecture (REQUIRED)
+[solution] PizzaBox.sln
+[project - console] PizzaBox.Client.csproj
+[project - classlib] PizzaBox.Domain.csproj
+[folder] Abstracts
+[folder] Interfaces
+[folder] Models
+[folder] Singletons
+[project - classlib ] PizzaBox.Storing.csproj
+[folder] Repositories
+[project - xunit] PizzaBox.Testing.csproj
+[folder] Tests
+requirements
+The application is centered around the interaction of 4 main objects:
+	Customer
+	Order
+	Pizza
+	Store
+store
+[required] there should exist at least 2 stores for a customer to choose from
+[required] each store should be able to view any and all of their placed orders
+[required] each store should be able to view any and all of their sales (weekly, monthly, quarterly)
+
+order
+[required] each order must be able to modify its collection of pizzas
+[required] each order must be able to compute its pricing
+[required] each order must be limited to a total pricing of no more than $250
+[required] each order must be limited to a collection of pizzas of no more than 50
+
+pizza
+[required] each pizza must be able to have a crust
+[required] each pizza must be able to have a size
+[required] each pizza must be able to have toppings
+[required] each pizza must be able to compute its pricing
+[required] each pizza must have no less than 2 default toppings
+[required] each pizza must have no more than 5 total toppings
+
+customer
+[required] must be able to view its order history
+[required] must be able to only order from 1 location in a 24-hour period with no reset
+[required] must be able to only order once in a 2-hour period
+
+technologies
+.NET Core - C#
+.NET Core - EF + SQL
+.NET Core - xUnit
+timelines
+(DELETE)due on Mar-15 at 11p Central
+present on Mar-17 starting at 9.30a Central
+try to implement as many requirements as you can (don't push to get all done)
+should be an mvp (minimum viable product) status
+
+able to at least place an order with 1 pizza
+able to at least have 10 total validation unit tests for Customer, Order, Pizza, Store
+able to save a placed order including customer info, pizza info, store info
+
+
+as a customer
+should be able to launch application
+should be able to view all stores
+should be able to select a store
+should be to place an order
+should be able to choose either custom or pre-set pizzas
+
+for a custom pizza
+should be able to choose crust, size and toppings
+
+for a preset pizza
+should be able to choose pizza and size
+
+should be able to view a preview of the order in progress
+should be able to modify the order in progress (add/remove pizza)
+should be able to place/checkout the order in progress
+should be able to view order history
+should be able to make new order
+
+store story
+as a store, i should be able do this:
+access the application
+select options for order history, sales
+if order history
+select options for all store orders and orders associated to a user (filtering)
+if sales
+see pizza type, count, revenue by week or by month
+
+the goal is to try to complete as many reqs as you can in the time alloted. :)
+
+/////////////////////////////////////////////////////////////////
+
+architecture (REQUIRED)
+[solution] PizzaBox.sln
+[project - console] PizzaBox.Client.csproj
+[project - classlib] PizzaBox.Domain.csproj
+[folder] Abstracts
+[folder] Interfaces
+[folder] Models
+[folder] Singletons
+[project - classlib ] PizzaBox.Storing.csproj
+[folder] Repositories
+[project - xunit] PizzaBox.Testing.csproj
+[folder] Tests
+requirements
+The application is centered around the interaction of 4 main objects:
+
+Customer
+Order
+Pizza
+Store
+store
+[required] there should exist at least 2 stores for a customer to choose from
+[required] each store should be able to view any and all of their placed orders
+[required] each store should be able to view any and all of their sales (weekly, monthly, quarterly)
+order
+[required] each order must be able to modify its collection of pizzas
+[required] each order must be able to compute its pricing
+[required] each order must be limited to a total pricing of no more than $250
+[required] each order must be limited to a collection of pizzas of no more than 50
+pizza
+[required] each pizza must be able to have a crust
+[required] each pizza must be able to have a size
+[required] each pizza must be able to have toppings
+[required] each pizza must be able to compute its pricing
+[required] each pizza must have no less than 2 default toppings
+[required] each pizza must have no more than 5 total toppings
+customer
+[required] must be able to view its order history
+[required] must be able to only order from 1 location in a 24-hour period with no reset
+[required] must be able to only order once in a 2-hour period
+technologies
+.NET Core - C#
+.NET Core - EF + SQL
+.NET Core - xUnit
+
+timelines
+(DELETE)due on Mar-15 at 11p Central
+present on Mar-17 starting at 9.30a Central
+try to implement as many requirements as you can (don't push to get all done)
+should be an mvp (minimum viable product) status
+
+
+-- able to at least place an order with 1 pizza
+-- able to at least have 10 total validation unit tests for Customer, Order, Pizza, Store
+-- able to save a placed order including customer info, pizza info, store info
+
+
+as a customer
+	-- should be able to launch application
+	-- should be able to view all stores
+	-- should be able to select a store
+	-- should be to place an order
+	-- should be able to choose either custom or pre-set pizzas
+
+for a custom pizza
+	-- should be able to choose crust, size and toppings
+
+for a preset pizza
+	-- should be able to choose pizza and size
+	-- should be able to view a preview of the order in progress
+	-- should be able to modify the order in progress (add/remove pizza)
+	-- should be able to place/checkout the order in progress
+	-- should be able to view order history
+	-- should be able to make new order
+
+
+store story
+as a store, i should be able do this:
+	-- access the application
+	-- select options for order history, sales
+if order history
+	-- select options for all store orders and orders associated to a user (filtering)
+	-- if sales
+
+	-- see pizza type, count, revenue by week or by month
+	
+the goal is to try to complete as many reqs as you can in the time alloted. :)
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////
+	Old Code
+////////////////////////////////////////////////////////////////////////////
+/// ///////////////////////////////////////////////////////////////////////
+// public static void PrintStoreInfo()
+//         {
+//             var orders = orderController.GetOrders();
+//             var stores = storeController.GetStores();
+
+//             var result = orders.Join(stores,
+//                 orders => orders.StoreId,
+//                 stores => stores.AStoreId,
+//                 (orders, stores) => new
+//                     {
+//                         StoreName = stores.Name,
+//                         OrderNum = orders.AOrderId
+//                     }).ToList();
+            
+//             result.ForEach(x => System.Console.WriteLine($"{x.StoreName}\t{x.OrderNum}"));
+            
+//         }
+
+        // public static void PrintStoreInfo2(string input)
+        // {
+        //     var stores = storeController.GetStores();
+        //     var orders = orderController.GetOrders();
+
+        //     var ordStoreJoin = orders.Join(stores,
+        //         orders => orders.StoreId,
+        //         stores => stores.AStoreId,
+        //         (orders, stores) => new 
+        //         {
+        //             StoreName = stores.Name,
+        //             OrderNum = orders.AOrderId
+        //         }).Where(x => x.StoreName == input).ToList();
+
+        //     ordStoreJoin.ForEach(x => System.Console.WriteLine($"{x.StoreName} {x.OrderNum}"));
+        // }
+
+        // public static void PrintStoreInfo()
+        // {
+        //     var orders = orderController.GetOrders();
+        //     var stores = storeController.GetStores();
+        //     var pizzas = pizzaController.GetPizzas();
+        //     var customers = customerController.GetCustomers();
+
+        //     var ordStoreJoin = orders.Join(stores,
+        //         orders => orders.StoreId,
+        //         stores => stores.AStoreId,
+        //         (orders, stores) => new
+        //             {
+        //                 StoreName = stores.Name,
+        //                 OrderNum = orders.AOrderId,
+        //                 OrderPizza = orders.PizzaId,
+        //                 OrderCust = orders.CustomerId
+        //             }).ToList();
+                    
+        //     var pizzaJoin = pizzas.Join(ordStoreJoin,
+        //         pizzas => pizzas.APizzaId,
+        //         ordStoreJoin => ordStoreJoin.OrderPizza,
+        //         (pizzas, ordStoreJoin) => new
+        //         {
+        //             StoreName = ordStoreJoin.StoreName,
+        //             OrderNum = ordStoreJoin.OrderNum,
+        //             PizzaName = pizzas.Name,
+        //             OrderCust = ordStoreJoin.OrderCust
+        //         }).ToList();
+            
+        //     var custJoin = customers.Join(pizzaJoin,
+        //         customers => customers.ACustomerId,
+        //         pizzaJoin => pizzaJoin.OrderCust,
+        //         (customers, pizzaJoin) => new
+        //         {
+        //             StoreName = pizzaJoin.StoreName,
+        //             PizzaName = pizzaJoin.PizzaName,
+        //             CustomerName = customers.Name
+        //         }).OrderByDescending(x => x.StoreName);
+
+
+            
+        //     System.Console.WriteLine($"Store Name\tCustomer Name\tPizza Name");
+        //     foreach(var x in custJoin)
+        //     {
+        //         System.Console.WriteLine($"{x.StoreName}\t{x.CustomerName}\t{x.PizzaName}");
+        //     } 
+        // }
+
+
+Due Wednesday 9pm CST
+This is the exact same requirements as SweetnSalty (below) with some notable required changes.
+Print the numbers 1 to 1000 to the console. (console.log()).
+Print them in groups of 10 per line with a space separating each number. This will require string concatenation to print the 10 number/strings to the console at a time.
+When the number is a multiple of three, print “sweet” instead of the number on the console.  
+If the number is a multiple of five, print “salty” (instead of the number) to the console.  
+For numbers which are multiples of three and five, print “sweet’nSalty” to the console (instead of the number).  
+After the numbers have all been printed, print out how many sweet’s, how many salty’s, and how many sweet’nSalty’s. These are three separate groups, so sweet’nSalty does not increment sweet or salty (and vice versa). 
+Include verbose commentary in the source code to tell me what each few lines are doing. (I will count off for this.)
+The coding Challenge is due by 9pm, Wednesday, 03.17.21. 
+Push the “compilable” source code to a directory called SweetnSalty_Js your P0 repo. 
+
+
+
+
+
+
+
+
+
