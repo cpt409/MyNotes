@@ -62,7 +62,36 @@ git merge upstream/master (or whatever)  (use git remote -v to see the branches)
 if you want to update your github copy, then:
 git push origin master
 
+
+when updating from the batchRepo:
+- git fetch
+- git checkout main
+- git pull origin
+
+other branches: 
+	git branch
+	git pull demosBranch, etc... for each branch
+should be 4:
+	resources
+	demosBranch
+	PdfsBranch
+	CodingChallenges
+
+also try:
+	git switch <existing branch>
+	
+
 ///////////////////////////
+
+Drills:
+Singleton
+LinkedList
+EventHandler
+Delegate
+
+
+
+
 
 
 

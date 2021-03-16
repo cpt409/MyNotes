@@ -1,0 +1,76 @@
+medicine to avoid:
+	diflunisal
+	ibuprofen
+	nystatin
+	piroxicam
+	tetracycline
+
+Good:
+	acetominophen
+	amoxicillin
+	ampicillin
+	aspirin									
+	diclofenac	(aka Voltaren, Arthrotec)	NSAID
+	gentamicin								antibiotic
+	indomethacin							
+	ketoprofen								
+	naproxen								aleve
+	neomycin								
+	penicillamine							
+	penicillin
+	streptomycin							
+	sulfamethoxazole						
+	sulindac								
+
+
+alternatives:
+arnica
+ginger
+turmeric
+thyme
+omega-3 fatty acids
+cinnamon
+
+
+yeoman.io
+npm install -g yo generator-aspnet gulp bower
+yo aspnet
+
+choose	WebApplication
+		Bootstrap (3.3.7)
+		CarModel
+
+Nuget:
+EntityFramework.MicrosoftSqlServer
+
+to get this one, you have to install it manually:
+EntityFramework.MicrosoftSqlServer.Design
+open project.json file:
+find this line:
+"EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+add this line:
+"EntityFramework.MicrosoftSqlServer.Design": "7.0.0-rc1-final",
+
+
+dnx ef dbcontext scaffold "Server=.\sqlexpress;Database=Cars;Trusted_Connection=True;" 
+EntityFramework.MicrosoftSqlServer --outputDir Models
+
+
+add this to Startup class, in the ConfigureServices method:
+var connection = @"Server=.\sqlexpress;Database=Cars;Trusted_Connection=True;";
+services.AddEntityFramework()
+  .AddSqlServer()
+  .AddDbContext<CarsContext>(options => options.UseSqlServer(connection));
+  
+  
+
+
+
+
+
+
+
+
+
+
+

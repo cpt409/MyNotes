@@ -1,15 +1,12 @@
 
+////////////////////////////////  Zoom  /////////////////////////////////////
+Zoom:
+Main:
+https://revature.zoom.us/j/93857863375?pwd=V01iRERYSnRvQnZSWmlOYU1NVitydz09
+passId:		93857863375
+passcode:	V01iRERYSnRvQnZSWmlOYU1NVitydz09
 
-Slack:
-chrisschoolacct
-03012021-dotnet-uta
-
-github:
-cpt409
-
-zoom room:
-https://revature.zoom.us/j/8458858703?pwd=SkdqUDc3STBWMHhoaGhmbnpMYkRZQT09
-
+Mark:
 Meeting ID:		845 885 8703
 Host:			Mark Moore
 Passcode:		j1f#yqKk
@@ -17,27 +14,296 @@ Numeric Passcode:	82641604
 Participant ID:		270825
 https://revature.zoom.us/j/8458858703?pwd=SkdqUDc3STBWMHhoaGhmbnpMYkRZQT09
 
-Zoom:
+My Zoom:
 My personal meeting ID:		578 882 8873
 
-SonarCloud.io/account
-cpt409
 
 
-http://connect.revature.net/
+////////////////////////////////  Slack  /////////////////////////////////////
+
+Slack:
+revaturepro.slack.com
+christopher.trimmer@revature.net
+03012021-dotnet-uta
+Member ID: U01PRSWUV7V
 
 
+Fred slack:
+https://join.slack.com/t/revaturepro/shared_invite/zt-n2degcte-bDCDWHbq2EPwhBAy_hPA1Q
+https://join.slack.com/t/revaturepro/shared_invite/zt-n9hdupjo-ikM0OvM8WvSPZ~k~KxIzUw
+
+Mark Moore slack:
+https://join.slack.com/t/revature-2qu3256/shared_invite/zt-mv65v5b6-3WpxvMU8~asORnKhleQWqw
+
+
+
+////////////////////////////////  HR  /////////////////////////////////////
+
+emails:
 hr@revature.com
 connect@revature.com
-
-
-
+itsupport@revature.com
+timesheet@revature.com
+payroll@reature.com
+housing@revature.com
+kyle.taylor
+fred.belotte
+Emily.baillie@revature.com
+antony.xavier@revature.com
+Alexandra.fingerhut@revature.com
 
 Email-Id	christopher.trimmer@revature.net
 Password	Warl0rd!@#
-Login URL	https://mail.revature.net
 
+Email:
+https://mail.revature.net
+
+http://connect.revature.net/
+https://workforcenow.adp.com/
+
+Timesheet:
+https://rev2.force.com/revature/
+
+Revature Pro:
 https://app.revature.com/dashboard
+
+Revature:
+Two-Factor Authentication Backup Codes
+747220
+864505
+760443
+113908
+741844
+996261
+278957
+773561
+265472
+188872
+
+
+
+
+
+
+
+username:  christopher.trimmer
+
+ctrl-~	to get terminal window
+
+"C:\\Program Files\\Git\\bin\\bash.exe" to "terminal.integrated.shell.windows" in VS Code’s user settings.
+
+
+
+
+
+writeline(enter your name:)
+
+string input;
+input = console.readline();
+
+if (!stirng.Isnullorwhitespace(input)){
+	writeline(input);
+}
+
+terminal.integrated.windowsEnableConpty   <-- make that false
+
+{
+  "key": "ctrl+alt+t",
+  "command": "shellLauncher.launch"
+}
+
+
+Proficiencies:
+VS Code
+Visual Studio 2017/2019
+Git Bash
+GitHub
+
+
+Slack
+Zoom
+MS Teams
+Skype
+LinkedIn
+Discord
+
+
+if (value/firstcheck) * firstcheck == value)
+
+
+drwx-xr-x
+d = directory
+user, group, owner
+rwx = read, write, execute
+user = read only, etc...
+
+
+rm -rf <dir>
+(recursive, force)
+
+
+
+(it will show that you can fetch/push)
+
+dotnet new gitignore
+
+nano <file name>
+
+
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github:
+git push -u origin main
+
+
+
+git clone https://github.com/cpt409/RevPizzaBox.git
+
+
+
+
+
+///////////////////////////////  GitHub ////////////////////////////////
+
+https://github.com/03012021-dotnet-uta/project-0
+
+Create all work in 
+Source/Repos/Revature
+modify .gitignore file make things visible
+
+
+
+
+xml for c# extention in vs code
+///  for xml comments
+
+
+git remote add origin https://github.com/03012021-dotnet-uta/project-0
+
+https://github.com/03012021-dotnet-uta/ChrisTrimmer_p0.git
+
+
+git fetch https://github.com/03012021-dotnet-uta/pizzabox.git
+
+git fetch
+git pull
+
+
+For branch repo:
+/Source/Repos/Revature_New/BatchRepository/03012021BatchRepository
+go into 03102...
+git pull (to git updates)
+
+git checkout main
+git switch PdfsBranch
+
+Branches:
+	PdfsBranch
+	demosBranch
+	resources
+	CodingChallenges
+	main
+
+
+----------
+
+install mssql extention
+ctrl+shift+p, or F1
+mssql (select SQL Server)
+file -> new document
+ctrl+k m  =  select sql from dropdown
+F1
+MS SQL: Connect
+500-409
+dbName
+Integrated authentication
+profile name (tower profile)
+create db: sqlCreateDatabase
+ctrl+shift+E (execute commands)
+F1
+ms sql: Use Database
+find DB you just created
+
+-------------------------------------
+
+create migrations:
+dotnet ef migrations add CreateCoreSchoolDB
+
+update database:
+dotnet ef database update
+
+
+
+acid
+transaction and isolation levels
+
+
+Week2 - "Fizz/Buzz" by any other name. 
+Print the numbers 1 to 1000 to the console. 
+Print them in groups of 10 per line with a space separating each number.  
+When the number is multiple of three, print “sweet” instead of the number on the console.  
+If the number is a multiple of five, print “salty” (instead of the number) to the console.  
+For numbers which are multiples of three and five, print “sweet’nSalty” to the console (instead of the number).  
+After the numbers have all been printed, print out how many sweet’s, how many salty’s, and how many sweet’nSalty’s. These are three separate groups, so sweet’nSalty does not increment sweet or salty (and vice versa). 
+Include verbose commentary in the source code to tell me what each few lines are doing. 
+The coding Challenge is due by midnight, today, 03.10.21. 
+Push the “compilable” source code to your P0 repo. 
+Good Luck!
+
+
+
+what is ORM  object relational maps
+fluent API - sweet of classes that EF uses to interact with databases
+EF = open source, cross platform ORM -> enables developers to work with database using .Net objects, and eliminates the need for most of the data-access code they need to write.
+data access is performed using a Model.
+Models are made up of enttity classes and a context object.
+context represents the 
+
+
+
+"Prepared Statement" vs. "Stored Procedure".
+What is the "CHECK" constraint?
+Name some Aggregate Functions.
+Name some Scalar Functions.
+Difference between UNION and UNION ALL.
+What is SQL Injection?
+
+
+
+git clone https://address
+create new folder, go to that folder
+git checkout -b <sweetnsaltyjs>
+dotnet new console -o <sweetnsalty_js>
+
+git status
+git add.
+git commit -m "xxxx"
+git push --set-upstream origin <sweetnsaltyjs> (can use -U instead of upstream)
+
+you should be able to refresh github and see it in the side branch.
+git checkout main
+
+cd out to your name_p0 folder
+git merge <sweetnsaltyjs>
+
+git push origin main
+go back refresh github and you should see it populated in main, and in branch.
+you can now delete the branch.
+
+
+create pull request from github
+do the other two drop-downs
+base main:  from: nodejs folder
+
+---------------------------------------
+
+git branch -D remove
+git push origin --delete Project0
+
+---------------------------------------
+
 
 
 

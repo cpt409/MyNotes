@@ -15,7 +15,7 @@ add this in <ItemGroup> with the Package References:
 <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
 
 In Package Manager Console:
-Scaffold-DbContext "Server=.\;Database=PWS_Names;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+Scaffold-DbContext "Server=500-409;Database=PWS_Names;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 
 To update code from the Database:
 Scaffold-DbContext "Server=.\;Database=PWS_Names;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force
