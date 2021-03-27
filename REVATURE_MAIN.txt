@@ -20,6 +20,13 @@ My personal meeting ID:		578 882 8873
 
 
 //////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////  Elevator Pitch Document ////////////////////////////
+
+
+https://revature0-my.sharepoint.com/:x:/g/personal/mark_moore_revature_com/ETxFsL2ladVBjnzZlwdTO0EBtq-XPl3b3UBckOSksqESwg
+
+
+//////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////  Slack  /////////////////////////////////////////////
 
 Slack:
@@ -241,15 +248,18 @@ dotnet sln add **/*.csproj
 
 dotnet add PizzaBox.Storing/PizzaBox.Storing.csproj reference PizzaBox.Domain/PizzaBox.Domain.csproj
 dotnet add PizzaBox.Client/PizzaBox.Client.csproj reference PizzaBox.Domain/PizzaBox.Domain.csproj
-dotnet add PizzaBox
+dotnet add PizzaBox.Client/PizzaBox.Client.csproj reference PizzaBox.Storing/PizzaBox.Storing.csproj
+
+
+-->  wait on this one:  do the scaffold first:  mkdir PizzaBox.Domain/Abstracts
 
 mkdir PizzaBox.Domain/Models
-mkdir PizzaBox.Domain/Abstracts
 mkdir PizzaBox.Domain/Singletons
 mkdir PizzaBox.Domain/Interfaces
 mkdir PizzaBox.Storing/Repositories
 mkdir PizzaBox.Storing/Interfaces
 mkdir PizzaBox.Testing/Tests
+
 touch PizzaBox.Storing/Repositories/StoreRepository.cs
 touch PizzaBox.Storing/Repositories/CustomerRepository.cs
 touch PizzaBox.Storing/Repositories/ComponentRepository.cs
@@ -260,11 +270,13 @@ touch PizzaBox.Storing/Interfaces/ICustomerRepository.cs
 touch PizzaBox.Storing/Interfaces/IComponentRepository.cs
 touch PizzaBox.Storing/Interfaces/IPizzaRepository.cs
 touch PizzaBox.Storing/Interfaces/IOrderRepository.cs
+
 touch PizzaBox.Domain/Abstracts/AStore.cs
 touch PizzaBox.Domain/Abstracts/APizza.cs
 touch PizzaBox.Domain/Abstracts/ACustomer.cs
 touch PizzaBox.Domain/Abstracts/AComponent.cs
 touch PizzaBox.Domain/Abstracts/AOrder.cs
+
 touch PizzaBox.Domain/Models/Pittsburgh.cs
 touch PizzaBox.Domain/Models/TampaBay.cs
 touch PizzaBox.Domain/Models/CheesePizza.cs
@@ -275,7 +287,8 @@ touch PizzaBox.Domain/Models/CustomPizza.cs
 touch PizzaBox.Domain/Models/Crusts.cs
 touch PizzaBox.Domain/Models/Toppings.cs
 touch PizzaBox.Domain/Models/Sizes.cs
-touch PizzaBox.Domain/Models/PizzaBoxContext.cs
+touch PizzaBox.Domain/Models/Order.cs
+
 touch PizzaBox.Testing/Tests/StoreTests.cs
 touch PizzaBox.Testing/Tests/PizzaTests.cs
 touch PizzaBox.Testing/Tests/CustomerTests.cs
@@ -306,9 +319,39 @@ dotnet add PizzaBox.Storing/ package Microsoft.EntityFrameworkCore.SqlServer
 dotnet add PizzaBox.Storing/ package Microsoft.EntityFrameworkCore.Design
 dotnet add PizzaBox.Storing/ package Microsoft.EntityFrameworkCore.Tools.DotNet
 
+dotnet add PizzaBox.Client/ package Microsoft.EntityFrameworkCore  
+dotnet add PizzaBox.Client/ package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add PizzaBox.Client/ package Microsoft.EntityFrameworkCore.Tools
+dotnet add PizzaBox.Client/ package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add PizzaBox.Client/ package Microsoft.EntityFrameworkCore.Design
+dotnet add PizzaBox.Client/ package Microsoft.EntityFrameworkCore.Tools.DotNet
+
+dotnet add PizzaBox.Client/ package Microsoft.EntityFrameworkCore  
+dotnet add PizzaBox.Client/ package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add PizzaBox.Client/ package Microsoft.EntityFrameworkCore.Tools
+dotnet add PizzaBox.Client/ package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add PizzaBox.Client/ package Microsoft.EntityFrameworkCore.Design
+dotnet add PizzaBox.Client/ package Microsoft.EntityFrameworkCore.Tools.DotNet
 
 
-dotnet ef -p PizzaBox.Domain/ dbcontext scaffold "Server=500-409;Database=PizzaBoxDBMain;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+dotnet ef -p PizzaBox.Domain/ dbcontext scaffold "Server=500-409;Database=PizzaBox8DB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Abstracts
+
+dotnet ef -p PizzaBox.Models/PizzaBox.Models.csproj dbcontext scaffold "Server=500-409;Database=PizzaBox8DB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+
+dotnet ef -p Models.csproj dbcontext scaffold "Server=500-409;Database=PizzaBox8DB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models
+
+
+dotnet add PizzaBox.Models/ package Microsoft.EntityFrameworkCore  
+dotnet add PizzaBox.Models/ package Microsoft.EntityFrameworkCore.Tools
+dotnet add PizzaBox.Models/ package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add PizzaBox.Models/ package Microsoft.EntityFrameworkCore.Design
+dotnet add PizzaBox.Models/ package Microsoft.EntityFrameworkCore.Tools.DotNet
+
+dotnet add package Microsoft.EntityFrameworkCore  
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.Tools.DotNet
 
 
 using Microsoft.EntityFrameworkCore;
@@ -425,4 +468,516 @@ void Delete(int customerId);
 void Save();
 
 
+////////////////////////////////////////////////////////////////////////////
+stuff that didn't work:
+dotnet-aspnet-codegenerator -p "C:\MyProject\MyProject.csproj" controller -name StoreController -api -m SportsStore.Models.MyDemoModel -dc SportsStoreDbContext -outDir Controllers -namespace SportsStore.Controllers
+
+dotnet aspnet-codegenerator --project . controller -name StoreController -m Author -dc SportStoreDBContext
+
+dotnet aspnet-codegenerator --project . controller  -name StoreController -dc SportStoreDBContext
+
+
+//////////////////////////////////////////
+
+dotnet new webapi
+
+webapi
+class lib - repo
+class lib - business/models
+
+https://localhost:5001/swagger/index.html
+https://localhost:5001/weatherForecast
+
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.Tools.DotNet
+dotnet add package Microsoft.EntityFrameworkCore.Inmemory
+dotnet add package Microsoft.Data.SqlClient;
+
+dotnet tool install --global dotnet-aspnet-codegenerator
+dotnet aspnet-codegenerator --project . controller -name StoreController -dc SportStoreDBContext -outDir Controllers -namespace SportsStore.Controllers
+
+
+////////////////////////////////////////////////////
+
+ASPNet Web Application
+
+
+
+Steps by Mark:
+
+create project:
+apsnet core api
+https://localhost:5001/swagger/index.html
+https://localhost:5001/WeatherForecast
+
+
+start up file:
+make all changes ->  order is important
+app.UseStatusCodePages();
+app.UseHttpsRedirection();
+app.UseRewriter(neew RewriteOptions().AddRedirect("^$", "index.html"));
+app.UseStaticFiles();
+app.UseRouting();
+app userewriter -> add the using statement
+using Microsoft.AspNetCore.Rewrite
+
+create wwwroot folder
+add index.html
+add login.html
+add login.js
+add upload.html
+
+change the launchSeetings
+remove swagger, and make it index.html
+
+
+add Models classlib
+add a model class
+
+add Controller -> api controller (may need EF instead)
+modify Post method
+
+add refs to model
+
+add Business Logic
+add repo
+
+add refs to business logic
+
+add Class Library -> BusinessLogicLibrary
+add Class Library -> Repository
+add class library -> models
+
+add ref from business to repo
+add ref from business to models
+add ref from todo api to repo
+
+
+
+in Postman:
+even though you start with the .html page
+Post:   https://localhost:5001/api/TodoItems
+(don't use https://localhost:5001/index.html)
+
+for the example project:
+http://localhost:11881/login.html
+
+if you get wild webpage errors:
+	- remove all of the swagger functions
+	- if at beginning using api/name, then make sure name = the first controller class name
+	- at the top of controller class:   [Route("api/<name of controller only>")]
+
+for Get in postman:  use the url/number (of item you are updating)
+{
+	"id":1,
+	"name":"Chris",
+	"isAdmin":true
+}
+
+
+
+
+/////////////////////////////////////////////////////////////////////
+
+
+docker run -it ubuntu bash
+docker run -d -p 80:80 docker/getting-started
+
+docker run hello-world
+docker image ls
+
+docker ps			the container info
+docker ps -above
+docker rm <containerID>
+
+docker ps -a
+
+docker run -d -p 3000:80 hello-world
+detached = run in background
+p = port (you pick first number)
+second arg (80) is the port that your app is using: 5001, 5000, 80, etc.
+
+docker image rm <use image id>
+docker rmi <imageid> are more if you have them
+
+// must use lower case name
+-t give it a nmae
+docker build -t todolist .  -------------> . means look for docker file in this folder
+
+docker image ls
+docker run -dp 3500:3000 todolist  --------
+look in index.js for the port number
+
+now go to browser:  localhost:3500
+
+delete container first
+delete image next
+
+docker ps
+docker stop <containerID>
+
+now that it has been createed:
+docker start <containerID>    ---------------
+
+when you make changes in project,
+	it doesn't mean it makes changes to container
+	the container version of the image that you started with
+	you have to rebuild the image
+	
+docker build -t todolist1 .
+
+
+create the docker file (no suffix:  Dockerfile)
+use the todoList example from batchRepo
+
+in hub:
+create Repo
+make it public
+docker tag <project> cpt409docker/nameRepo
+docker push cpt409docker/nameRepo
+
+refresh hub webpage:
+docker pull markmooredocker/todolistrepo  <... :tagname (if blank, it will pull the latest);
+
+now:
+docker images ls
+docker run -dp 3800:3000 markmooredocker/todolistrepo
+
+docker ps -a
+now go to the webpage (localhost:3800)
+
+
+dotnet new mvc -o mvcbatchdemo
+create docker file
+
+docker build -t mvcdockerdemo .
+docker run -dp 3001:5001 mvcdockerdemo
+
+
+docker pull bc12807/mydockermvcappdemo
+(if you don't have it the image locally, it will copy it locally)
+
+///////////////////////////////////////////////////////////////////
+
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: '<Azure service connection>'
+    appName: '<Name of web app>'
+    package: $(System.DefaultWorkingDirectory)/**/*.zip
+	
+///////////////////////////////////////////////////////////////////
+
+UPDATED NOTES:
+
+create core web api
+project name:  
+PizzaBox
+	-> Controllers
+	-> wwwroot
+		-> css
+			-> site.css
+		-> js
+			-> login.js
+		index.html
+		login.html
+		upload.html
+		
+make sure swagger works and weatherForecast
+
+create PizzaBox.Models		classlib
+	-> generate from database
+create PizzaBox.Business	classlib
+	-> user methods
+create PizzaBox.Repository	classlib
+	-> context.cs
+	-> interfacees folder
+	-> repo folder
+create PizzaBox.Testing		xunit
+	-> testing.cs
+
+add ref from business to repo
+add ref from business to models
+add ref from repo to Models
+add ref from PizzaBox to Models
+
+
+use bash:
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.Tools.DotNet
+dotnet add package Microsoft.EntityFrameworkCore.Inmemory
+dotnet add package Microsoft.Data.SqlClient
+dotnet add package Microsoft.Net.Test.Sdk
+dotnet add package Microsoft.Extensions.Configuration.UserSecrets
+dotnet restore
+
+using System.Configuration; in context class
+
+do this in main PizzaBox because StartUp needs it:
+dotnet user-secrets init
+dotnet user-secrets set "PizzaBox:ServiceApiKey" "12345"
+dotnet user-secrets set ConnectionString:PizzaBox "Data Source=500-409;Initial Catalog=PizzaBox8DB;Trusted_Connection=True;"
+
+dotnet ef -p PizzaBox.csproj dbcontext scaffold ConnectionString:PizzaBox Microsoft.EntityFrameworkCore.SqlServer --context-dir "d:/Source/Repos/Revature_Test_Projects/WebAPITesting/PizzaBoxTesting/PizzaBox1/PizzaBox/Models/" --context-namespace Models -c PizzaBoxContext -o "d:/Source/Repos/Revature_Test_Projects/WebAPITesting/PizzaBoxTesting/PizzaBox1/PizzaBox/Models/Models/"
+
+using Microsoft.Extensions.Configuration
+in startup.cs
+public void ConfigureServices(IServiceCollection services)
+{
+	string connectionString = Configuration.GetConnectionString("PizzaBox");
+    services.AddDbContext<BloggingContext>(options =>
+        options.UseSqlServer(connectionString));
+}
+
+using System.Configuration
+in the context class:
+public class BloggingContext : DbContext
+{
+    public DbSet<Blog> Blogs { get; set; }
+    public DbSet<Post> Posts { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+      optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["PizzaBox"].ConnectionString);
+    }
+}
+
+now that context is built, scaffold the first controller.
+
+modify launchURL to be api/Customer (first part of the controller name).  (remove the swagger stuff).
+
+
+now its time to add the JavaScript stuff:
+add these to StartUp.cs
+public void Configure: these go above app.UseHTTPSRedirection()
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
+add all of the wwwroot files.
+(see section titled site.js below for the site.js stuff)
+modify launchURL again:  index.html.
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+try:
+
+do this in main PizzaBox because StartUp needs it:
+dotnet user-secrets init
+dotnet user-secrets set "PizzaBox:ServiceApiKey" "12345"
+dotnet user-secrets set ConnectionString:PizzaBox "Data Source=500-409;Initial Catalog=PizzaBox8DB;Trusted_Connection=True;"
+
+dotnet ef -p PizzaBox.csproj dbcontext scaffold ConnectionString:PizzaBox Microsoft.EntityFrameworkCore.SqlServer --context-dir "d:/Source/Repos/Revature_Test_Projects/WebAPITesting/PizzaBoxTesting/PizzaBox1/PizzaBox/Models/" --context-namespace Models -c PizzaBoxContext -o "d:/Source/Repos/Revature_Test_Projects/WebAPITesting/PizzaBoxTesting/PizzaBox1/PizzaBox/Models/Models/"
+
+
+
+now go to models:
+dotnet ef -p PizzaBox.Models/PizzaBox.Models.csproj dbcontext scaffold Name=ConnectionStrings:PizzaBox Microsoft.EntityFrameworkCore.SqlServer -o Models --context-dir PizzaBox.Models/ -c "PizzaBoxContext"
+
+using Microsoft.Extensions.Configuration
+in startup.cs
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDbContext<BloggingContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase")));
+}
+
+using System.Configuration
+in the context class:
+public class BloggingContext : DbContext
+{
+    public DbSet<Blog> Blogs { get; set; }
+    public DbSet<Post> Posts { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+      optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["BloggingDatabase"].ConnectionString);
+    }
+}
+
+
+more commands:
+dotnet ef database update InitialCreate
+dotnet ef migrations add "initial"
+
+secrets:
+dotnet user-secrets init
+dotnet user-secrets set "PizzaBox:ServiceApiKey" "12345"
+dotnet user-secrets set ConnectionString:Blogging "Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=Blogging"
+dotnet ef dbcontext scaffold Name=ConnectionString:Blogging Microsoft.EntityFrameworkCore.SqlServer
+dotnet user-secrets set "Movies:ServiceApiKey" "12345" --project "C:\apps\WebApp1\src\WebApp1"
+
+dotnet user-secrets init
+dotnet user-secrets set ConnectionStrings:PizzaBox "Data Source=500-409;Initial Catalog=PizzaBox8DB;Trusted_Connection=True;"
+
+example:
+dotnet ef dbcontext scaffold "Server=(localdb)\mssqllocaldb;Database=Blogging;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models -t Blog -t Post --context-dir Context -c BlogContext --context-namespace New.Namespace
+
+or add it to appsettings.json:
+{
+  "ConnectionString": {
+    "BloggingDatabase": "Server=(localdb)\\mssqllocaldb;Database=EFGetStarted.ConsoleApp.NewDb;Trusted_Connection=True;"
+  },
+}
+
+using Microsoft.Extensions.Configuration
+public void ConfigureServices(IServiceCollection services)
+{
+    services.AddDbContext<BloggingContext>(options =>
+        options.UseSqlServer(Configuration.GetConnectionString("BloggingDatabase")));
+}
+
+
+
+dotnet ef -p Models/Models.csproj dbcontext scaffold "Server=500-409;Database=PizzaBox8DB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -o Models/Models --context-dir Models -c PizzaBoxContext --context-namespace Models
+
+dotnet ef -p PizzaBox.Models/PizzaBox.Models.csproj dbcontext scaffold "Server=500-409;Database=PizzaBox8DB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer --context-dir "d:/Source/Repos/Revature_Test_Projects/WebAPITesting/PizzaBoxTesting/PizzaBox1/PizzaBox/PizzaBox.Repository/" --context-namespace PizzaBox.Repository -c PizzaBoxContext -o "d:/Source/Repos/Revature_Test_Projects/WebAPITesting/PizzaBoxTesting/PizzaBox1/PizzaBox/PizzaBox.Models/Models/"
+
+dotnet ef -p PizzaBox/PizzaBox.csproj dbcontext scaffold
+"Server=500-409;Database=PizzaBox8DB;Trusted_Connection=True;"
+ Microsoft.EntityFrameworkCore.SqlServer --context-dir "d:/Source/Repos/Revature_Test_Projects/WebAPITesting/PizzaBoxTesting/PizzaBox1/PizzaBox/Models" --context-namespace Models -c PizzaBoxContext -o "d:/Source/Repos/Revature_Test_Projects/WebAPITesting/PizzaBoxTesting/PizzaBox1/PizzaBox/Models/Models"
+
+using System.Configuration.ConfigurationManager;
+
+dotnet ef -p Models/Models.csproj dbcontext scaffold "Server=500-409;Database=PizzaBox8DB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer --context-dir "d:/Source/Repos/Revature_Test_Projects/WebAPITesting/PizzaBoxTesting/PizzaBox1/PizzaBox/Models/" --context-namespace Models -c PizzaBoxContext -o "d:/Source/Repos/Revature_Test_Projects/WebAPITesting/PizzaBoxTesting/PizzaBox1/PizzaBox/Models/Models/"
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+site.js
+
+const uri = 'api/TodoItems';
+let todos = [];
+
+function getItems() {
+  fetch(uri)
+    .then(response => response.json())
+    .then(data => _displayItems(data))
+    .catch(error => console.error('Unable to get items.', error));
+}
+
+function addItem() {
+  const addNameTextbox = document.getElementById('add-name');
+
+  const item = {
+    isComplete: false,
+    name: addNameTextbox.value.trim()
+  };
+
+  fetch(uri, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(item)
+  })
+    .then(response => response.json())
+    .then(() => {
+      getItems();
+      addNameTextbox.value = '';
+    })
+    .catch(error => console.error('Unable to add item.', error));
+}
+
+function deleteItem(id) {
+  fetch(`${uri}/${id}`, {
+    method: 'DELETE'
+  })
+  .then(() => getItems())
+  .catch(error => console.error('Unable to delete item.', error));
+}
+
+function displayEditForm(id) {
+  const item = todos.find(item => item.id === id);
+  
+  document.getElementById('edit-name').value = item.name;
+  document.getElementById('edit-id').value = item.id;
+  document.getElementById('edit-isComplete').checked = item.isComplete;
+  document.getElementById('editForm').style.display = 'block';
+}
+
+function updateItem() {
+  const itemId = document.getElementById('edit-id').value;
+  const item = {
+    id: parseInt(itemId, 10),
+    isComplete: document.getElementById('edit-isComplete').checked,
+    name: document.getElementById('edit-name').value.trim()
+  };
+
+  fetch(`${uri}/${itemId}`, {
+    method: 'PUT',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(item)
+  })
+  .then(() => getItems())
+  .catch(error => console.error('Unable to update item.', error));
+
+  closeInput();
+
+  return false;
+}
+
+function closeInput() {
+  document.getElementById('editForm').style.display = 'none';
+}
+
+function _displayCount(itemCount) {
+  const name = (itemCount === 1) ? 'to-do' : 'to-dos';
+
+  document.getElementById('counter').innerText = `${itemCount} ${name}`;
+}
+
+function _displayItems(data) {
+  const tBody = document.getElementById('todos');
+  tBody.innerHTML = '';
+
+  _displayCount(data.length);
+
+  const button = document.createElement('button');
+
+  data.forEach(item => {
+    let isCompleteCheckbox = document.createElement('input');
+    isCompleteCheckbox.type = 'checkbox';
+    isCompleteCheckbox.disabled = true;
+    isCompleteCheckbox.checked = item.isComplete;
+
+    let editButton = button.cloneNode(false);
+    editButton.innerText = 'Edit';
+    editButton.setAttribute('onclick', `displayEditForm(${item.id})`);
+
+    let deleteButton = button.cloneNode(false);
+    deleteButton.innerText = 'Delete';
+    deleteButton.setAttribute('onclick', `deleteItem(${item.id})`);
+
+    let tr = tBody.insertRow();
+    
+    let td1 = tr.insertCell(0);
+    td1.appendChild(isCompleteCheckbox);
+
+    let td2 = tr.insertCell(1);
+    let textNode = document.createTextNode(item.name);
+    td2.appendChild(textNode);
+
+    let td3 = tr.insertCell(2);
+    td3.appendChild(editButton);
+
+    let td4 = tr.insertCell(3);
+    td4.appendChild(deleteButton);
+  });
+
+  todos = data;
+}
+
+///////////////////////////////////////////////////////////////
 

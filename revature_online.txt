@@ -277,6 +277,12 @@ create new folder, go to that folder
 git checkout -b <sweetnsaltyjs>
 dotnet new console -o <sweetnsalty_js>
 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+go to p0
+git checkout -b <sweetnsaltyjs>
+may have to git switch <SweetnSaltyJsInteractive> after that
+add your folder/files
+
 git status
 git add.
 git commit -m "xxxx"
@@ -289,9 +295,14 @@ cd out to your name_p0 folder
 git merge <sweetnsaltyjs>
 
 git push origin main
+(if you get error about failed to push some refs... try to get fetch
+then git status 
+(if it says you branch and origin/main have diverged, then git pull, or git merge if that doesn't work
+then git push origin main, again
+
 go back refresh github and you should see it populated in main, and in branch.
 you can now delete the branch.
-
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 create pull request from github
 do the other two drop-downs
@@ -303,6 +314,11 @@ git branch -D remove
 git push origin --delete Project0
 
 ---------------------------------------
+
+wsl --set-default-version 2
+
+https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package
+
 
 
 

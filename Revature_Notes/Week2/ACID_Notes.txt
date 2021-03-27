@@ -1,0 +1,141 @@
+
+
+ACID		Set of properties of database transactions
+			intended to guarantee validity even in the
+			event of errors or power failures.
+			
+			
+
+Atomicity	Transaction	must execute exactly once and must be atomic
+			Either all ooperations occur, or none do.
+			Eliminates the chance of processing only a subset of operations.
+
+Consistency	Transaction must transform data from one consistent state to another
+			Database must be consistent before and after transaction.
+			referential integrity.
+
+Isolation	transaction must be completed in isolation.
+			multiple transactions occur independently without interference.
+			concurrent transactions should behave as if each were the only
+			transaction running.
+			high isolation can limit the number of concurrent transactions.
+			There are five levels of isolation.
+
+Durability	transaction must have durability (be recoverable).
+			changes of a successful transaction occurs even if the	
+			system failure occurs.
+			if transaction "commits", the updates will persist even
+			if the system fails immediately after.
+			logging allows system's restart procedure to completed
+			unfinished operations.
+			
+
+Transactions	sequence of operations performed on a database
+				as a single logical unit of work.
+				Specify isolation level
+				defines the degree one transaction must be isolated
+				
+Isolation levels	indicate which concurrency side effects are allowed
+					whether locks are taken when data is read
+					how long the read locks are held
+					whether a read operation references rows modified
+					by another transaction
+					doesnt affect the locks that are acquired to protect data
+					modifications
+					
+					for read operations, primarily defines the level of protection
+					from the effects of modifications made by other transactions.
+					
+					lower level increases the ability of many users to access
+					data at the same time, but increases the number of 
+					concurrency effects
+					
+					isolation level is deteremined by its permissiveness of:
+						dirty reads -	when transaction reads new, uncommitted
+										data of another transaction
+			
+						non-repeatable read	
+										when transaction reads the same row
+										twice and gets a different value
+										each time
+										
+						phantom read - 	when two identical queries are executed
+										but the rows retrieved by the two
+										are different
+										
+Isolation Level:	Dirty		Non-Repeatable		Phantom
+Read uncommitted	Yes			Yes					Yes
+Read committed		No			Yes					Yes
+Repeatable read		No			No					Yes
+Snapshot			No			No					No
+Serializable		No			No					No
+
+
+
+Serializable		provides complete isolation from concurrency
+					data guaranteed not to change before transaction ends
+					transaction will see latest commited data
+					
+Snapshot			all queries in the transaction see the same version
+					or snapshot, of the database, based on state of the
+					database at the moment in time when the transaction
+					begins.
+					data read within a transaction will never reflect changes
+					made by other simultaneous transactions.
+					uses data row versions that exist when the transaction
+					begins.
+					no locks placed on data when it is read, so it doesnt
+					block other transactions from writing data.
+
+Repeatable read		guaranteed to read "only" commited data.
+					if two identical queries are enacted simultaneously,
+					they may return different results.
+					
+Read commited		can see commited data from different points in time -
+					even for a single row (using technique like index
+					intersection).
+					
+Read uncommitted	weakest of the levels.
+					no read locking or versioning
+					overhead is minimized.
+					
+
+
+Commit			saving of data permanently after a set of tentative changes
+Rollback		operation which return the database to some previous state
+Savepoint		way of implementing nested transactions by indicating a
+				point within a transaction can be "rolled back" to without
+				affecting any work done in transaction before Savepoint was
+				created.
+				multiple savepoints can exist within a single transaction.
+				
+
+
+
+Example of Fund Transfer
+Transaction to transfer $1000 from account X to account Y:
+read(X)
+X = X –1000
+write(X)
+read(Y)
+Y = Y + 1000
+write(Y)
+Atomicity requirement — if the transaction fails after step 3 and before step 6, the system should ensure that its updates are not reflected in the database, else an inconsistency will result.
+Consistency requirement – the sum of X and Y is unchanged by the execution of the transaction.
+if between steps 3 and 6, another transaction is allowed to access the partially updated database, it will see an inconsistent database (the sum X + Y will be less than it should be).
+Isolation can be ensured trivially by running transactions serially, that is one after the other.
+However, executing multiple transactions concurrently has significant benefits, as we will see later.
+Durability requirement — once the user has been notified that the transaction has completed (i.e., the transfer of the $1000 has taken place), the updates to the database by the transaction must persist despite failures.
+
+
+
+
+					
+
+
+
+
+
+			
+			
+

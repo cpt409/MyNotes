@@ -1,0 +1,909 @@
+HTML = standard language for creating webpages.
+
+hypertext = text that contains a link to another resource.  content linked to related content.
+mark up:  portrayed by using tags or elements, which describe how the content between the tags should be displayed.  they "mark up" text.
+
+<a>text</a> anchor tag
+
+tags = surrounded by angle brackets.
+
+element = a set of tags and the enclosed content.
+
+<tag></tag>
+<selfclosingtag />
+
+attribute = metadata inside tag defined by key/value pair.
+
+<img src="logo.png"/>
+
+////////////
+Link	relatioinship between current document and external resource
+		typically used for stylesheets
+<link rel="stylesheet" href="./CSS/stylesheet.css">
+rel = relationship	stylesheet
+					alternate, author, help, icon, license, search, preload, prerender, more...
+href = location of linked document.  URL or path.
+
+////////////////////
+
+<a></a>	defines a hyperlink = link one page to another
+Anchor
+target	determines where to open link:	_blank, _self, _parent, _top
+href	URL, path, #
+
+
+
+Elements:
+<!DOCTYPE html> (let browser know that this is an HTML document)
+<html>  (Parent of all other elements.  Start of html document.)
+	<head>
+		<title>Title</title> (title of webpage)
+	</head>
+	
+	<body> (Sibling of Head / Second child of <html>)
+		<p>A Paragraph</p>
+	</body>
+</html>
+
+
+Syntax rules:  	tags are not case sensitive
+				however, always used lowercase
+				attributes values are case sensitive
+				single white space character
+				browsers ignore unknown tags
+				
+
+General Content Elements:
+<p>			paragraph
+<br />		line break
+<!-- -->	comment tag
+<div>		block element; entire width; group interior content
+<span>		inline element; width of interior content
+			other content will be side by side with it
+			if it overflows, then content will fall to next line.
+			only as wide as its contents
+
+Semantic Elements:
+do not visually affect webpages
+they determine how a browser displays their contents
+i.e. mobile might treat divs and sections differently when screen is rotated.
+organize related content
+<header>	header content at top of page
+<nav>		nav bars for navigational information
+<section>	reserved section of a page
+<article>	article or story content
+<aside>		sidebar content
+<footer>	footer content
+
+
+Tables:
+<table>		table element
+<th>		table header have special styling
+<tr>		table row
+<td>		table data cell
+
+sections: just used for organization
+<thead>
+<tbody>
+<tfoot>
+
+cell elements:
+used with TD or TH element
+rowspan		how man rows a cell will occupy (vertically)
+colspan		how many columns a cell will occupy (horizontally)
+
+Captions:
+<caption>	give title or description
+			use directly beneath table element tag
+			
+
+
+Lists:
+Ordered and Unordered
+<ol>	uses numbers or letters
+<ul>	uses bullets
+<li>	an item in any kind of list
+
+use Type attribute to change characters/bullets
+default is Arabic numerals.
+use A for uppercase letters
+use 'a' for lowercase letters
+use 'i' for roman numerals (in upper and lower).
+
+
+Links:
+hyperlink
+<a> anchor tag
+
+attributes:
+href=""		hypertext reference - the resource the link directs to
+target=""	target window - 
+			determines which context the link opens in
+			either in current window frame, or different context
+	can have four values:
+	_self	load resource in same window as current page (default)
+	_blank	load in new window/tab
+	_parent	parent of current context
+			if in a frame, load in the frame's parent window
+			if no parent, the use current window
+	_top	find ancestor of all contexts, or very first parent
+	
+<a href="https:...">Link 1</a>
+<a href="https:..." target="_blank">Link 2</a>
+
+
+Internal Link:
+<div id="div1">
+<a href="#div1">Link to Div1</a>
+
+
+Forms:
+<form>
+
+attributes:
+method		determines wihich HTTP method will be used to send data
+			use either GET or POST
+			
+GET			embed the form data into the URL
+			never use for passwords
+			for bookmarkable data
+POST		put data in the body of the request
+			more secure
+			for sensitive data
+			
+action		specifies the URI that will handle the HTTP request
+			"handler"
+			this is where the front-end meets the back-end
+			this is where the form data is sent
+			if you don't specify action, then current page will
+			handle the form
+			
+Use Input:
+<input>		create a data entry field
+<textarea>	resizable text box
+<select>	create a drop-down list
+<option>	denotes an item selectable in a select list
+			value attribute is what actually gets sent to server
+			<option value="MD">Value user sees in dropdown MD</option>
+			value="MD" is what actually gets sent to server
+<fieldset>	grouping form fields
+<legend>	adds a caption for the parent fieldset
+<label>		each input can have a label
+<button>	render button on page
+
+Input types:
+type="email"	validates input as an email address
+type="number"	only allows numbers as input
+type="color"	create a color-picker tool
+type="date"		restrics input to mm/dd/yyyy
+type="password"	obscure user input
+type="range"	replaces input with a slider
+type="tel"		format input as phone number
+type="url"		validates input as a URL
+
+give every input a name="" attribute
+
+
+<body>
+	<p>Input with Legend/FieldSet and Labels</p>
+	<form>
+		<fieldset>
+			<legend>User Credentials</legend>
+				<label>Username: <input type="text"
+								name="username"/>
+								</label>
+				<label>Password: <input type="password"
+								name="password"/>
+				</label>
+		</fieldset>
+	</form>
+</body>
+
+another way to do input with label using For and Id
+<label for="street"/>Street</lable>
+<input id="street" name="address1" type="text"/>
+
+
+
+
+Embedding Media:
+
+<img>	embed images
+		use src attribute
+		alt attribute - alternative text when image not loaded
+			can be seen by hovering mouse over image
+		<img src="images/sample.png" alt="company logo"/>
+		
+<audio>
+
+<video>
+
+valueless attributes:
+controls	toggles playback controls on/off
+autoplay	toggles automatic playback
+			do not embed autoplay media, considered rude
+loop		automatically replay media once it has loaded
+
+examples:
+<audio src="audio/notes.mp3" controls>text</audio>
+
+This way enables to have multiple file types available:
+<audio controls>
+	<source src="/notes.mp3" type="audio/mp3"/>
+	<source src="/notes.ogg" type="audio/ogg"/>
+</audio>
+	
+
+<video src="pingpong.mp4" controls
+		width="300px" height="400px">text</video>
+		
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+css:
+body { margin: 2em }	all margins set to 2em
+body { margin: 1em 2em }	top/bottom = 1em  right/left = 2em
+body { margin: 1em 2em 3em }  top = 1, right = 2, bottom = 3, left = 2
+
+collapsing margins: combining margins of two or more boxes
+	horizontal margins never collapse
+	margins of root element's box do not collapse
+	if top and bottom margins of an element with clearance
+		are adjoining, its margins collapse with the adjoining
+		margins of followng siblings
+
+
+			
+Four link states:
+a:link			normal/unvisited
+a:visited		user has visited it
+a:hovering		mouse hovers over it
+a:active		link the moment it is clicked
+
+/* Directional values */
+caption-side: top;
+caption-side: bottom;
+
+/* Logical values */
+caption-side: block-start;
+caption-side: block-end;
+caption-side: inline-start;
+caption-side: inline-end;
+
+/* Global values */
+caption-side: inherit;
+caption-side: initial;
+caption-side: unset;
+
+
+
+
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+
+
+JavaScript:
+Not related to Java
+given that name by creators, because at that time
+Java was very popular, so they wanted it to be familiar
+
+It is a front-end, scripting, language
+
+<script</script>
+type is default JavaScript.
+
+comment
+// two forward slashes
+/*   */
+
+
+Datatypes = specialized form of information, typically conforming to a template.
+in JavaScript, variables are not assigned a type during declaration.
+Types are interpreted as the code runs.
+7 total:
+string		" ", or ' '
+boolean		true/false
+number		integer or decimal
+undefined	var blank;  // a variable that is not assigned
+object		group of key/value pairs (null)
+function
+symbol
+
+date		date/time
+array		collection of data
+
+special:
+undefined	value not yet defined
+null		an empty value
+
+var b;		// undefined
+var b = null;
+
+
+Variables:
+temporary storage unit that stores data
+camelCase
+must begin with letter, _, or $
+case sensitive
+
+
+Operators:
+division by zero	Infinity keyword
+increment operator	++, etc.
+shorthand combine operators		+=, etc.
+Not-a-Number		NaN
+
+when you add a number to a string, you get concatenation
+NaN is value to see when doing arithmetic other than
+concatenation when operating with strings and numbers.
+
+
+
+Conditional Statements
+flow of execution of a program
+If
+
+==		compares values, not datatype
+===		compares two operands considering value and type
+"2" == 2	true
+"2" === 2	false
+
+
+
+Truth Values
+Truthy		if it evaluates to true/false
+			all values not listed below
+			any number other than 0
+			non-empty strings
+			non-empty object
+			true
+Falsy		a value that evaluates to false
+			false
+			null
+			undefined
+			0
+			NaN
+			"" (empty string)
+
+<body>
+<p>The value is <span id="result"></span>.</p>			
+var elem = document.getElementById("result");
+var value = NaN;
+if (value)
+	elem.innerHTML = "true";
+else
+	elem.innerHTML = "false";
+	
+	
+
+For loop: the i is still usable outside of the for loop.
+While loop:
+break			break out of loop immediately
+continue		skip to next iteration of loop
+
+
+Functions:
+function() {
+	alert(hello!);
+}
+
+parameter	variables inside the function signature
+argument	value passed to the function
+
+Hoisting	process of assigning loose variables	
+			to the global window object
+			if you declare a variable without using
+			the var/let keyword
+			
+
+Objects:
+group properties and behaviors that are related to each other
+into one container
+Representation of an entity that has related functionality
+uses Literal notation:
+
+var Person = {
+	property:value,
+	property:value
+};
+
+each key/value pair is referred to as a property and associated value
+
+Creating objects:
+constructor notation with new keyword:
+var Person = new Object();
+
+dot-notation	access an objects properties value
+array-notation	access value similar to array: Person["name"]
+
+
+Methods:	function that is assigned as a property of an object
+
+var Person = {
+	GetName: function {
+	
+	}
+}
+
+
+
+Timers:
+function that executes after a set period of time
+
+setTimeout()		call function once after specified ms
+setInterval()		execute repeatedly waiting ms between executions
+clearInterval()		stop execution of code run by setInterval()
+
+function talk() { alert("Hello!"); }
+setTimeout(talk, 4000);
+
+
+
+DOM
+Document Object Model
+Programming interface that allows programmers to retrieve and 
+manipulate elements of a webpage/document.
+
+tree-like structure/representation of individual elements
+and content on a page
+
+serves as an API for handling events and responding to user or browser interactions.
+
+the model is the tree-like structure
+each element is a node
+
+document is root
+html is child
+head	body  siblings (have same parent node)
+
+
+
+Accessing the DOM (5):
+Document.getElementById()	
+getElementsByTagName()				"LI"
+getElementsByClassName()			"className"
+getElementsByName()					name attribute
+
+document.querySelector("li");		
+document.querySelectorAll("ol");	
+
+
+
+
+Elements that display text		element.innerHTML
+set attributes					element.setAttribute("name", value);
+style property					element.style.property = value;
+
+<body>
+	<p id="myID">This is a paragraph</p>
+	<script>
+		var para = document.getElementById("myID");
+		console.log(para);
+		
+		para.innerHTML = "New text";
+		para.style.color = "red";
+	</script>
+
+
+Adding/Deleting Elements:
+document.createElement()	use tag name
+appendChild()
+removeChild()
+
+
+
+Event Handlers:
+Events		interesting actions that occur
+Listeners	added to HTML elements
+
+addEventListener()		register a handler
+						button.addEventListener("click", function(){...});
+
+						2 arguments:
+						string name of the event
+						function that we want to execute
+
+	another way:
+	btn.addEventListener("click", clickResponse);
+
+	function clickResponse() {}
+
+
+Event Names:
+click
+change			when an option is selected from a dropdown
+mouseover
+keydown
+load			when a key is pressed
+focus
+blur			when an element loses focus
+submit			
+
+
+Callback function		a parameter that is a function that is
+						executed when an event occurs
+						
+for IE versions older than 11:  use .attachEvent();
+
+
+Prevent default actions:
+preventDefault()			stop the execution of default actions
+							associated with the event.
+							
+			link.addEventListener("click", function(event) {
+				event.preventDefault();
+				... more code });
+				
+			when you need to run calculations, etc., before it
+			sent to server.
+			
+
+
+Event Propagation:
+when an event first occurs, such as a click, the event is
+emitted frm the topmost object in the DOM (the window).  
+
+Then it moves down the tree structure until it reaches the
+origination or target of the event.
+
+This is called capturing:
+
+capturing			the phase of event propogation through the
+					DOM from the root node to the target.
+
+after capturing:
+					
+Bubbling			phase of event propogation outward from	
+					the target up the DOM to the root node.
+					"bubble up to the window".
+					
+By default, event listeners are triggered in the bubbling phase.
+
+
+To set the phase programattically, you would add a third parameter
+to the addEventListener method specifying a boolean value:
+		true	the listener is set to trigger under capturing
+		false	it will trigger under bubbling
+		
+//////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+
+
+CSS
+
+block style statement language
+selector 	i.e., p div or whatever
+			{} surround all statements related to that selector
+declaration		property: value inside the curly braces
+
+
+Types of selectors:
+element						p { }		
+class						.blue { }	(class="blue")
+id							#green { }	(id="green")
+* (all)						* {}
+multiple, elements			h1, p {}
+parent > child				div > p {}
+							immediate children of specific element
+							all immediate paragraphs that are children
+							of div elements
+ancestor descendant			div p {}
+							more general descendants
+							will apply to all paragraphs in a div
+							even if they are grandchildren
+sibling+sibling2			h2 + p {}
+							any paragraphs, or all paragraphs
+							that immediately follow <h2>
+							elements that are both immediate
+							children of same parent. i.e., a
+							second para that is also sibling would not
+							get styled.
+predecessor-successor		div ~ p
+							successor comes after another in tree
+							all paragraphs that are sucessors of
+							div elements
+							
+
+Colors:
+Hexadecimal			RGBA (base10)	(A = alpha = 0 - 1 (transparency))
+000000	black		
+FFFFFF	white		
+FF0000	red			color:rgb(255,0,0, 0.5);	
+00FF00	green		
+0000FF	blue		
+FFFF00	yellow		
+FF00FF	magenta			
+00FFFF	aqua		
+(ex: p { color: #FF0000; } );
+
+HSL (hue, saturation, lightness)
+p { color:hsl(360, 100%, 100%) };
+p { color:hsla(360, 100%, 100%, 0.5) };
+
+first value = 0 - 360
+second and third value are 1-100%
+can also add fourth value for alpha of 0 -1
+
+background-color		
+background-size			
+background-position		
+background-image		
+background-repeat		
+
+
+Font properties:
+color			
+weight			
+font-family		serif vs sans-serif
+font-size		height/width
+
+serif = feet on text
+
+Font-Variant	display font in small caps
+				normal(default)
+				small-caps = uppercase, but reduced size
+				
+Font-Style		normal
+				oblique
+				italic
+				
+Font-weight		boldness of chars
+				range = 100-900
+				100 is lightest
+				900 is boldest
+				values: lighter, bold, bolder
+				400 is default = normal
+				700 = bold
+
+Import custom fonts:
+<link href="https:/...." rel='stylesheet' type='text/css'>
+<style>
+	* {
+		font-family: 'Raleway', 'Century Gothic', sans-serif;
+	}
+</style>
+
+
+
+Text Properties:
+Text-align		center, left, right, justify, justify-all
+				justify-all forces the last line to be justified
+				
+Text-decoration		underline, overline, line-through
+					or none
+					some elements have default set
+
+Text-transform		capitalization of text				
+					uppercase, lowercase, capitalize, none
+
+line-height			space between lines
+					numerical, length (mm, px, pt, em), or %
+					normal is default
+					
+Text-indent			spacing before first line of text of an element.
+					numerical, length, or %
+					default is 0
+
+Vertical-align		many options
+
+Directional			reading direction
+					ltr, rtl
+					
+Letter-Spacing		control spacing between letters
+					any length value
+					
+Word-Spacing		normal, length, %
+
+Text-Shadow			color x-offset y-offset blur-radius
+					or
+					x-offset y-offset blur-radius color
+				
+					p { text-shadow: 1px 1px 1px blue; }
+
+
+Tables, List, Links:
+border
+border-collapse		separate is default
+caption-side		left and right may not work in some browsers
+border-spacing		only works if border-collapse is set to separate
+					specifieds horizontal/vertical
+					enlarge area between cell's content and outer border
+empty-cells			show, hide
+table-layout		
+
+List:
+list-style-type			upper-alpha, decimal, lower-alpha, etc
+list-style-image
+list-style-position		outside (default), inside
+						numbers will be outside the border
+						
+Link:
+Anchor States:
+link (default)		
+visited				when link has been clicked before
+hover				when mouse is position over link
+active				when user actively clicking the link
+
+
+Units of Measure:
+value				percent, pixels, points, etc
+					margin allows negative values
+					cannot have negative padding
+absolute units		based on length
+					cm, in, px (1/96th of an inch), pts, picas
+					
+relative units		based on dimensions of another element
+	em				relative to font-size property of current element
+	rem				relative to the root element of page
+	ch				relative to width of the zero character
+	%				based on its parent element or
+					browser's window depending on the property
+					
+Length-based properties:
+width				based on browser's window
+height				if expressed in %
+					calculated based on its parent element
+					<body> and <html> may need to
+					have a height of 100%
+margin
+padding
+font-size
+border-width
+background-size
+
+
+CSS Box Model
+way for the drawing engine to layout and display elements;
+composed of four containers:
+	margin		spacing between other elements
+	border		color and outline of an element
+	padding		space between border and containing content
+	content
+	
+
+Margin 
+(length-based)
+auto			tell browser to calculate the margins
+%
+length (px, em, mm, etc.)
+<body> has default margin set to 1em
+
+
+
+Border
+Place outline around element
+border-width
+border-style
+border-color
+border-radius
+
+border-radius values: (length value range 1 - 4)
+15px, 50px, 30px, 5px
+topleft, topright, bottomright, bottomleft
+
+15px 50px 30px
+topleft, topright and bottomleft, bottomright
+
+15px 50px
+topleft and bottomright, topright and bottomleft
+
+15px
+applies to all four corners
+
+
+
+Padding 
+(inner most container that manages space between content
+			and the border)
+%				
+length-based	
+
+Box-Sizing property
+content will spill outside the container
+if you set the width of an elem to 100%, and a padding to some
+positive value for the left and/or right sides.
+the browser will calculate the width of the element first,
+and then it adds the padding, causing it to spill.
+
+change the box-sizing property from its default value: content-box
+to border-box, then padding will be included in the calculations
+
+box-sizing property:
+content-box		default. width/height includees only content.
+				border/padding are not included.
+border-box		include padding and border in the element's
+					total width/height
+
+
+Position Elements:
+
+choose position property:
+absolute				relative to its parent
+						or to document body if parent is static
+						if you want child to be relative to parent
+						then you have to set the position of the parent.
+						
+fixed					relative to browsing window
+						scrolls with the window
+						
+relative				relative to its normal flow
+						leave blank spaces where they would normally be
+						
+static (default)		elements render in order, as they appear in the
+						document flow
+
+choose side:
+top, right, bottom, left
+
+z-index property
+higher values on top
+0 and negative are valid values
+
+float property:
+set an element along the left/right side of its container
+allow text to wrap around it
+left		left hand side
+right		rigth hand side
+none
+
+clear property		specify side to disallow elements to float to
+left
+right
+both
+
+overflow property
+hidden		hide the content
+scroll		use scrollbars
+visible		render the overflow content
+auto		tell browser to fit the content inside a parent that has
+			a float property assigned to it
+
+
+let, var, const
+
+var		function level scope
+		if defined in middle of function, then it is hoisted to top
+		only the declaration is hoisted, not the assignment;
+		
+
+let 	cannot be redeclared in the same scope
+		can be defined in block scope
+
+const 	cannot be re-assigned
+
+
+
+
+asynchronous javascript and xml
+used to create asynchronous web applications
+asych = communicate with server, exchange data, update page, without having to refresh
+four states:
+0	unsent
+1	opened
+2	headers_received
+3	loading
+4	done
+
+
+FetchAPI
+interface for fetching resources (more powerful than XMLHttpRequest
+asynchronous
+promise chaining: run multiple actions on the returns of sequential asych functions
+
+
+
+Primitive DataTypes:
+number
+string
+boolean
+
+null
+undefined
+symbol
+
+
+
+
+
+
+

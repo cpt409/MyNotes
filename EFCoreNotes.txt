@@ -15,7 +15,7 @@ add this in <ItemGroup> with the Package References:
 <DotNetCliToolReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet" Version="2.0.0" />
 
 In Package Manager Console:
-Scaffold-DbContext "Server=500-409;Database=PWS_Names;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+Scaffold-DbContext "Server=500-409;Database=PizzaBoxMain;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 
 To update code from the Database:
 Scaffold-DbContext "Server=.\;Database=PWS_Names;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -force
@@ -64,4 +64,37 @@ Since connectionString Name is different than context, then put that in your con
 
 ////////////////////////////////////////////////////////////////////////////////
 		
+
+yeoman.io
+npm install -g yo generator-aspnet gulp bower
+yo aspnet
+
+choose	WebApplication
+		Bootstrap (3.3.7)
+		CarModel
+
+Nuget:
+EntityFramework.MicrosoftSqlServer
+
+to get this one, you have to install it manually:
+EntityFramework.MicrosoftSqlServer.Design
+open project.json file:
+find this line:
+"EntityFramework.MicrosoftSqlServer": "7.0.0-rc1-final",
+add this line:
+"EntityFramework.MicrosoftSqlServer.Design": "7.0.0-rc1-final",
+
+
+dnx ef dbcontext scaffold "Server=.\sqlexpress;Database=Cars;Trusted_Connection=True;" 
+EntityFramework.MicrosoftSqlServer --outputDir Models
+
+
+add this to Startup class, in the ConfigureServices method:
+var connection = @"Server=.\sqlexpress;Database=Cars;Trusted_Connection=True;";
+services.AddEntityFramework()
+  .AddSqlServer()
+  .AddDbContext<CarsContext>(options => options.UseSqlServer(connection));
+  
+  
+  
 
