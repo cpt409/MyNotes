@@ -885,10 +885,6 @@ four states:
 4	done
 
 
-FetchAPI
-interface for fetching resources (more powerful than XMLHttpRequest
-asynchronous
-promise chaining: run multiple actions on the returns of sequential asych functions
 
 
 
@@ -900,6 +896,905 @@ boolean
 null
 undefined
 symbol
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+FetchAPI
+interface for fetching resources (more powerful than XMLHttpRequest
+asynchronous
+promise chaining: run multiple actions on the returns of sequential asych functions
+
+fetch('https://reqres.in/api/users/23', { 
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        name: 'User1'
+    })
+})
+    .then(res => {
+        return res.json()
+    })
+    .then(data => console.log(data))
+    .catch(error => console.log('Error'))
+
+
+you have to set header type (content-type: application/json)
+you have to stringify the body data (convert it from javascript object to a json string)
+
+
+Promises:
+asynchronous
+the result of the Fetch HTTP request
+two responses:  resolved, rejected
+.then(a, b)
+	-> a = the resolved request
+.catch()
+	-> b = the rejected function is implemented
+.final()
+	-> always runs
+
+great for when you need to do something in the background that might take a long time
+rest of the app can run, while the promise is being worked on
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+AJAX (asynchronous javascript and xml)
+create asynchronous web applications using web technologies on the client-side
+uses XMLHttpRequest to communicate with server
+asynchronous = comm with server, exchange data, update a page without having to refresh
+four states:
+0	UNSENT				open() not called yet
+1	OPENED				open() has been called
+2	HEADERS_RECEIVED	send() has been called (headers and status available)
+3	LOADING				downloading
+4	DONE				operation is complete
+
+
+a set of inter-related technologies:
+javascript, xml, html/css, DOM, XMLHttpRequest
+
+XMLHttpRequest = sends data in the background to the server
+				requests/receives/updates data from the server
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h1>The XMLHttpRequest Object</h1>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
+
+JSON
+javascript object notation
+used to exchange data between a browser and server
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+REST
+Representation State Transfer
+Representation = format used (JSON) to exchange information
+use a stateless request model
+architectural style
+Performs CRUD in a standard way
+treat all server URLs as access points for varioius resources on the server
+https://example.com/users
+users = the resource that the server is exposing
+
+https://example.com/users/1
+act on the resource id of a single user
+
+four basic HTTP actions: (get, post, put, delete)
+uses these to perform whatever actions on the resource
+https://example.com/users (get) get a list of all users
+							when an id is not in the url, it acts on the entire resource
+							get corresponds to reading data
+https://example.com/users (post) create a new user
+							used on entire resource, not on single Id
+							corresponds to creating a resource
+https://example.com/users/1 (get) get a single user based on Id that is in the URLs
+							acts on a single ID
+https://example.com/users/1 (put) update the resource with the given ID
+							acts on a single ID
+							corresponds to updating a single resource
+https://example.com/users/1 (delete) delete
+							delete resource with given id
+
+urls do not need to be in the format above
+they just need to correspond to a resource
+
+SOAP
+Simple object access protocol
+provides access to web resources
+architectural style vs protocol
+protocol of specific structure - its requests have a unified look and organization
+.xml for message format
+relies on layer protocols (http)
+soap message components:
+Envelope (header)
+Body (WSDL text of message itself)
+sender information and request details (http protocol)
+soap has a type system
+bandwidth = heavier requests
+		require more work on both ends (sealing, opening)
+		uses an envelope
+data logic: shows the logic for each protocol in transfers
+use when information needs to be controlled and described in details
+more stability
+standardization, security, extensibility
+financial operaitons
+
+REST
+an approach to architecture: client-side and server-side are isolated
+defined with an interface description language (choose xml, html, json, etc)
+bandwidth = lighter
+	a postcard is faster/cheaper
+	takes extra steps to access a postcard
+data logic: names resources to be accessed during transfer
+use when messages and minimal or low-bandwidth situations, and specify less information
+high performance, scalability, flexibilty, browser freindliness
+use when performing multiple operations vs one big one
+
+
+DNS:
+directory of names and IP addr
+Domain Name
+google.com	->	ip address 
+
+
+Backend:
+get a URL
+protocol (http or https (encrypted))
+host (domain name) = IP = server already knows this
+path = tells server what the client wants
+	defines which section of code on the server should be run to get the response
+query string = used by the section to handle the response
+	string is divided into parameters which can augment the way the server responds
+	
+url is not enough
+it also needs an action
+action = GET, POST, PUT, DELETE
+
+combine path and action = server knows what part of the section to go to, and use the query to alter the response of that part of the section.
+	- might be a dynamically generated html page
+	- example youtube, each time you search, you get the same page but with different videos bbased on your query
+
+
+
+100 - 199	informational
+200 - 299	successful responses
+200			OK (request succeeded based on whatever action)
+201			Created (sent after POST, PUT succeeded)
+204			No Content (no content to send for the request, but the headers might be useful
+300 - 399	redirects
+300			Multiple Choices (request resource has different choices, cannot be resolved into one)
+301			Moved Permanently (URL has been changed, and is given in the response).
+302			Found (URI has been changed temporarily).  Use same URI for future requests.
+304			Not Modified. (client performed GET request.  access is allowed. document unmodified.)
+307			Temporary Redirect. (resource resides temporarily under a different URI.)
+400 - 499	serve cannot find the requested resource/client errors
+400			Bad Request (invalid syntax)
+401			Unauthorized (it means unauthenticated).  the client must authenticate itself.
+403			Forbidden (client does not have access rights to the content.  it is unauthorized).
+						(server is refusing to give the request resource.
+						(client's identity is known to the server.)
+404			Not Found (server cannot find the requested resource.)
+						(URL is not recognized.)
+						(API = endpoint is valid, but the resource itself does not exist.)
+						(server can send this instead of a 403 to hide the existencce of a resource
+							from an unauthorized client.)
+405			Method Not Allowed (method/action has been disabled - i.e., DELETE, PUT, etc.)
+					(GET and HEAD are mandatory and can never be disabled.)
+408			Request Timeout (response is sent on an idle connection).
+410			Gone. (resource is no longer available; no forwarding address is known.)
+500 - 599	server errors
+500			Internal Server Error: Server encountered a situation it doesn't know how to handle
+501			Not Implemented: method is not supported by the server
+502			Bad Gateway: the server, acting as a gateway, got an invalid response
+503			Service Unavailable: server is not ready to handle the request.
+							server is down, overloaded.
+505			HTTP Version Not Supported: HTTP version used in request is not supported by the server.
+511			Network Authentication Required: indicates that the client needs to authenticate to gain access.
+550			Permission Denied.  your acct does not have permission to perform the action you are attempting.
+
+Safe operation	does not alter the state of the server
+				GET, HEAD, OPTIONS are safe
+				
+Idempotent	identical request can be made in a row with same effect while leaving server in same state
+			should not have any side-effects
+			only back-end of server is considered
+			client calls same method several times in a row, and get the same result
+			GET, HEAD, PUT, DELETE, OPTIONS, TRACE
+			Not POST (ie., add row is called several times, and each time the result is different because its a new row
+			
+
+All Safe methods are idempotent, but not idempotent methods are safe
+			PUT and DELETE are idempotent, but not safe
+			
+Idempotent methods:		GET, HEAD, PUT, DELETE, OPTIONS, TRACE
+Non-Idempotent:			POST, PATCH, CONNECT
+			
+
+
+
+HTTP Lifecycle:
+Session consistes of three phases:
+1) client establishes a connection (UDP/TCP) with HTTP/HTTPS (80/443)
+2) client sends its REQUEST and waits for the RESPONSE
+	request composed of three parts separated by CRLF (carriage return, line feed):
+		Line 1: request Method (get, put, post, etc.), absolute URL document path, protocol version:
+			GET /doc/test.html HTTP/1.1
+		HTTP Header gives the server:
+			info about what data is appropriate
+			other info about how to treat the request/behaviors
+		-- then an empty line
+		Request Body:
+			(optional) data block, mainly used by POST that contains more data
+3) server processes the request, sending back its answer with a STATUS CODE and data
+	Response is composed three blocks separated by CRLF
+			LIne 1: Status. ack of HTTP version used, and a request status code w/meaning
+				HTTP/1.1 200 OK
+			Specific HTTP headers, giving client info like data type/size/coompression/caching
+			-- then an empty line
+			Body:
+				data block that contains the data (webpage...)
+
+Request Methods:
+	HTTP Verbs
+		GET		request/retrieve data (all data, or just a record)
+		POST	sends data to server, mainly used for forms
+		PUT		replace data of that record with new data
+		DELETE	delete the resource
+		HEAD	identical to GET, but without response body
+		OPTIONS	communication options for the target resource
+		TRACE	message loop-back test
+		PATCH	partial modifications to a resource
+		CONNECT	establish tunnel to server identified by target resource
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+API: set of functions and procedures allowing the create of applications that access the features or data of an operating system, application, or other service.
+
+interactions between multiple software applications or mixed hardware-software intermediaries.
+
+
+difference between middleware and api:
+API:	api connect your website directly to third-party tool, application,
+		single, direct line of communication between your app and tool you're integrating without
+		easy to configure, can be integrated quickly
+		downside: it can only consume data in one-to-one connection
+
+Middlware: 
+		connector between your website and other tools
+		processes data through multiple sources
+		data processed from your webiste into middleware then distributed to ERP, accting software, email tool
+		good for managing high-volume of orders
+		automating data processing
+		downside: middleware is more unique
+				configure it requires expertise
+				requires daily administration by developer(s)
+				more time to build and maintain
+				sensitive data will mean it is another vulnerability
+				
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+2)
+
+SDLC
+Dividing software development work into distinct, repeatable phases to improve design and product management
+
+Phases:
+Planning/Requirements phase		Stakeholders give input and decide on feasibility of project
+								Different approaches to solving various problems are explored
+Define project requirements		Stakeholders define and document the product to get them approved by the customer
+								Final design approach is decided upon
+Design product architecture		Decide on best approach to implement the design plan
+Building the product			specific language is chosen and code is written following guidelines
+Testing							testing/refactoring the product is conducted mostly after product is complete.
+Deployment and maintenance		user acceptance testing.
+								formal release with continued evaluation.
+								code refactoring based on user feedback.
+								
+Waterfall Model:	breaks down project into phases
+					each phase depends on deliverables of previous phase
+					progress flows down each phase only when preceding phase is verified to be complete.
+					less iterative, less flexible
+					high accountabiity and documentation
+					too regid for most situations
+
+Spiral Model:		base process on unique risk patterns of project.
+					adopts elements of other models.
+					a single loop of spiral is an iterative waterfall.
+					exact number of loops depends on requirements of the project.
+					each loop is called a phase
+					each phase is divided into quadrants
+						1 - objective definition
+						2 - identify risks
+						3 - develop next version of product
+						4 - review/plan for next phase
+						
+Iterative Model:	develop project through small iterative develoment cycles
+					learn from earlier versions of the project
+					each iteration adds features until full app is implemented
+					analysis of each iteratation is based on client/user feedback
+					unlike waterfall, iterative allows backtracking
+					
+V Model:			process steps flow downward during development
+					then back upward during testing phase
+					relationship between each phase occurs horizontally among the pairs
+					horizontal axis represents time (gets longer as start and end).
+					vertical down axis = project definition
+					vertical up axis = project test and integration
+					
+					Down						Up
+					concept of ops				ops and maintenance
+					requirements/architectural	system verification/validation
+					detailed design				integration, test, verification/validation
+					
+Big Bang Model:		does not follow any specific process
+					requirements implemented without much analysis
+					development starts as soon as the required funds are acquired, and developers are ready
+					high risk
+					for small projects, offers easy management, rapid prototyping, flexibility, few resources
+					
+Agile - CMMI		Capability Maturity Model Integration					
+					process level improvement appraisal program
+					"quality of a system or product is highly influenced by the process used to develop and maintain it".
+					guides process improvement across a project, division, or entire organization
+					
+					Level 1:	Initial.  Processes unpredicttable, poorly controlled
+						2:		Managed.	processes characterized for project are reactive.
+						3:		Defined.	processes are proactive.
+											projects tailor processes from organizational standards.
+						4:		Quantitatively Managaged:
+											processes are measured and controlled.
+						5:		Optimizing.	focus on proces improvement.
+						
+Agile:				interactions are prioritized over processes
+					working software is more important than extensive documentation
+					collaboration with client is prioritized above negotation
+					quick response to new requirements
+					priorities:
+						early, continuous delivery (CI/CD)
+						quick acceptance
+						quick delivery
+						regularly scheduled sessions of introspection
+						constant adjustment
+					series of sprints
+						each team has as a specific user story
+						2-4 weeks
+						after sprint, each team demonstrate what they have accomplished
+			
+			Scrum:	iterative
+					teams hypothesize about how the final project should work
+					try to implement the idea
+					reflect on experience
+					make adjustments
+					repeat the cycle
+					best used when amount of work can be split in to more than one sprint
+					
+			Sprint:	period of time which teams work to complete a user story
+					all user stories form the backlog (record of all user stories)
+					each user story is assigned points representing the expected effort needed
+					after the sprint, you add up the points completed
+						this repesents VELOCITY = enables you to estimate how many sprints will be needed
+										can also be used to guage how much you can do in each sprint
+					
+			Kanban:	japanese word for visual signaling for work-in-progress
+					FLOW = reflects that work flows continuously through the system instead of being constrained to distinct timeboxes
+					
+					
+///////////////////////////////////////////////////////////////////////////////////////////
+
+3)
+Docker:
+mix between software development platform and virtualization technology
+containerized
+apps run the same, independent of the system they are run on
+run in their own micro-computer (own resources, processes, etc.)
+how is docker different than virtual machine
+
+VM:
+	simulates a real computer within an existing OS
+	software is isolated from underlying hardware resources
+	
+Virtualization Software:
+				docker and kubernetes
+				run application in an isolation environment called a container
+					on single computer, without a hypervisor
+
+containerization:	bundling an app together with all config files, libraries, dependencies
+					system agnostic
+
+Docker:			allows devs to continue working in standardized environment while using containers
+
+docker image:	standalone executable package that includes everything need to run an app
+
+docker container:
+				created from the docker image
+				becomes the unit for distributing and testing your app
+				deploy app as a container
+				
+docker engine:
+				client-server app with three components:
+					server:	long-running program called a daemon
+					
+					REST API: how you interface with daemon
+								the dockerd command
+								
+								daemon: creates and manages docker objects
+											images, containers, networks, volumes
+					
+					CLI Client: how you interact with docker through CLI
+								the docker command
+
+Client-Server architecture:
+		docker client talks to the docker daemon (Server) which builds, runs, distributes docker containers
+		client and daemon can run on same system
+
+
+									
+Docker compose:	tool for defining and running multi-container Docker applications
+				uses YAML file to configure app services
+				with single command, you create and start all the services from your config.
+				used extensively in CI/CD
+				used to automate testing configurations and dependencies so that workflows are automated and end-to-end testing is faster and easier
+
+Dockerfile		used by docker build command to create a container image
+				build an application inside and outside of Docker
+				dockerfile -> docker image -> docker container
+				
+					
+///////////////////////////////////////////////////////////////////////////////////////////
+
+4)
+DevOps Fundamentals:					
+		replace silo'd Development and Operations teams
+
+OODA Loop:	Observe business and market needs
+			Orient with options for what you can deliver
+			Decide goals to pursue
+			Act by delivering working software to real users
+			
+Continuous Integration:
+			automating merging and testing of code.
+			process of automating build and testing of code every time there is a commit changes to version control.
+			automating merging and testing of code
+			helps catch bugs early.
+
+Continuous Delivery:
+			process of building, testing, configuring, and deploying code to a production environment
+			helps improve product quality
+			achieves the shortest path from new code to final deployment
+			code changes are automatically prepared for a release to production
+			every code change is built, tested, then pushed
+			manual approval to update to production
+			
+Continuous Deployment:
+			production happens automatically without explicit approval
+			automates the entire software release process
+			every revision that is committed triggers an automated flow that builds, tests, then stages the update.
+			the final decision to deploy is triggered by the developer.
+			
+Continuous Testing:
+			use of automated build-deploy-test workflows
+			test your changes continuously in a fast, scalable manner
+			
+				
+5) Pipelines:
+			starting point is to have source code in a version control system: GIT and TFVC
+			
+	Azure Pipeline:
+	edit code -> edit YAML file -> push to code repo -> azure pipelines -> deploy to target
+		constantly tetst and build your code to be shipped to any target
+		
+	Build Definition: mechanism that controls how and when builds occur.
+			.yml file defines a build.
+			specifies:
+				the things you want to do
+	
+	Code Analysis:
+		SonarCloud.io
+			third party analyzes documentation and code from the pipeline, and then analyze it.
+			
+		Static Code Analysis:
+			analysis of computer software performed without executing the program.
+			performed on source code.
+			usually performed by automated tool (SonarCloud, SonarQube)
+			Code Review = human analysis
+	
+		Coverage:
+			determines what percentage of the total lines of code are covered by unit testing.
+			it is a mix of line coverage and condition coverage.
+			Formula:
+				CT = conditions evaluated to true
+				CF = false
+				LC = lines covered
+				B = total number of conditions
+				EL = total number of executable lines
+				
+				Coverage = (CT + CF + LC) / (2*B + EL)
+				
+		Technical Debt:
+			estimated time to fix all maintainability issues/code smells
+			
+		Code Smell:
+			characteristic in source code of a program that indicates a deeper problem.
+			an issue with long-term maintainability in the code.
+			leaving it as-is means that it will be more difficult for maintainers to make changes.
+			risk of new errors as they make changes.
+			
+		Duplication:
+			lines of code that are identical and could theoretically be sepaated into a method or be called by using SOLID or DRY principles
+			
+		Quality Gate:
+			best way to "fix the water leak" and enforce policies ensuring high quality code.
+			basically clean your code as you go.
+			set up a gate to give a go/no-go signal on the current worthiness of code.
+			
+		Monitoring Security and Vulnerability:
+			security-related issues:
+				a place in your code that an attacker could exploit
+			security hotspots:
+				areas of code that may cause security issues and need to be reviewed
+				
+			Three types:
+				reliability (bug)
+				vulnerability (security)
+				maintainability (code smell)
+	
+///////////////////////////////////////////////////////////////////////////////////////////
+		
+6) YAML
+	human readable data serialization standard for all programming languages.
+	superset of JSON.
+	syntactically significant newlines and indentation
+
+	useful for configuration, messaging
+	portable between programming languages
+
+%YAML 1.2
+- - -
+!!map {
+  ? !!str "Not indented"
+  : !!map {
+      ? !!str "By one space"
+      : !!str "By four\n  spaces\n",
+      ? !!str "Flow style"
+      : !!seq [
+          !!str "By two",
+          !!str "Also by two",
+          !!str "Still by two",
+        ]
+    }
+}
+
+	used by Azure Pipelines to configure CI/CD Pipelines
+		the file sits at root of project
+		controls the build, test, and deploy stages:
+			Build
+			Test
+			Deploy
+		started by a trigger activated when conditions are met
+			push = git push
+			pull = git pull
+	pipeline
+		stage A
+			Job 1
+				Step 1.1
+				Step 1.2
+			Job 2
+				Step 2.1
+				Step 2.2
+		stage B
+			...
+
+
+	Stages = major divisions
+		has a collection of jobs
+		
+		Job = unit of work
+			add reference to a container
+			has a collection of steps
+			
+			Steps = tasks (smallest unit of work)
+				each step runs in it's own process
+	
+	If you have more than one Stage, they can be nested within a "Stages" section
+	Jobs are the same way.
+
+	Variables: can be specified at the pipeline, stage, or job level.
+	Template: can import reusable sections of your pipeline from separate file.
+		Stage
+		Job
+		Step
+		Variable
+		
+		
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+7) OWASP Foundation
+Open Web Application Security Project
+use educational and training conferences, and information, to be the 
+primary source for developers and technologists to secure the web
+
+Risk Rating Methodology:
+
+Standard Risk Model:
+Risk = likelihood * impact
+1)	identify a risks
+2)	estimate the likelihood
+	threat agent:
+		skill level, motive, opportunity, size
+	vulnerability factors:
+		ease of discovery, exploit, awareness, intrusion detection
+3) estimate the impact
+	technical: confidentiality, integrity, availability, accountability
+	busines: financial, reputation, non-compliance, privacy
+4) determine severity
+	give all factors in likelihood and estimate a rating from 0 to 9.
+	then average them for likelihood, and separate average for estimate
+	0 to <3 = low
+	3 to <6 = medium
+	6 to <9 = high
+	
+	then combine them on a final table:
+	Overall Risk Severity
+5) decide what to fix
+	most severe should be fixed first
+	however, it is also based on financial.
+		cost of fixing an issue, may not be worth it financially
+6) customize the risk rating model
+
+
+Top Web Security Risks:
+Injection: SQL, OS, LDAP, NoSQL
+		execute commands
+Broken authentication:
+		compromised passwords, etc.,
+Sensitive data exposure:
+		weakly protected data.
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+
+8) Cloud Computing:
+	delivery of computing services over the internet
+	offers faster innovation, flexible resources, and scalability
+	
+Scaling Types:
+	cloud	- allocate resource and pay for them as you need them
+	vertical - moving to a larger/smaller instance or upgrading/downgrading resources
+	horizontal - adding/removing instances to a service, sytem, application
+	
+Terms:
+	SLA:	service level agreement
+			commitment between SP and client about the quality and availability of service and responsibilities of each
+	Regions:	independent geographic areas that consist of zones
+				locations within zones may have minimum network latencies
+	Accessibility zone:	deployment area for cloud resources within a region
+						zones are considered a single failure domain within a region
+						for higher availability, deploy across multiple zones in a region
+						
+Types:
+	Public		owned by 3rd party
+				Azure, AWS, GCP
+				all hardware/software is owned by the provider
+				clients access services through web browser
+				
+	Private		single organization
+				physically located at on-site locations
+				can be contracted to 3rd party to host cloud off-site
+				services/infrastructure are maintained on a private network
+	
+	Hybrid		public, private, on-site clouds combined
+				bound together by technology (data/apps are shared between them)
+				could also be "multicloud" - org uses more than one public cloud in addition to their on-premises datacenter
+								
+Models:
+	SAAS		deliver software apps over the internet
+				typically on a subscription basis
+				cloud providers host and manage the app, underlying infrastructure, and maintenance
+				office365
+				smartsheet
+
+	Serverless	cloud provider handles the setup, capacity, server management for you
+				you build the app functionality without spending time managing servers
+				you bring your own containers to the fully managed clusters that can scale
+				docker hub / kubernetes
+			
+	PAAS		cloud provider handles the infrastructure of servers, storage, network, etc.
+				cloud provider provides tools to enable the software to be accessible over the web.
+				apps are run in virtual containers
+				you host and maintain the app
+				Heroku/SalesForce
+				SAP
+
+	IAAS		you rent IT infrastructure - servers, VMs, storage, networks, OS
+				pay as you go
+				AWS, Azure, GCP
+				
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+Git commands:
+Git clone https://nameofrepo	
+	download existing source code from remote repo
+
+Git branch	
+	allows devs to work in parallel on same project simultaneously
+	use command to create, list, and delete branches
+	
+	git branch <branch name>
+		creates branch locally
+		
+	git push -u <remote repo> <branch-name>
+		push the new branch into the remote repo
+		
+	git branch or git branch --list
+	
+	git branch -d <branch name>
+	
+	
+Git checkout
+	to work in a branch, you need to switch to it
+	
+	git checkout <branch>
+	
+	1) the changes in current branch must be committed first
+	2) the branch you want to check out should exist in your locally
+	
+	git checkout -b <branch>
+		this will create a new branch in your local, and check it out
+		
+Git Status
+	current branch is up to date
+	anything to commit, push, pull
+	files staged, unstaged, untracked 
+		staged = changes are in Git and marked for commit
+		unstaged =  are in Git, but not marked for commit
+		untracked = (changes are not in git at all)
+	files created, modified, deleted
+
+Git add
+	add modified files to the next commit
+	unstaged will not be included in the next commit
+	
+	git add <file>
+	git add -A
+	
+Git commit
+	this will save changes only locally
+	
+	git commit -m "commit message"
+	
+Git push
+	after committing your changes, send them to remote server
+	
+	if you are on a new branch:
+	git push --set-upstream <remote> <name>
+	or
+	git push -u origin <branch name>
+	
+	if you are already setup:
+	git push <remote> <branch-name>
+	
+
+Git pull
+	get updates from remote repo
+	this command combines git fetch and git merge
+	
+	it gets updates from remote repo (git fetch)
+	and immediately applies the changes in your local (git merge)
+	
+	git pull <remote>
+	
+Git revert
+	undo changes that have been made
+	
+	to see commit history:
+	git log--oneline
+	
+	this will give outpu with a hashcode next to each commit
+	use hashcode to identify the commit you want to undo:
+	
+	git revert 3321844
+	
+	a file will show up with output
+	
+	press shift+q to exit the file
+	
+	it will undo the given commit, but will create a new commit without deleting the old one
+	
+	it basically doesn't touch the commit hisotry
+	
+	everything happens in local system, unless we push them to remote repo
+	
+
+Git merge
+	now you merge branch with the parent dev/master branch
+	
+	you need to be on the dev branch first
+	full steps:
+	
+	git checkout dev
+	
+	update the dev branch first just in case:
+	git fetch
+	
+	now merge:
+	git merge <branch name>
+	
+	
+Git reset
+	unstage a file
+	git reset --<filename>
+	
+//////////////////////////////////////////////////////////////////////////////////////////
+
+NuGet
+
+Microsoft-supported mechanism for sharing code (for .Net and .Net Core)
+defines how packages for .Net are created, hosted, and consumed
+single zip file .nupkg extension that contains compiled code (DLLs, other files, etc).
+
+developer creates package, publish them to public/private host.
+consumer obtains the package and calls the functionality in their code.
+NuGet itself handles all of the intermediate details.
+
+NuGet supports private hosts, and the public nuget.org host.
+
+create -> package -> publish on nuget.org -> consumer browses/installs
+
+package manager console:
+install-package <package name> -p <project name>
+
+dotnet cli:
+dotnet add package Newtonsoft.json
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
 
 
 
